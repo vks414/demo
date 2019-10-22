@@ -1,0 +1,59 @@
+{
+    "commerceSuiteVersion": "1905.0",
+    "extensions": [
+        "modeltacceleratorservices",
+        "electronicsstore",
+        "yacceleratorstorefront",
+        "backoffice"
+    ],
+         "aspects": [
+        {
+            "name": "backoffice",
+            "webapps": [
+                {
+                    "name": "hac",
+                    "contextPath": "/hac"
+                },
+                {
+                    "name": "mediaweb",
+                    "contextPath": "/medias"
+                },
+                {
+                    "name": "backoffice",
+                    "contextPath": ""
+                }
+            ]
+        },
+        {
+            "name": "accstorefront",
+            "webapps": [
+                {
+                    "name": "mediaweb",
+                    "contextPath": "/medias"
+                },
+                {
+                    "name": "yacceleratorstorefront",
+                    "contextPath": "/yacceleratorstorefront"
+                },
+                {
+                    "name": "acceleratorservices",
+                    "contextPath": "/acceleratorservices"
+                }
+            ]
+        },
+        {
+            "name": "backgroundProcessing",
+            "properties": [],
+            "webapps": [
+                {
+                    "name": "hac",
+                    "contextPath": ""
+                },
+                {
+                    "name": "mediaweb",
+                    "contextPath": "/medias"
+                }
+            ]
+        }
+    ]
+}
