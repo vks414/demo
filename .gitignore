@@ -151,7 +151,7 @@ hybris/bin/**/bin
 gensrc
 
 # Folders to ignore at the root of the repository
-hybris/bin/
+
 hybris/data/
 hybris/log/
 hybris/temp/
@@ -163,8 +163,9 @@ hybris/sampleconfigurations/
 hybris/config
 
 # filter only custom extension
-hybris/bin/*
-!hybris/bin/custom/
+hybris/bin/modules/
+hybris/bin/platform/
+!bin/custom/
 hybris/bin/custom/**/gensrc/**/
 
 # Absolute path to ignore

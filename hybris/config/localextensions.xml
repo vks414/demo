@@ -1,6 +1,7 @@
 <hybrisconfig xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='../bin/platform/resources/schemas/extensions.xsd'>
   <extensions>
     <path dir='${HYBRIS_BIN_DIR}' autoload='false' />
+	<path dir='${HYBRIS_BIN_DIR}/custom/dcxdemo' autoload='false' />
     <extension name='adaptivesearchsolr' />
     <extension name='adaptivesearchbackoffice' />
     <extension name='adaptivesearchsamplesaddon' />
@@ -8,10 +9,10 @@
     <extension name='commerceservicesbackoffice' />
     <extension name='solrfacetsearchbackoffice' />
     <extension name='solrserver' />
-    <extension name='yacceleratorbackoffice' />
-    <extension name='yacceleratorinitialdata' />
-    <extension name='yacceleratorfulfilmentprocess' />
-    <extension name='yacceleratorstorefront' />
+    <!-- <extension name='yacceleratorbackoffice' /> -->
+    <!-- <extension name='yacceleratorinitialdata' /> -->
+    <!-- <extension name='yacceleratorfulfilmentprocess' /> -->
+    <!-- <extension name='yacceleratorstorefront' /> -->
     <extension name='ycommercewebservices' />
     <extension name='ycommercewebservicestest' />
     <extension name='electronicsstore' />
@@ -95,5 +96,12 @@
     <extension name='merchandisingservices' />
     <extension name='merchandisingservicesbackoffice' />
     <extension name='merchandisingstorefrontsampledataaddon' />
+	<extension name="dcxdemofulfilmentprocess"/>
+	<extension name="dcxdemocore"/>
+    <extension name="dcxdemofacades"/>
+	<extension name="dcxdemotest"/>
+	<extension name="dcxdemoinitialdata"/>
+	<extension name="dcxdemobackoffice"/>
+	<extension name="dcxdemostorefront"/>
   </extensions>
 </hybrisconfig>
