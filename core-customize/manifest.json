@@ -20,7 +20,7 @@
                 },
                 {
                     "name": "backoffice",
-                    "contextPath": ""
+                    "contextPath": "/backoffice"
                 }
             ]
         },
@@ -32,8 +32,8 @@
                     "contextPath": "/medias"
                 },
                 {
-                    "name": "yacceleratorstorefront",
-                    "contextPath": "/yacceleratorstorefront"
+                    "name": "dcxdemostorefront",
+                    "contextPath": "/dcxdemostorefront"
                 },
                 {
                     "name": "acceleratorservices",
