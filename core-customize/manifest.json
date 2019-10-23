@@ -1,11 +1,24 @@
 {
-    "commerceSuiteVersion": "1905.0",
+    "commerceSuiteVersion": "1905",
     "extensions": [
         "modeltacceleratorservices",
-        "electronicsstore",
-        "yacceleratorstorefront",
-        "backoffice"
     ],
+	"useConfig": {
+        "properties": [
+            {
+                "location": "/hybris/config/local.properties"
+            },
+            {
+                "location": "/hybris/config/local.properties",
+                "persona": "development"
+            }
+            
+        ],
+        
+        "extensions": {
+            "location": "/hybris/config/localextensions.xml"
+        }
+		},
          "aspects": [
         {
             "name": "backoffice",
