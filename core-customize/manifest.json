@@ -6,17 +6,17 @@
 	"useConfig": {
         "properties": [
             {
-                "location": "/hybris/config/local.properties"
+                "location": "hybris/config/local.properties"
             },
             {
-                "location": "/hybris/config/local.properties",
+                "location": "hybris/config/local.properties",
                 "persona": "development"
             }
             
         ],
         
         "extensions": {
-            "location": "/hybris/config/localextensions.xml"
+            "location": "hybris/config/localextensions.xml"
         }
 		},
          "aspects": [
