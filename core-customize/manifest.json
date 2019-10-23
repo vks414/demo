@@ -1,7 +1,7 @@
 {
     "commerceSuiteVersion": "1905",
     "extensions": [
-        "modeltacceleratorservices",
+        "modeltacceleratorservices"
     ],
 	"useConfig": {
         "properties": [
