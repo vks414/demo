@@ -73,7 +73,26 @@
 				{
 				 "name": "previewwebservices",
 				 "contextPath": "/previewwebservices"
-				 }
+				 },
+				 {
+				 "name": "personalizationsmartedit",
+				 "contextPath": "/personalizationsmartedit"
+				 },
+
+				 {
+				 "name": "personalizationpromotionssmartedit",
+				 "contextPath": "/personalizationpromotionssmartedit"
+				 },
+
+				{
+				 "name": "personalizationwebservices",
+				 "contextPath": "/personalizationwebservices"
+				 },
+
+				{
+				 "name": "personalizationsearchsmartedit",
+				 "contextPath": "/personalizationsearchsmartedit"
+				 }	
 			]
         },
         {
@@ -129,6 +148,25 @@
 				{
 				 "name": "previewwebservices",
 				 "contextPath": "/previewwebservices"
+				 },
+				 {
+				 "name": "personalizationsmartedit",
+				 "contextPath": "/personalizationsmartedit"
+				 },
+
+				 {
+				 "name": "personalizationpromotionssmartedit",
+				 "contextPath": "/personalizationpromotionssmartedit"
+				 },
+
+				{
+				 "name": "personalizationwebservices",
+				 "contextPath": "/personalizationwebservices"
+				 },
+
+				{
+				 "name": "personalizationsearchsmartedit",
+				 "contextPath": "/personalizationsearchsmartedit"
 				 }
 				
             ]
@@ -206,6 +244,25 @@
 			{
 			 "name": "mediaweb",
 			 "contextPath": "/medias"
+			 },
+			 {
+			 "name": "personalizationsmartedit",
+			 "contextPath": "/personalizationsmartedit"
+			 },
+
+			 {
+			 "name": "personalizationpromotionssmartedit",
+			 "contextPath": "/personalizationpromotionssmartedit"
+			 },
+
+			{
+			 "name": "personalizationwebservices",
+			 "contextPath": "/personalizationwebservices"
+			 },
+
+			{
+			 "name": "personalizationsearchsmartedit",
+			 "contextPath": "/personalizationsearchsmartedit"
 			 }
 		  ]
 		}
