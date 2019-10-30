@@ -36,49 +36,45 @@
                     "contextPath": "/backoffice"
                 },
 				{
-			  "name": "oauth2",
-			  "contextPath": "/authorizationserver"
-			},
-			{
-			  "name": "cmswebservices",
-			  "contextPath": "/cmswebservices"
-			},
-			{
-			  "name": "permissionswebservices",
-			  "contextPath": "/permissionswebservices"
-			},
-			{
-			  "name":"odata2webservices",
-			  "contextPath": "/odata2webservices"
-			},
-			{
-			 "name": "smartedit",
-			 "contextPath": "/smartedit"
-			 },
+				  "name": "oauth2",
+				  "contextPath": "/authorizationserver"
+				},
+				{
+				  "name": "cmswebservices",
+				  "contextPath": "/cmswebservices"
+				},
+				{
+				  "name": "permissionswebservices",
+				  "contextPath": "/permissionswebservices"
+				},
+				{
+				  "name":"odata2webservices",
+				  "contextPath": "/odata2webservices"
+				},
+				{
+				 "name": "smartedit",
+				 "contextPath": "/smartedit"
+				 },
 
-			 {
-			 "name": "cmssmartedit",
-			 "contextPath": "/cmssmartedit"
-			 },
+				 {
+				 "name": "cmssmartedit",
+				 "contextPath": "/cmssmartedit"
+				 },
 
-			 {
-			 "name": "smarteditwebservices",
-			 "contextPath": "/smarteditwebservices"
-			 },
+				 {
+				 "name": "smarteditwebservices",
+				 "contextPath": "/smarteditwebservices"
+				 },
 
-			 {
-			 "name": "cmssmarteditwebservices",
-			 "contextPath": "/cmssmarteditwebservices"
-			 },
-			{
-			 "name": "previewwebservices",
-			 "contextPath": "/previewwebservices"
-			 },
-			{
-			 "name": "mediaweb",
-			 "contextPath": "/medias"
-			 }
-            ]
+				 {
+				 "name": "cmssmarteditwebservices",
+				 "contextPath": "/cmssmarteditwebservices"
+				 },
+				{
+				 "name": "previewwebservices",
+				 "contextPath": "/previewwebservices"
+				 }
+			]
         },
         {
             "name": "accstorefront",
@@ -96,48 +92,44 @@
                     "contextPath": "/acceleratorservices"
                 },
 				{
-			  "name": "oauth2",
-			  "contextPath": "/authorizationserver"
-			},
-			{
-			  "name": "cmswebservices",
-			  "contextPath": "/cmswebservices"
-			},
-			{
-			  "name": "permissionswebservices",
-			  "contextPath": "/permissionswebservices"
-			},
-			{
-			  "name":"odata2webservices",
-			  "contextPath": "/odata2webservices"
-			},
-			{
-			 "name": "smartedit",
-			 "contextPath": "/smartedit"
-			 },
+				  "name": "oauth2",
+				  "contextPath": "/authorizationserver"
+				},
+				{
+				  "name": "cmswebservices",
+				  "contextPath": "/cmswebservices"
+				},
+				{
+				  "name": "permissionswebservices",
+				  "contextPath": "/permissionswebservices"
+				},
+				{
+				  "name":"odata2webservices",
+				  "contextPath": "/odata2webservices"
+				},
+				{
+				 "name": "smartedit",
+				 "contextPath": "/smartedit"
+				 },
 
-			 {
-			 "name": "cmssmartedit",
-			 "contextPath": "/cmssmartedit"
-			 },
+				 {
+				 "name": "cmssmartedit",
+				 "contextPath": "/cmssmartedit"
+				 },
 
-			 {
-			 "name": "smarteditwebservices",
-			 "contextPath": "/smarteditwebservices"
-			 },
+				 {
+				 "name": "smarteditwebservices",
+				 "contextPath": "/smarteditwebservices"
+				 },
 
-			 {
-			 "name": "cmssmarteditwebservices",
-			 "contextPath": "/cmssmarteditwebservices"
-			 },
-			{
-			 "name": "previewwebservices",
-			 "contextPath": "/previewwebservices"
-			 },
-			{
-			 "name": "mediaweb",
-			 "contextPath": "/medias"
-			 }
+				 {
+				 "name": "cmssmarteditwebservices",
+				 "contextPath": "/cmssmarteditwebservices"
+				 },
+				{
+				 "name": "previewwebservices",
+				 "contextPath": "/previewwebservices"
+				 }
 				
             ]
         },
