@@ -1,0 +1,20 @@
+{
+  "name": "storefrontapp-e2e-cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Marcin Lasak",
+  "license": "MIT",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --spec cypress/integration/smoke/**/*",
+    "cy:cli": "cypress run",
+    "cy:run:mobile": "cypress run --config numTestsKeptInMemory=1 --spec \"cypress/integration/mobile/**/*\"",
+    "cy:run:regression": "cypress run --config numTestsKeptInMemory=1 --spec \"cypress/integration/regression/**/*\"",
+    "cy:run:all": "cypress run --config numTestsKeptInMemory=1 --spec \"cypress/integration/**/*\""
+  },
+  "devDependencies": {
+    "@cypress/webpack-preprocessor": "^4.0.3",
+    "@testing-library/cypress": "^4.2.0",
+    "cypress": "^3.1.5"
+  }
+}

@@ -3,41 +3,40 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mystore": {
+    "storefrontapp": {
+      "root": "projects/storefrontapp/",
+      "sourceRoot": "projects/storefrontapp/src",
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "cx",
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mystore",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "outputPath": "dist/storefrontapp",
+            "index": "projects/storefrontapp/src/index.html",
+            "main": "projects/storefrontapp/src/main.ts",
+            "polyfills": "projects/storefrontapp/src/polyfills.ts",
+            "tsConfig": "projects/storefrontapp/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/storefrontapp/src/favicon.ico",
+              "projects/storefrontapp/src/assets",
+              "projects/storefrontapp/src/manifest.json",
+              "projects/storefrontapp/src/webApplicationInjector.js"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["projects/storefrontapp/src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["./projects", "./projects/storefrontstyles/scss"]
+            },
+            "ngswConfigPath": "projects/storefrontlib/src/cms-structure/pwa/ngsw-config.json",
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "projects/storefrontapp/src/environments/environment.ts",
+                  "with": "projects/storefrontapp/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -49,76 +48,253 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
+              "serviceWorker": true,
+              "tsConfig": "projects/storefrontapp/tsconfig.app.prod.json"
+            },
+            "ci": {
+              "fileReplacements": [
                 {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "replace": "projects/storefrontapp/src/environments/environment.ts",
+                  "with": "projects/storefrontapp/src/environments/environment.ci.ts"
                 }
-              ]
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "tsConfig": "projects/storefrontapp/tsconfig.app.prod.json"
+            },
+            "qa": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/storefrontapp/src/environments/environment.ts",
+                  "with": "projects/storefrontapp/src/environments/environment.qa.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "serviceWorker": true,
+              "tsConfig": "projects/storefrontapp/tsconfig.app.prod.json"
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mystore:build"
+            "browserTarget": "storefrontapp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mystore:build:production"
+              "browserTarget": "storefrontapp:build:production"
+            },
+            "development": {
+              "browserTarget": "storefrontapp:build:development"
+            },
+            "ci": {
+              "browserTarget": "storefrontapp:build:ci"
+            },
+            "qa": {
+              "browserTarget": "storefrontapp:build:qa"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mystore:build"
+            "browserTarget": "storefrontapp:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "main": "projects/storefrontapp/src/test.ts",
+            "polyfills": "projects/storefrontapp/src/polyfills.ts",
+            "tsConfig": "projects/storefrontapp/tsconfig.spec.json",
+            "karmaConfig": "projects/storefrontapp/karma.conf.js",
+            "styles": ["projects/storefrontapp/src/styles.scss"],
+            "scripts": [],
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/storefrontapp/src/favicon.ico",
+              "projects/storefrontapp/src/assets",
+              "projects/storefrontapp/src/manifest.json"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "codeCoverageExclude": ["dist/**/*"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "projects/storefrontapp/tsconfig.app.json",
+              "projects/storefrontapp/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mystore:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "mystore:serve:production"
-            }
+            "outputPath": "dist/storefrontapp-server",
+            "main": "projects/storefrontapp/src/main.server.ts",
+            "tsConfig": "projects/storefrontapp/tsconfig.server.json",
+            "fileReplacements": [
+              {
+                "replace": "projects/storefrontapp/src/environments/environment.ts",
+                "with": "projects/storefrontapp/src/environments/environment.prod.ts"
+              }
+            ]
           }
         }
       }
-    }},
-  "defaultProject": "mystore"
+    },
+    "storefrontlib": {
+      "root": "projects/storefrontlib",
+      "sourceRoot": "projects/storefrontlib/src",
+      "projectType": "library",
+      "prefix": "cx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/storefrontlib/tsconfig.lib.json",
+            "project": "projects/storefrontlib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/storefrontlib/src/test.ts",
+            "tsConfig": "projects/storefrontlib/tsconfig.spec.json",
+            "karmaConfig": "projects/storefrontlib/karma.conf.js",
+            "codeCoverageExclude": ["dist/**/*"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["./projects/storefrontstyles/scss"]
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/storefrontlib/tsconfig.lib.json",
+              "projects/storefrontlib/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "core": {
+      "root": "projects/core",
+      "sourceRoot": "projects/core/src",
+      "projectType": "library",
+      "prefix": "cx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/core/tsconfig.lib.json",
+            "project": "projects/core/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/core/src/test.ts",
+            "tsConfig": "projects/core/tsconfig.spec.json",
+            "karmaConfig": "projects/core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/core/tsconfig.lib.json",
+              "projects/core/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "vendor": {
+      "root": "projects/vendor",
+      "sourceRoot": "projects/vendor/src",
+      "projectType": "library",
+      "prefix": "cx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/vendor/tsconfig.lib.json",
+            "project": "projects/vendor/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/vendor/src/test.ts",
+            "tsConfig": "projects/vendor/tsconfig.spec.json",
+            "karmaConfig": "projects/vendor/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/vendor/tsconfig.lib.json",
+              "projects/vendor/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "assets": {
+      "root": "projects/assets",
+      "sourceRoot": "projects/assets/src",
+      "projectType": "library",
+      "prefix": "cx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/assets/tsconfig.lib.json",
+            "project": "projects/assets/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/assets/src/test.ts",
+            "tsConfig": "projects/assets/tsconfig.spec.json",
+            "karmaConfig": "projects/assets/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/assets/tsconfig.lib.json",
+              "projects/assets/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "storefrontapp"
 }
