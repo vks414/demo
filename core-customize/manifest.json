@@ -52,6 +52,7 @@
                     "name": "acceleratorservices",
                     "contextPath": "/acceleratorservices"
                 }
+				
             ]
         },
         {
@@ -74,7 +75,11 @@
 			{
 			  "key":"xss.filter.header.X-Frame-Options",
 			  "value":""
-			}
+			},
+			{
+			 "key":"storefrontContextRoot",
+			 "value":"dcxdemostorefront"
+			 }
 		  ],
 		  "webapps": [
 			{
@@ -96,7 +101,34 @@
 			{
 			  "name":"odata2webservices",
 			  "contextPath": "/odata2webservices"
-			}
+			},
+			{
+			 "name": "smartedit",
+			 "contextPath": "/smartedit"
+			 },
+
+			 {
+			 "name": "cmssmartedit",
+			 "contextPath": "/cmssmartedit"
+			 },
+
+			 {
+			 "name": "smarteditwebservices",
+			 "contextPath": "/smarteditwebservices"
+			 },
+
+			 {
+			 "name": "cmssmarteditwebservices",
+			 "contextPath": "/cmssmarteditwebservices"
+			 },
+			{
+			 "name": "previewwebservices",
+			 "contextPath": "/previewwebservices"
+			 },
+			{
+			 "name": "mediaweb",
+			 "contextPath": "/medias"
+			 }
 		  ]
 		}
     ]
