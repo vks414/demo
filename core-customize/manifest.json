@@ -92,7 +92,11 @@
 				{
 				 "name": "personalizationsearchsmartedit",
 				 "contextPath": "/personalizationsearchsmartedit"
-				 }	
+				 },
+				{
+				 "name": "merchandisingsmartedit",
+				 "contextPath": "/merchandisingsmartedit"
+				 }				 
 			]
         },
         {
@@ -167,6 +171,10 @@
 				{
 				 "name": "personalizationsearchsmartedit",
 				 "contextPath": "/personalizationsearchsmartedit"
+				 },
+				  {
+				 "name": "merchandisingsmartedit",
+				 "contextPath": "/merchandisingsmartedit"
 				 }
 				
             ]
@@ -263,6 +271,10 @@
 			{
 			 "name": "personalizationsearchsmartedit",
 			 "contextPath": "/personalizationsearchsmartedit"
+			 },
+			 {
+			 "name": "merchandisingsmartedit",
+			 "contextPath": "/merchandisingsmartedit"
 			 }
 		  ]
 		}
