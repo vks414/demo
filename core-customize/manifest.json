@@ -19,6 +19,33 @@
             "location": "config/localextensions.xml"
         }
 		},
+		"storefrontAddons": [
+		{
+		  "addon": "cmsoccaddon",
+		  "storefront": "ycommercewebservices",
+		  "template": "ycommercewebservices"
+		},
+		{
+		  "addon": "acceleratorwebservicesaddon",
+		  "storefront": "ycommercewebservices",
+		  "template": "ycommercewebservices"
+		},
+		{
+		  "addon": "consignmenttrackingoccaddon",
+		  "storefront": "ycommercewebservices",
+		  "template": "ycommercewebservices"
+		},
+		{
+		  "addon": "customerinterestsoccaddon",
+		  "storefront": "ycommercewebservices",
+		  "template": "ycommercewebservices"
+		},
+		{
+		  "addon": "notificationoccaddon",
+		  "storefront": "ycommercewebservices",
+		  "template": "ycommercewebservices"
+		}
+	],
          "aspects": [
         {
             "name": "backoffice",
