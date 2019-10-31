@@ -10,8 +10,8 @@ import { B2cStorefrontModule, defaultCmsContentConfig } from '@spartacus/storefr
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CustomfooterComponent
+    AppComponent
+    
   ],
   imports: [
     BrowserModule,
