@@ -42,8 +42,8 @@
 		},
 		{
 		  "addon": "smarteditaddon",
-		  "storefront": "ycommercewebservices",
-		  "template": "ycommercewebservices"
+		  "storefront": "dcxdemostorefront",
+		  "template": "yacceleratorstorefront"
 		},
 		{
 		  "addon": "notificationoccaddon",
