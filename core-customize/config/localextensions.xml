@@ -88,6 +88,8 @@
     <extension name='odata2webservices' />
     <extension name='odata2webservicesfeaturetests' />
     <extension name='integrationbackoffice' />
+    <extension name='sapcpiproductexchange' />
+    <extension name='sapproductconfigservices' />
     <extension name='integrationmonitoringbackoffice' />
     <extension name='outboundsyncbackoffice' />
     <extension name='merchandisingaddon' />
