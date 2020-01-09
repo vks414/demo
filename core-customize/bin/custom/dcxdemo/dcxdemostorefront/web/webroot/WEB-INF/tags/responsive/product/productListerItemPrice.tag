@@ -19,7 +19,7 @@
 				<format:price priceData="${product.price}"/>
 			</c:when>
 			<c:otherwise>
-				<format:price priceData="${product.priceQuantity}"/>
+				$${product.priceQuantity}.
 			</c:otherwise>
 		</c:choose>
 
