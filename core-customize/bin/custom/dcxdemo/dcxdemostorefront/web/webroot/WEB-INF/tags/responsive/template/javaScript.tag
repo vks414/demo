@@ -97,6 +97,11 @@
 		
 	</c:otherwise>
 </c:choose>
-
+<script type='text/javascript' src='//static.queue-it.net/script/queueclient.min.js'></script>
+<script
+   data-queueit-c='capgeminiin'
+   type='text/javascript'
+   src='//static.queue-it.net/script/queueconfigloader.min.js'>
+</script>
 
 <cms:previewJS cmsPageRequestContextData="${cmsPageRequestContextData}" />
