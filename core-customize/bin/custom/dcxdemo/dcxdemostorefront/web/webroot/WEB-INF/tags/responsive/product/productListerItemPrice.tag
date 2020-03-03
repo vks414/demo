@@ -15,8 +15,11 @@
 			<c:when test="${product.multidimensional and (product.priceRange.minPrice.value ne product.priceRange.maxPrice.value)}">
 				<format:price priceData="${product.priceRange.minPrice}"/> - <format:price priceData="${product.priceRange.maxPrice}"/>
 			</c:when>
-			<c:otherwise>
+			<c:when test="${product.priceQuantity eq 1}">
 				<format:price priceData="${product.price}"/>
+			</c:when>
+			<c:otherwise>
+				<format:price priceData="${product.priceQuantity}"/>
 			</c:otherwise>
 		</c:choose>
 
