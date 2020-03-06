@@ -21,6 +21,11 @@
 		},
 		"storefrontAddons": [
 		{
+		  "addon": "b2boccaddon",
+		  "storefront": "ycommercewebservices",
+		  "template": "ycommercewebservices"
+		},
+		{
 		  "addon": "cmsoccaddon",
 		  "storefront": "ycommercewebservices",
 		  "template": "ycommercewebservices"
@@ -36,19 +41,79 @@
 		  "template": "ycommercewebservices"
 		},
 		{
-		  "addon": "customerinterestsoccaddon",
+		  "addon": "savedorderformsoccaddon",
 		  "storefront": "ycommercewebservices",
 		  "template": "ycommercewebservices"
 		},
 		{
 		  "addon": "smarteditaddon",
-		  "storefront": "dcxdemostorefront",
+		  "storefront": "dcxb2bdemostorefront",
 		  "template": "yacceleratorstorefront"
 		},
 		{
-		  "addon": "notificationoccaddon",
-		  "storefront": "ycommercewebservices",
-		  "template": "ycommercewebservices"
+		  "addon": "b2bacceleratoraddon",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "commerceorgaddon",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "commerceorgsamplesaddon",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "b2bpunchoutaddon",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "secureportaladdon",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "accountsummaryaddon",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "assistedservicestorefront",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "captchaaddon",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "customerticketingaddon",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "promotionenginesamplesaddon",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "textfieldconfiguratortemplateaddon",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "orderselfserviceaddon",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "consignmenttrackingaddon",
+		  "storefront": "dcxb2bdemostorefront",
+		  "template": "yacceleratorstorefront"
 		}
 	],
          "aspects": [
@@ -149,8 +214,8 @@
                     "contextPath": "/medias"
                 },
                 {
-                    "name": "dcxdemostorefront",
-                    "contextPath": "/dcxdemostorefront"
+                    "name": "dcxb2bdemostorefront",
+                    "contextPath": "/dcxb2bdemostorefront"
                 },
                 {
                     "name": "acceleratorservices",
@@ -244,7 +309,7 @@
 			},
 			{
 			 "key":"storefrontContextRoot",
-			 "value":"dcxdemostorefront"
+			 "value":"dcxb2bdemostorefront"
 			 }
 		  ],
 		  "webapps": [

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+--><extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+        	
+    
+    <extension abstractclassprefix="Generated" classprefix="Dcxb2bdemoCore" managername="Dcxb2bdemoCoreManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="dcxb2bdemocore">
+                		
+        
+        <!-- you should add all required extensions to this list, except platform 
+			extensions which are automatically required -->
+                		
+        
+        <requires-extension name="acceleratorcms"/>
+                		
+        
+        <requires-extension name="solrserver"/>
+                		
+        
+        <coremodule generated="true" manager="com.dcx.b2b.demo.core.jalo.Dcxb2bdemoCoreManager" packageroot="com.dcx.b2b.demo.core"/>
+                		
+        
+        		
+	
+    
+    </extension>
+        
+
+</extensioninfo>
