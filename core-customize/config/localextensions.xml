@@ -103,5 +103,8 @@
 	<extension name="dcxdemoinitialdata"/>
 	<extension name="dcxdemobackoffice"/>
 	<extension name="dcxdemostorefront"/>
+	  <extension name='sapcpiproductexchange' />
+
+<extension name='sapproductconfigservices' />
   </extensions>
 </hybrisconfig>
