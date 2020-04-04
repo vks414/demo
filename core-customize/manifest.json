@@ -59,6 +59,12 @@
 	"odata2webservices"
 	 
   ],
+  "extensionPacks": [
+       {
+           "name": "hybris-b2ctelco-suite",
+            "version": "1911.0"
+       }
+    ],
   "properties": [
     {
       "key": "impex.import.workers",
