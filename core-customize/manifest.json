@@ -117,9 +117,51 @@
       "template": "ycommercewebservices"
     }
   ],
+  "tests": {
+    "extensions": [    
+	"b2ctelcobackoffice",
+     "b2ctelcofulfillmentprocess",
+     "b2ctelcostore",
+     "utilitiesstore",
+     "mediastore",
+     "b2ctelcoaddon",
+     "b2ctelcotmfwebservices",
+     "b2ctelcowebservices",
+     "upilbackoffice",
+     "upilintegrationservices"
+    ],
+    "annotations": [
+      "UnitTests",
+      "IntegrationTests"
+    ],
+    "packages": [
+      "de.hybris.platform.*"
+    ]
+  },
+  "webTests": {
+    "extensions": [
+      "b2ctelcowebservices",
+      "b2ctelcooccaddon",
+      "b2ctelcotmfwebservices"
+    ],
+    "excludedPackages": [
+      "de.hybris.platform.*"
+    ]
+  },
          "aspects": [
         {
             "name": "backoffice",
+      "properties": [
+        {
+          "key": "test.property.1",
+          "value": "test.property-1-value-prod-backoffice",
+          "persona": "production"
+        },
+        {
+          "key": "test.property.2",
+          "value": "test.property-2-value-backoffice"
+        }
+      ],
             "webapps": [
                 {
                     "name": "hac",
@@ -211,7 +253,7 @@
 	{
           "key":"storefrontContextRoot",
           "value":"/yacceleratorstorefront"
-        }
+        },
 			{
 			  "key":"smarteditaddon.javascript.paths.responsive",
 			  "value":"/shared/common/js/webApplicationInjector.js?allow-origin=https://backoffice.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com:443;/shared/common/js/reprocessPage.js;/shared/common/js/adjustComponentRenderingToSE.js;/responsive/common/js/smarteditaddon.js"			  
