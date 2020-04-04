@@ -356,12 +356,12 @@
                 {
                     "name": "mediaweb",
                     "contextPath": "/medias"
-                }
-            ]
+                },
+            
         
-			 }
-		  ],
-		  "webapps": [
+			 
+		  
+		  
 			{
 			  "name": "ycommercewebservices",
 			  "contextPath": "/rest"
