@@ -57,19 +57,89 @@
   "integrationmonitoringbackoffice",
 	"odata2webservices"
 	 
-    ],
-	"useConfig": {
-        "properties": [
-            {
-                "location": "config/local.properties"
-            },
-            {
-                "location": "config/local.properties",
-                "persona": "development"
-            }
-            
-        ]
-	},
+  ],
+  ""properties": [
+    {
+      "key": "impex.import.workers",
+      "value": "1"
+    },
+	{
+      "key": "catalog.sync.workers",
+      "value": "1"
+    },
+    {
+      "key": "kernel.events.cluster.jgroups.channel",
+      "value": "disable"
+    },
+    {
+      "key": "datahub.publication.saveImpex",
+      "value": ""
+    },
+    {
+      "key": "kernel.autoInitMode",
+      "value": "update"
+    },
+    {
+      "key": "mail.smtp.starttls.enable",
+      "value": "true"
+    },
+    {
+      "key": "mail.use.tls",
+      "value": "true"
+    },
+    {
+      "key": "storefront.show.debug.info",
+      "value": "true"
+    },
+    {
+      "key": "commerceservices.default.desktop.ui.experience",
+      "value": "responsive"
+    },
+    {
+      "key": "googleEmbedApiKey",
+      "value": ""
+    },
+    {
+      "key": "storefront.show.checkout.flows",
+      "value": "true"
+    },
+    {
+      "key" : "b2ctelcotmfwebservices.api.base.url",
+      "value" : "http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+    },
+    {
+      "key":"website.b2ctelco.http",
+      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+    },
+    {
+      "key":"website.b2ctelco.https",
+      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+    },
+    {
+      "key":"website.media.http",
+      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+    },
+    {
+      "key":"website.media.https",
+      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront""
+    },
+    {
+      "key":"website.utilities.http",
+      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+    },
+    {
+      "key":"website.utilities.https",
+      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+    },
+    {
+      "key":"system.unlocking.disabled",
+      "value":"false"
+    },
+    {
+      "key":"task.engine.loadonstartup",
+      "value":"true"
+    } 
+  ],
   "storefrontAddons": [
     {
       "addon": "b2ctelcoaddon",
@@ -148,9 +218,9 @@
       "de.hybris.platform.*"
     ]
   },
-         "aspects": [
-        {
-            "name": "backoffice",
+  "aspects": [
+    {
+      "name": "backoffice",
       "properties": [
         {
           "key": "test.property.1",
@@ -162,273 +232,131 @@
           "value": "test.property-2-value-backoffice"
         }
       ],
-            "webapps": [
-                {
-                    "name": "hac",
-                    "contextPath": "/hac"
-                },
-                {
-                    "name": "mediaweb",
-                    "contextPath": "/medias"
-                },
-                {
-                    "name": "backoffice",
-                    "contextPath": "/backoffice"
-                },
-				{
-				  "name": "oauth2",
-				  "contextPath": "/authorizationserver"
-				},
-				{
-				  "name": "cmswebservices",
-				  "contextPath": "/cmswebservices"
-				},
-				{
-				  "name": "permissionswebservices",
-				  "contextPath": "/permissionswebservices"
-				},
-				{
-				  "name":"odata2webservices",
-				  "contextPath": "/odata2webservices"
-				},
-				{
-				 "name": "smartedit",
-				 "contextPath": "/smartedit"
-				 },
-
-				 {
-				 "name": "cmssmartedit",
-				 "contextPath": "/cmssmartedit"
-				 },
-
-				 {
-				 "name": "smarteditwebservices",
-				 "contextPath": "/smarteditwebservices"
-				 },
-
-				 {
-				 "name": "cmssmarteditwebservices",
-				 "contextPath": "/cmssmarteditwebservices"
-				 },
-				{
-				 "name": "previewwebservices",
-				 "contextPath": "/previewwebservices"
-				 },
-				 {
-				 "name": "personalizationsmartedit",
-				 "contextPath": "/personalizationsmartedit"
-				 },
-
-				 {
-				 "name": "personalizationpromotionssmartedit",
-				 "contextPath": "/personalizationpromotionssmartedit"
-				 },
-
-				{
-				 "name": "personalizationwebservices",
-				 "contextPath": "/personalizationwebservices"
-				 },
-
-				{
-				 "name": "personalizationsearchsmartedit",
-				 "contextPath": "/personalizationsearchsmartedit"
-				 },
-				{
-				 "name": "merchandisingsmartedit",
-				 "contextPath": "/merchandisingsmartedit"
-				 }				 
-			]
+      "webapps": [
+        {
+          "name": "hac",
+          "contextPath": "/hac"
         },
         {
-            "name": "accstorefront",
-			"properties": [
-			{
-			  "key":"xss.filter.header.X-Frame-Options",
-			  "value":""
-			},
-			 {
+          "name": "mediaweb",
+          "contextPath": "/medias"
+        },
+        {
+          "name": "backoffice",
+          "contextPath": "/backoffice"
+        },
+	{
+          "name": "odata2webservices",
+          "contextPath": "/odata2webservices"
+        }     
+    
+      ]
+    },
+    {
+      "name": "accstorefront",
+      "properties": [
+        {
           "key": "spring.session.enabled",
           "value": "false"
         },
-	{
+        {
           "key":"storefrontContextRoot",
           "value":"/yacceleratorstorefront"
+        }
+      ],
+      "webapps": [
+        {
+          "name": "mediaweb",
+          "contextPath": "/medias"
         },
-			{
-			  "key":"smarteditaddon.javascript.paths.responsive",
-			  "value":"/shared/common/js/webApplicationInjector.js?allow-origin=https://backoffice.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com:443;/shared/common/js/reprocessPage.js;/shared/common/js/adjustComponentRenderingToSE.js;/responsive/common/js/smarteditaddon.js"			  
-			}
-		  ],
-            "webapps": [
-                {
-                    "name": "mediaweb",
-                    "contextPath": "/medias"
-                },
         {
           "name": "yacceleratorstorefront",
           "contextPath": "/yacceleratorstorefront"
         },
-	{
+        {
           "name": "b2ctelcowebservices",
           "contextPath": "/b2ctelcowebservices"
         },
-                {
-                    "name": "acceleratorservices",
-                    "contextPath": "/acceleratorservices"
-                },
-				{
-				  "name": "oauth2",
-				  "contextPath": "/authorizationserver"
-				},
-				{
-				  "name": "cmswebservices",
-				  "contextPath": "/cmswebservices"
-				},
-				{
-				  "name": "permissionswebservices",
-				  "contextPath": "/permissionswebservices"
-				},
-				{
-				  "name":"odata2webservices",
-				  "contextPath": "/odata2webservices"
-				},
-				{
-				 "name": "smartedit",
-				 "contextPath": "/smartedit"
-				 },
-
-				 {
-				 "name": "cmssmartedit",
-				 "contextPath": "/cmssmartedit"
-				 },
-
-				 {
-				 "name": "smarteditwebservices",
-				 "contextPath": "/smarteditwebservices"
-				 },
-
-				 {
-				 "name": "cmssmarteditwebservices",
-				 "contextPath": "/cmssmarteditwebservices"
-				 },
-				{
-				 "name": "previewwebservices",
-				 "contextPath": "/previewwebservices"
-				 },
-				 {
-				 "name": "personalizationsmartedit",
-				 "contextPath": "/personalizationsmartedit"
-				 },
-
-				 {
-				 "name": "personalizationpromotionssmartedit",
-				 "contextPath": "/personalizationpromotionssmartedit"
-				 },
-
-				{
-				 "name": "personalizationwebservices",
-				 "contextPath": "/personalizationwebservices"
-				 },
-
-				{
-				 "name": "personalizationsearchsmartedit",
-				 "contextPath": "/personalizationsearchsmartedit"
-				 },
-				  {
-				 "name": "merchandisingsmartedit",
-				 "contextPath": "/merchandisingsmartedit"
-},
+        {
+          "name":"oauth2",
+          "contextPath" :"/authorizationserver"
+        },
+        {
+          "name": "acceleratorservices",
+          "contextPath": "/acceleratorservices"
+        },
+        {
+          "name": "smartedit",
+          "contextPath": "/smartedit"
+        },
+        {
+          "name": "cmssmartedit",
+          "contextPath": "/cmssmartedit"
+        },
+        {
+          "name": "cmssmarteditwebservices",
+          "contextPath": "/cmssmarteditwebservices"
+        },
+        {
+          "name": "smarteditwebservices",
+          "contextPath": "/smarteditwebservices"
+        },
+        {
+          "name": "cmscockpit",
+          "contextPath": "/cmscockpit"
+        },
+        {
+          "name": "cmswebservices",
+          "contextPath": "/cmswebservices"
+        },
+        {
+          "name": "cscockpit",
+          "contextPath": "/cscockpit"
+        },
+        {
+          "name": "maintenanceweb",
+          "contextPath": "/maintenance"
+        },
+        {
+          "name": "permissionswebservices",
+          "contextPath": "/permissionswebservices"
+        },
+        {
+          "name": "personalizationsmartedit",
+          "contextPath": "/personalizationsmartedit"
+        },
+        {
+          "name": "personalizationwebservices",
+          "contextPath": "/personalizationwebservices"
+        },
+        {
+          "name": "previewwebservices",
+          "contextPath": "/previewwebservices"
+        },
+        {
+          "name": "ycommercewebservices",
+          "contextPath": "/rest"
+        },
         {
           "name" : "b2ctelcotmfwebservices",
           "contextPath" : "/b2ctelcotmfwebservices"
-				 }
-				
-            ]
+        }    
+      ]
+    },
+    {
+      "name": "backgroundProcessing",
+      "properties": [],
+      "webapps": [
+        {
+          "name": "hac",
+          "contextPath": ""
         },
         {
-            "name": "backgroundProcessing",
-            "properties": [],
-            "webapps": [
-                {
-                    "name": "hac",
-                    "contextPath": ""
-                },
-                {
-                    "name": "mediaweb",
-                    "contextPath": "/medias"
-                },
-            
-        
-			 
-		  
-		  
-			{
-			  "name": "ycommercewebservices",
-			  "contextPath": "/rest"
-			},
-			{
-			  "name": "oauth2",
-			  "contextPath": "/authorizationserver"
-			},
-			{
-			  "name": "cmswebservices",
-			  "contextPath": "/cmswebservices"
-			},
-			{
-			  "name": "permissionswebservices",
-			  "contextPath": "/permissionswebservices"
-			},
-			{
-			  "name":"odata2webservices",
-			  "contextPath": "/odata2webservices"
-			},
-			{
-			 "name": "smartedit",
-			 "contextPath": "/smartedit"
-			 },
-
-			 {
-			 "name": "cmssmartedit",
-			 "contextPath": "/cmssmartedit"
-			 },
-
-			 {
-			 "name": "smarteditwebservices",
-			 "contextPath": "/smarteditwebservices"
-			 },
-
-			 {
-			 "name": "cmssmarteditwebservices",
-			 "contextPath": "/cmssmarteditwebservices"
-			 },
-			{
-			 "name": "previewwebservices",
-			 "contextPath": "/previewwebservices"
-			 },
-			 {
-			 "name": "personalizationsmartedit",
-			 "contextPath": "/personalizationsmartedit"
-			 },
-
-			 {
-			 "name": "personalizationpromotionssmartedit",
-			 "contextPath": "/personalizationpromotionssmartedit"
-			 },
-
-			{
-			 "name": "personalizationwebservices",
-			 "contextPath": "/personalizationwebservices"
-			 },
-
-			{
-			 "name": "personalizationsearchsmartedit",
-			 "contextPath": "/personalizationsearchsmartedit"
-			 },
-			 {
-			 "name": "merchandisingsmartedit",
-			 "contextPath": "/merchandisingsmartedit"
-			 }
-		  ]
-		}
-    ]
+          "name": "mediaweb",
+          "contextPath": "/medias"
+        }
+      ]
+    }
+  ],
+  "disableBackgroundProcessing": false
 }
