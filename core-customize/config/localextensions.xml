@@ -5,7 +5,16 @@
     <extension name='adaptivesearchsolr' />
     <extension name='adaptivesearchbackoffice' />
     <extension name='adaptivesearchsamplesaddon' />
-    <extension name='adaptivesearchwebservices' />
+<extension name='addonsupport' />
+<extension name='b2ctelcobackoffice' />
+<extension name='b2ctelcofulfillmentprocess' />
+<extension name='b2ctelcostore' />
+<extension name='utilitiesstore' />
+<extension name='mediastore' />
+<extension name='b2ctelcoaddon' />
+<extension name='b2ctelcotmfwebservices' />
+<extension name='b2ctelcowebservices' />
+<extension name='b2ctelcooccaddon' />
     <extension name='commerceservicesbackoffice' />
     <extension name='solrfacetsearchbackoffice' />
     <extension name='solrserver' />

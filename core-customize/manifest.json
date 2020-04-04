@@ -26,6 +26,11 @@
 		  "template": "ycommercewebservices"
 		},
 		{
+		  "addon": "b2ctelcooccaddon",
+		  "storefront": "ycommercewebservices",
+		  "template": "ycommercewebservices"
+		},
+		{
 		  "addon": "acceleratorwebservicesaddon",
 		  "storefront": "ycommercewebservices",
 		  "template": "ycommercewebservices"
@@ -49,6 +54,11 @@
 		  "addon": "notificationoccaddon",
 		  "storefront": "ycommercewebservices",
 		  "template": "ycommercewebservices"
+		},
+		{
+		  "addon": "b2ctelcoaddon",
+		  "storefront": "dcxdemostorefront",
+		  "template": "yacceleratorstorefront"
 		}
 	],
          "aspects": [
