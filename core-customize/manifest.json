@@ -405,10 +405,6 @@
 			 "name": "previewwebservices",
 			 "contextPath": "/previewwebservices"
 			 },
-			{
-			 "name": "mediaweb",
-			 "contextPath": "/medias"
-			 },
 			 {
 			 "name": "personalizationsmartedit",
 			 "contextPath": "/personalizationsmartedit"
