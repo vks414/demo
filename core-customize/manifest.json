@@ -62,7 +62,7 @@
   "extensionPacks": [
        {
            "name": "hybris-b2ctelco-suite",
-            "version": "1911.0"
+            "version": "2003.0"
        }
     ],
   "properties": [
