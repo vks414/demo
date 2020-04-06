@@ -71,6 +71,10 @@
       "value": "1"
     },
 	{
+	  "key": "corsfilter.acceleratorservices.allowedOrigins",
+      "value": "*"
+	},
+	{
       "key": "catalog.sync.workers",
       "value": "1"
     },
