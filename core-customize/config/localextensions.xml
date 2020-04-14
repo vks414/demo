@@ -48,6 +48,8 @@
 		<extension name='assistedservicestorefront' /> 
 		<extension name='assistedservicecustomerinterestsaddon' /> 
 		<extension name="promotionenginesamplesaddon"/>
+		<extension name="cmsoccaddon"/>
+		
 		<extension name="dcxtelcofulfilmentprocess"/>
 		<extension name="dcxtelcocore"/>
 		<extension name="dcxtelcoinitialdata"/>
