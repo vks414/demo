@@ -47,6 +47,7 @@
 		<extension name='assistedservicefacades' /> 
 		<extension name='assistedservicestorefront' /> 
 		<extension name='assistedservicecustomerinterestsaddon' /> 
+		<extension name="promotionenginesamplesaddon"/>
 		<extension name="dcxtelcofulfilmentprocess"/>
 		<extension name="dcxtelcocore"/>
 		<extension name="dcxtelcoinitialdata"/>
@@ -54,6 +55,7 @@
 		<extension name="dcxtelcotest"/>
 		<extension name="dcxtelcostorefront"/>
 		<extension name="dcxtelcobackoffice"/>
+		
 		
 	</extensions>
 </hybrisconfig>
