@@ -7,12 +7,6 @@ import de.hybris.platform.acceleratorstorefrontcommons.constants.WebConstants;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractPageController;
 import de.hybris.platform.commercefacades.consent.data.AnonymousConsentData;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -20,6 +14,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;
@@ -46,16 +44,16 @@ public class AnonymousConsentController extends AbstractPageController
 	private static final ObjectMapper mapper = new ObjectMapper();
 
 	@RequestMapping(value = "/{consentTemplateId}", method = RequestMethod.POST)
-	public ResponseEntity giveConsent(@PathVariable final String consentTemplateId, @RequestParam final String consentState,
-			final HttpServletRequest request, final HttpServletResponse response)
+	public ResponseEntity giveConsent(@PathVariable
+	final String consentTemplateId, @RequestParam
+	final String consentState, final HttpServletRequest request, final HttpServletResponse response)
 	{
 		final Cookie anonymousConsentCookie = WebUtils.getCookie(request, WebConstants.ANONYMOUS_CONSENT_COOKIE);
 
 		try
 		{
-			final List<AnonymousConsentData> anonymousConsentDataList = Arrays.asList(
-					mapper.readValue(URLDecoder.decode(anonymousConsentCookie.getValue(), StandardCharsets.UTF_8),
-							AnonymousConsentData[].class));
+			final List<AnonymousConsentData> anonymousConsentDataList = Arrays.asList(mapper.readValue(
+					URLDecoder.decode(anonymousConsentCookie.getValue(), StandardCharsets.UTF_8), AnonymousConsentData[].class));
 			final List<AnonymousConsentData> updatedList = anonymousConsentDataList.stream().peek(anonymousConsentData -> {
 				if (anonymousConsentData.getTemplateCode().equals(consentTemplateId))
 				{
@@ -72,12 +70,7 @@ public class AnonymousConsentController extends AbstractPageController
 			updatedAnonymousConsentCookie.setMaxAge((int) TimeUnit.DAYS.toSeconds(365));
 			response.addCookie(updatedAnonymousConsentCookie);
 		}
-		catch (final UnsupportedEncodingException e)
-		{
-			LOGGER.error("UnsupportedEncodingException occurred while decoding the Anonymous Consent Cookie", e);
-			return new ResponseEntity(HttpStatus.BAD_REQUEST);
-		}
-		catch (final IOException e)
+		catch (final Exception e)
 		{
 			LOGGER.error("IOException occured while reading the Anonymous Consent Cookie", e);
 			return new ResponseEntity(HttpStatus.BAD_REQUEST);
