@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hybrisconfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="resources/schemas/extensions.xsd">
+	<extensions>
+		<!--
+				All extensions located in ${HYBRIS_BIN_DIR}/platform/ext are automatically loaded.
+				More information about how to configure available extensions can be found here : https://wiki.hybris.com/x/nZVzC
+		-->
+		<path dir='${HYBRIS_BIN_DIR}' autoload='false' />
+		<path dir="${HYBRIS_BIN_DIR}/custom/dcxtelco"/>		
+		<extension name='acceleratorcms' /> 
+		<extension name='adaptivesearchbackoffice' /> 
+		<extension name='adaptivesearchsolr' /> 
+		<extension name='addonsupport' /> 
+		<extension name='b2ctelcostore' /> 
+		<extension name='utilitiesstore' /> 
+		<extension name='mediastore' /> 
+		<extension name='b2ctelcoaddon' /> 
+		<extension name='b2ctelcotmfwebservices' /> 
+		<extension name='b2ctelcowebservices' />
+		<extension name='b2ctelcooccaddon' /> 
+		<extension name='commerceservicesbackoffice' /> 
+		<extension name='solrfacetsearchbackoffice' /> 
+		<extension name='solrserver' /> 
+		<extension name='subscriptionbackoffice' /> 
+		  
+		<extension name='ycommercewebservices' /> 
+		<extension name='pcmbackofficesamplesaddon' /> 
+		<extension name='cmsbackoffice' /> 
+		<extension name='cmswebservices' /> 
+		<extension name='previewwebservices' /> 
+		<extension name='smarteditwebservices' /> 
+		<extension name='cmssmarteditwebservices' /> 
+		<extension name='permissionswebservices' /> 
+		<extension name='smarteditaddon' /> 
+		<extension name='cmssmartedit' /> 
+		<extension name='customerticketingaddon' /> 
+		<extension name='customersupportbackoffice' /> 
+		<extension name='personalizationwebservices' /> 
+		<extension name='previewpersonalizationweb' /> 
+		<extension name='personalizationcmsweb' /> 
+		<extension name='personalizationsmartedit' /> 
+		<extension name='personalizationservicesbackoffice' /> 
+		<extension name='personalizationcmsbackoffice' /> 
+		<extension name='personalizationservices' /> 
+		<extension name='personalizationfacades' /> 
+		<extension name='acceleratorservices' /> 
+		<extension name='assistedservicefacades' /> 
+		<extension name='assistedservicestorefront' /> 
+		<extension name='assistedservicecustomerinterestsaddon' /> 
+		<extension name="dcxtelcofulfilmentprocess"/>
+		<extension name="dcxtelcocore"/>
+		<extension name="dcxtelcoinitialdata"/>
+		<extension name="dcxtelcofacades"/>
+		<extension name="dcxtelcotest"/>
+		<extension name="dcxtelcostorefront"/>
+		<extension name="dcxtelcobackoffice"/>
+		
+	</extensions>
+</hybrisconfig>

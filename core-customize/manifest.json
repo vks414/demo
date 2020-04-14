@@ -1,71 +1,16 @@
 {
-  "commerceSuiteVersion": "1905",
+    "commerceSuiteVersion": "1905",
   "useCloudExtensionPack": true,
-  "extensions": [
-     "acceleratorcms",
-     "adaptivesearchbackoffice",
-     "addonsupport",
-	 "b2ctelcofulfillmentprocess",
-     "b2ctelcobackoffice",
-	 "b2ctelcostore",
-     "utilitiesstore",
-     "mediastore",
-     "b2ctelcoaddon",
-     "b2ctelcooccaddon",
-     "b2ctelcotmfwebservices",
-     "b2ctelcowebservices",
-     "commerceservicesbackoffice",
-     "solrfacetsearchbackoffice",
-     "solrserver",
-     "subscriptionbackoffice",
-     "yacceleratorstorefront",
-     "yacceleratorcore",
-     "ycommercewebservices",
-     "cmsbackoffice",
-     "cmswebservices",
-     "previewwebservices",
-     "smarteditwebservices",
-     "cmssmarteditwebservices",
-     "permissionswebservices",
-     "smarteditaddon",
-     "cmssmartedit",
-     "customerticketingaddon",
-     "customersupportbackoffice",
-     "personalizationwebservices",
-     "previewpersonalizationweb",
-     "personalizationcmsweb",
-     "personalizationsmartedit",
-     "personalizationservicesbackoffice",
-     "personalizationcmsbackoffice",
-     "personalizationservices",
-     "personalizationfacades",
-     "acceleratorservices",
-     "assistedservicefacades",
-     "assistedservicestorefront",
-     "assistedservicecustomerinterestsaddon",
-    "modeltacceleratorservices",
-    "pcmbackofficesamplesaddon",
-    "rulebuilderbackoffice",
-    "couponbackoffice",
-    "droolsruleengineservices",
-    "couponfacades",
-    "couponservices",
-    "promotionenginesamplesaddon",
-    "upilintegrationservices",
-    "upilbackoffice",
-    "cmsoccaddon",
-	"adaptivesearchsolr",
-  "integrationmonitoringbackoffice",
-	"odata2webservices"
-	 
-  ],
-  "extensionPacks": [
+    "extensions": [
+        "modeltacceleratorservices"
+    ],
+    "extensionPacks": [
        {
            "name": "hybris-b2ctelco-suite",
             "version": "2003.0"
        }
     ],
-  "properties": [
+    "properties": [
     {
       "key": "impex.import.workers",
       "value": "1"
@@ -149,10 +94,26 @@
     {
       "key":"task.engine.loadonstartup",
       "value":"true"
-    } 
-  ],
-  "storefrontAddons": [
-    {
+    }
+    ],
+	"useConfig": {
+        "properties": [
+            {
+                "location": "config/local.properties"
+            },
+            {
+                "location": "config/local.properties",
+                "persona": "development"
+            }
+            
+        ],
+        
+        "extensions": {
+            "location": "config/localextensions.xml"
+        }
+		},
+		"storefrontAddons": [
+		{
       "addon": "b2ctelcoaddon",
       "storefront": "yacceleratorstorefront",
       "template": "yacceleratorstorefront"
@@ -197,76 +158,99 @@
       "storefront": "ycommercewebservices",
       "template": "ycommercewebservices"
     }
-  ],
-  "tests": {
-    "extensions": [    
-	"b2ctelcobackoffice",
-     "b2ctelcofulfillmentprocess",
-     "b2ctelcostore",
-     "utilitiesstore",
-     "mediastore",
-     "b2ctelcoaddon",
-     "b2ctelcotmfwebservices",
-     "b2ctelcowebservices",
-     "upilbackoffice",
-     "upilintegrationservices"
-    ],
-    "annotations": [
-      "UnitTests",
-      "IntegrationTests"
-    ],
-    "packages": [
-      "de.hybris.platform.*"
-    ]
-  },
-  "webTests": {
-    "extensions": [
-      "b2ctelcowebservices",
-      "b2ctelcooccaddon",
-      "b2ctelcotmfwebservices"
-    ],
-    "excludedPackages": [
-      "de.hybris.platform.*"
-    ]
-  },
-  "aspects": [
-    {
-      "name": "backoffice",
-      "properties": [
+	],
+         "aspects": [
         {
-          "key": "test.property.1",
-          "value": "test.property-1-value-prod-backoffice",
-          "persona": "production"
+            "name": "backoffice",
+            "webapps": [
+                {
+                    "name": "hac",
+                    "contextPath": "/hac"
+                },
+                {
+                    "name": "mediaweb",
+                    "contextPath": "/medias"
+                },
+                {
+                    "name": "backoffice",
+                    "contextPath": "/backoffice"
+                },
+				{
+				  "name": "oauth2",
+				  "contextPath": "/authorizationserver"
+				},
+				{
+				  "name": "cmswebservices",
+				  "contextPath": "/cmswebservices"
+				},
+				{
+				  "name": "permissionswebservices",
+				  "contextPath": "/permissionswebservices"
+				},
+				{
+				  "name":"odata2webservices",
+				  "contextPath": "/odata2webservices"
+				},
+				{
+				 "name": "smartedit",
+				 "contextPath": "/smartedit"
+				 },
+
+				 {
+				 "name": "cmssmartedit",
+				 "contextPath": "/cmssmartedit"
+				 },
+
+				 {
+				 "name": "smarteditwebservices",
+				 "contextPath": "/smarteditwebservices"
+				 },
+
+				 {
+				 "name": "cmssmarteditwebservices",
+				 "contextPath": "/cmssmarteditwebservices"
+				 },
+				{
+				 "name": "previewwebservices",
+				 "contextPath": "/previewwebservices"
+				 },
+				 {
+				 "name": "personalizationsmartedit",
+				 "contextPath": "/personalizationsmartedit"
+				 },
+
+				 {
+				 "name": "personalizationpromotionssmartedit",
+				 "contextPath": "/personalizationpromotionssmartedit"
+				 },
+
+				{
+				 "name": "personalizationwebservices",
+				 "contextPath": "/personalizationwebservices"
+				 },
+
+				{
+				 "name": "personalizationsearchsmartedit",
+				 "contextPath": "/personalizationsearchsmartedit"
+				 },
+				{
+				 "name": "merchandisingsmartedit",
+				 "contextPath": "/merchandisingsmartedit"
+				 }				 
+			]
         },
         {
-          "key": "test.property.2",
-          "value": "test.property-2-value-backoffice"
-        }
-      ],
-      "webapps": [
-        {
-          "name": "hac",
-          "contextPath": "/hac"
-        },
-        {
-          "name": "mediaweb",
-          "contextPath": "/medias"
-        },
-        {
-          "name": "backoffice",
-          "contextPath": "/backoffice"
-        },
-	{
-          "name": "odata2webservices",
-          "contextPath": "/odata2webservices"
-        }     
-    
-      ]
-    },
-    {
-      "name": "accstorefront",
-      "properties": [
-        {
+            "name": "accstorefront",
+			"properties": [
+			{
+			  "key":"xss.filter.header.X-Frame-Options",
+			  "value":""
+			},
+			{
+			  "key":"smarteditaddon.javascript.paths.responsive",
+			  "value":"/shared/common/js/webApplicationInjector.js?allow-origin=https://backoffice.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com:443;/shared/common/js/reprocessPage.js;/shared/common/js/adjustComponentRenderingToSE.js;/responsive/common/js/smarteditaddon.js"			  
+			},
+			{
           "key": "spring.session.enabled",
           "value": "false"
         },
@@ -274,100 +258,197 @@
           "key":"storefrontContextRoot",
           "value":"/yacceleratorstorefront"
         }
-      ],
-      "webapps": [
-        {
-          "name": "mediaweb",
-          "contextPath": "/medias"
-        },
-        {
+		  ],
+            "webapps": [
+                {
+                    "name": "mediaweb",
+                    "contextPath": "/medias"
+                },
+                {
           "name": "yacceleratorstorefront",
           "contextPath": "/yacceleratorstorefront"
         },
         {
           "name": "b2ctelcowebservices",
           "contextPath": "/b2ctelcowebservices"
-        },
-        {
-          "name":"oauth2",
-          "contextPath" :"/authorizationserver"
-        },
-        {
+                },
+				{
+				  "name": "oauth2",
+				  "contextPath": "/authorizationserver"
+				},
+				{
+				  "name": "cmswebservices",
+				  "contextPath": "/cmswebservices"
+				},
+				{
+				  "name": "permissionswebservices",
+				  "contextPath": "/permissionswebservices"
+				},
+				{
           "name": "acceleratorservices",
           "contextPath": "/acceleratorservices"
-        },
-        {
-          "name": "smartedit",
-          "contextPath": "/smartedit"
-        },
-        {
-          "name": "cmssmartedit",
-          "contextPath": "/cmssmartedit"
-        },
+				},
+				{
+				 "name": "smartedit",
+				 "contextPath": "/smartedit"
+				 },
+
+				 {
+				 "name": "cmssmartedit",
+				 "contextPath": "/cmssmartedit"
+				 },
         {
           "name": "cmssmarteditwebservices",
           "contextPath": "/cmssmarteditwebservices"
         },
-        {
-          "name": "smarteditwebservices",
-          "contextPath": "/smarteditwebservices"
-        },
+				 {
+				 "name": "smarteditwebservices",
+				 "contextPath": "/smarteditwebservices"
+				 },
         {
           "name": "cmscockpit",
           "contextPath": "/cmscockpit"
         },
-        {
-          "name": "cmswebservices",
-          "contextPath": "/cmswebservices"
-        },
-        {
-          "name": "cscockpit",
-          "contextPath": "/cscockpit"
-        },
-        {
-          "name": "maintenanceweb",
-          "contextPath": "/maintenance"
-        },
-        {
-          "name": "permissionswebservices",
-          "contextPath": "/permissionswebservices"
-        },
-        {
-          "name": "personalizationsmartedit",
-          "contextPath": "/personalizationsmartedit"
-        },
-        {
-          "name": "personalizationwebservices",
-          "contextPath": "/personalizationwebservices"
-        },
-        {
-          "name": "previewwebservices",
-          "contextPath": "/previewwebservices"
-        },
-        {
+				 {
+				 "name": "cmssmarteditwebservices",
+				 "contextPath": "/cmssmarteditwebservices"
+				 },
+				{
+				 "name": "previewwebservices",
+				 "contextPath": "/previewwebservices"
+				 },
+				 {
+				 "name": "personalizationsmartedit",
+				 "contextPath": "/personalizationsmartedit"
+				 },
+
+				 {
+				 "name": "personalizationpromotionssmartedit",
+				 "contextPath": "/personalizationpromotionssmartedit"
+				 },
+
+				{
+				 "name": "personalizationwebservices",
+				 "contextPath": "/personalizationwebservices"
+				 },
+
+				{
+				 "name": "personalizationsearchsmartedit",
+				 "contextPath": "/personalizationsearchsmartedit"
+				 },
+				  {
+				 "name": "merchandisingsmartedit",
+				 "contextPath": "/merchandisingsmartedit"
+				 },
+				 {
           "name": "ycommercewebservices",
           "contextPath": "/rest"
         },
         {
           "name" : "b2ctelcotmfwebservices",
           "contextPath" : "/b2ctelcotmfwebservices"
-        }    
-      ]
-    },
-    {
-      "name": "backgroundProcessing",
-      "properties": [],
-      "webapps": [
-        {
-          "name": "hac",
-          "contextPath": ""
+        }  
+				
+            ]
         },
         {
-          "name": "mediaweb",
-          "contextPath": "/medias"
-        }
-      ]
-    }
-  ],
-  "disableBackgroundProcessing": false
+            "name": "backgroundProcessing",
+            "properties": [],
+            "webapps": [
+                {
+                    "name": "hac",
+                    "contextPath": ""
+                },
+                {
+                    "name": "mediaweb",
+                    "contextPath": "/medias"
+                }
+            ]
+        },
+		{
+		  "name": "api",
+		  "properties": [
+			{
+			  "key":"xss.filter.header.X-Frame-Options",
+			  "value":""
+			},
+			{
+			 "key":"storefrontContextRoot",
+			 "value":"dcxtelcostorefront"
+			 }
+		  ],
+		  "webapps": [
+			{
+			  "name": "ycommercewebservices",
+			  "contextPath": "/rest"
+			},
+			{
+			  "name": "oauth2",
+			  "contextPath": "/authorizationserver"
+			},
+			{
+			  "name": "cmswebservices",
+			  "contextPath": "/cmswebservices"
+			},
+			{
+			  "name": "permissionswebservices",
+			  "contextPath": "/permissionswebservices"
+			},
+			{
+			  "name":"odata2webservices",
+			  "contextPath": "/odata2webservices"
+			},
+			{
+			 "name": "smartedit",
+			 "contextPath": "/smartedit"
+			 },
+
+			 {
+			 "name": "cmssmartedit",
+			 "contextPath": "/cmssmartedit"
+			 },
+
+			 {
+			 "name": "smarteditwebservices",
+			 "contextPath": "/smarteditwebservices"
+			 },
+
+			 {
+			 "name": "cmssmarteditwebservices",
+			 "contextPath": "/cmssmarteditwebservices"
+			 },
+			{
+			 "name": "previewwebservices",
+			 "contextPath": "/previewwebservices"
+			 },
+			{
+			 "name": "mediaweb",
+			 "contextPath": "/medias"
+			 },
+			 {
+			 "name": "personalizationsmartedit",
+			 "contextPath": "/personalizationsmartedit"
+			 },
+
+			 {
+			 "name": "personalizationpromotionssmartedit",
+			 "contextPath": "/personalizationpromotionssmartedit"
+			 },
+
+			{
+			 "name": "personalizationwebservices",
+			 "contextPath": "/personalizationwebservices"
+			 },
+
+			{
+			 "name": "personalizationsearchsmartedit",
+			 "contextPath": "/personalizationsearchsmartedit"
+			 },
+			 {
+			 "name": "merchandisingsmartedit",
+			 "contextPath": "/merchandisingsmartedit"
+			 }
+		  ]
+		}
+    ]
 }

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+--><!--
+ All hybris buildcallbacks.xml macrodefinitions:
+ 
+ Build/Documentation
+ 
+	 before/after ant macro "clean"
+		 <macrodef name="dcxtelcocore_before_clean"/>
+		 <macrodef name="dcxtelcocore_after_clean"/>
+
+	 before/after ant macro "build"
+		 <macrodef name="dcxtelcocore_before_build"/>
+		 <macrodef name="dcxtelcocore_after_build"/>
+
+	 before/after ant macro "compile_core" - the core module of the extension
+		 <macrodef name="dcxtelcocore_before_compile_core">
+		 <macrodef name="dcxtelcocore_after_compile_core">
+
+	 before/after ant macro "compile_web" - the web module of the extension
+		 <macrodef name="dcxtelcocore_before_compile_web" />
+		 <macrodef name="dcxtelcocore_after_compile_web" />
+ 
+ Preparing extension
+ 
+	 will be called in the beginning of the ant call and only once (also when using multiple 
+	 ant targets e.g. ant build yunittest)
+		 <macrodef name="dcxtelcocore_only_once_prepare"/>
+ 
+ Creating ear module/production
+ 
+	 before/after ant macro "ear"
+		 <macrodef name="dcxtelcocore_before_ear"/>
+		 <macrodef name="dcxtelcocore_after_ear"/>
+
+	 before/after ant macro "production" - for hybris server only
+		 <macrodef name="dcxtelcocore_before_production" />
+		 <macrodef name="dcxtelcocore_after_production" />
+ 
+ JUnit Test
+ 
+	 before/after ant macro "yunitinit" 
+		 <macrodef name="dcxtelcocore_before_yunitinit" />
+		 <macrodef name="dcxtelcocore_after_yunitinit" />
+
+	 before/after ant macro "yunit"
+		 <macrodef name="dcxtelcocore_before_yunit" />
+		 <macrodef name="dcxtelcocore_after_yunit" /> 
+
+ Distribution package
+ 
+ 	 before/after ant macro "dist" - internal target; only for use when platform is available in source code
+		 <macrodef name="dcxtelcocore_after_dist"/>
+		 <macrodef name="dcxtelcocore_before_dist"/>
+
+	 before/after ant macro "dist_copy" - internal target; only for use when platform is available in source code
+		 <macrodef name="dcxtelcocore_before_dist_copy"/>
+		 <macrodef name="dcxtelcocore_after_dist_copy"/>
+
+--><project name="dcxtelcocore_buildcallbacks">
+    	
+    <macrodef name="dcxtelcocore_after_build">
+        		
+        <sequential>
+            			
+            <impexGenerate extname="dcxtelcocore"/>
+            		
+        </sequential>
+        	
+    </macrodef>
+    	
+    <macrodef name="dcxtelcocore_after_clean">
+        		
+        <sequential>
+            			
+            <delete failonerror="false" file="${ext.dcxtelcocore.path}/resources-lang/touch_impexgen"/>
+            		
+        </sequential>
+        	
+    </macrodef>
+    	
+	
+    <!-- exclude impex files from localization -->
+     
+	
+    <patternset id="dcxtelcocore.localization.pattern">
+        		
+        <patternset refid="localization.defaultpattern"/>
+        		
+        <exclude name="**/*.impex"/>
+        	
+    </patternset>
+    	
+
+
+</project>
