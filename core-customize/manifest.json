@@ -61,31 +61,31 @@
     },
     {
       "key" : "b2ctelcotmfwebservices.api.base.url",
-      "value" : "http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+      "value" : "http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/dcxtelcostorefront"
     },
     {
       "key":"website.b2ctelco.http",
-      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/dcxtelcostorefront"
     },
     {
       "key":"website.b2ctelco.https",
-      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/dcxtelcostorefront"
     },
     {
       "key":"website.media.http",
-      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/dcxtelcostorefront"
     },
     {
       "key":"website.media.https",
-      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/dcxtelcostorefront"
     },
     {
       "key":"website.utilities.http",
-      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/dcxtelcostorefront"
     },
     {
       "key":"website.utilities.https",
-      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/yacceleratorstorefront"
+      "value":"http://accstorefront.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com/dcxtelcostorefront"
     },
     {
       "key":"system.unlocking.disabled",
@@ -115,37 +115,37 @@
 		"storefrontAddons": [
 		{
       "addon": "b2ctelcoaddon",
-      "storefront": "yacceleratorstorefront",
+      "storefront": "dcxtelcostorefront",
       "template": "yacceleratorstorefront"
     },
     {
       "addon": "smarteditaddon",
-      "storefront": "yacceleratorstorefront",
+      "storefront": "dcxtelcostorefront",
       "template": "yacceleratorstorefront"
     },
     {
       "addon": "assistedservicestorefront",
-      "storefront": "yacceleratorstorefront",
+      "storefront": "dcxtelcostorefront",
       "template": "yacceleratorstorefront"
     },
     {
       "addon": "assistedservicecustomerinterestsaddon",
-      "storefront": "yacceleratorstorefront",
+      "storefront": "dcxtelcostorefront",
       "template": "yacceleratorstorefront"
     },
     {
       "addon": "customerticketingaddon",
-      "storefront": "yacceleratorstorefront",
+      "storefront": "dcxtelcostorefront",
       "template": "yacceleratorstorefront"
     },
     {
       "addon": "pcmbackofficesamplesaddon",
-      "storefront": "yacceleratorstorefront",
+      "storefront": "dcxtelcostorefront",
       "template": "yacceleratorstorefront"
     },
     {
       "addon": "promotionenginesamplesaddon",
-      "storefront": "yacceleratorstorefront",
+      "storefront": "dcxtelcostorefront",
       "template": "yacceleratorstorefront"
     },
     {
@@ -256,7 +256,7 @@
         },
         {
           "key":"storefrontContextRoot",
-          "value":"/yacceleratorstorefront"
+          "value":"/dcxtelcostorefront"
         }
 		  ],
             "webapps": [
@@ -265,8 +265,8 @@
                     "contextPath": "/medias"
                 },
                 {
-          "name": "yacceleratorstorefront",
-          "contextPath": "/yacceleratorstorefront"
+          "name": "dcxtelcostorefront",
+          "contextPath": "/dcxtelcostorefront"
         },
         {
           "name": "b2ctelcowebservices",
