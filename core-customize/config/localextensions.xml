@@ -408,7 +408,7 @@
             <extension name="cmscockpit"/>
             <extension name="cmsfacades"/>
             <extension name="cmsocc"/>
-            <!-- //<extension name="cmsoccaddon"/> -->
+            <extension name="cmsoccaddon"/>
             <extension name="cmswebservices"/>
             <extension name="previewwebservices"/>
         <!-- // web-services-commons -->
