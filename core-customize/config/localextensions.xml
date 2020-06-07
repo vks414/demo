@@ -184,7 +184,7 @@
             <extension name="consignmenttrackingfacades"/>
             <extension name="consignmenttrackingmock"/>
             <extension name="consignmenttrackingocc"/>
-            <!-- // <extension name="consignmenttrackingoccaddon"/> -->
+            <extension name="consignmenttrackingoccaddon"/>
             <extension name="consignmenttrackingservices"/>
         <!-- // core-accelerator -->
             <extension name="acceleratorbackoffice"/>
@@ -193,7 +193,7 @@
             <extension name="acceleratorocc"/>
             <extension name="acceleratorservices"/>
             <extension name="acceleratorstorefrontcommons"/>
-            <!-- // <extension name="acceleratorwebservicesaddon"/> -->
+            <extension name="acceleratorwebservicesaddon"/>
             <extension name="addonsupport"/>
         <!-- // coupon -->
             <extension name="couponbackoffice"/>
@@ -212,7 +212,7 @@
             <extension name="customerinterestsaddon"/>
             <extension name="customerinterestsfacades"/>
             <extension name="customerinterestsocc"/>
-            <!-- // <extension name="customerinterestsoccaddon"/> -->
+            <extension name="customerinterestsoccaddon"/>
             <extension name="customerinterestsservices"/>
         <!-- // customer-service -->
             <extension name="customersupportbackoffice"/>
@@ -271,7 +271,7 @@
             <extension name="notificationaddon"/>
             <extension name="notificationfacades"/>
             <extension name="notificationocc"/>
-            <!-- // <extension name="notificationoccaddon"/> -->
+            <extension name="notificationoccaddon"/>
             <extension name="notificationservices"/>
         <!-- // npm-ancillary -->
             <extension name="npmancillary"/>
