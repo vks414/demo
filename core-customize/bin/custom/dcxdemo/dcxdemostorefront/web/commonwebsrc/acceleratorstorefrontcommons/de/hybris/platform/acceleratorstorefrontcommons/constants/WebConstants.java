@@ -42,25 +42,25 @@ public final class WebConstants
 	/**
 	 * @deprecated Use {@link CommerceFacadesConstants#USER_CONSENTS} instead
 	 */
-	@Deprecated(since = "1905")
+	@Deprecated(since = "1905", forRemoval = true)
 	public static final String USER_CONSENTS = CommerceFacadesConstants.USER_CONSENTS;
 
 	/**
 	 * @deprecated Use {@link CommerceFacadesConstants#CONSENT_GIVEN} instead
 	 */
-	@Deprecated(since = "1905")
+	@Deprecated(since = "1905", forRemoval = true)
 	public static final String CONSENT_GIVEN = CommerceFacadesConstants.CONSENT_GIVEN;
 
 	/**
 	 * @deprecated Use {@link CommerceFacadesConstants#CONSENT_WITHDRAWN} instead
 	 */
-	@Deprecated(since = "1905")
+	@Deprecated(since = "1905", forRemoval = true)
 	public static final String CONSENT_WITHDRAWN = CommerceFacadesConstants.CONSENT_WITHDRAWN;
 
 	/**
 	 * @deprecated Use {@link CommerceFacadesConstants#CONSENT_TEMPLATES} instead
 	 */
-	@Deprecated(since = "1905")
+	@Deprecated(since = "1905", forRemoval = true)
 	public static final String CONSENT_TEMPLATES = CommerceFacadesConstants.CONSENT_TEMPLATES;
 
 	public static final String CLOSE_ACCOUNT = "closeAcc";

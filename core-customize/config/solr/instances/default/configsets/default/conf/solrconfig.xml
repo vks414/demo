@@ -78,6 +78,19 @@
 		</arr>
 	</requestHandler>
 
+	<!--
+	<requestHandler name="/suggest" class="solr.SearchHandler">
+		<lst name="defaults">
+			<str name="suggest">true</str>
+			<str name="suggest.dictionary">default</str>
+			<str name="suggest.count">5</str>
+		</lst>
+		<arr name="components">
+			<str>suggest</str>
+		</arr>
+	</requestHandler>
+	-->
+
 	<requestHandler name="/suggest" class="solr.SearchHandler">
 		<lst name="defaults">
 			<str name="spellcheck">true</str>
@@ -184,6 +197,227 @@
 			<str name="field">spellcheck_zh_tw</str>
 		</lst>
 	</searchComponent>
+
+	<!--
+	<searchComponent name="suggest" class="solr.SuggestComponent">
+		<lst name="suggester">
+			<str name="name">default</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell</str>
+			<str name="field">autosuggest</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">en</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_en</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_en</str>
+			<str name="field">autosuggest_en</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">cs</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_cs</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_cs</str>
+			<str name="field">autosuggest_cs</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">de</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_de</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_de</str>
+			<str name="field">autosuggest_de</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">es</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_es</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_es</str>
+			<str name="field">autosuggest_es</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">es_CO</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_es_co</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_es_co</str>
+			<str name="field">autosuggest_es_co</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">fr</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_fr</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_fr</str>
+			<str name="field">autosuggest_fr</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">hi</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_hi</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_hi</str>
+			<str name="field">autosuggest_hi</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">hu</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_hu</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_hu</str>
+			<str name="field">autosuggest_hu</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">id</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_id</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_id</str>
+			<str name="field">autosuggest_id</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">it</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_it</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_it</str>
+			<str name="field">autosuggest_it</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">ja</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_ja</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_ja</str>
+			<str name="field">autosuggest_ja</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">ko</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_ko</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_ko</str>
+			<str name="field">autosuggest_ko</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">pl</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_pl</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_pl</str>
+			<str name="field">autosuggest_pl</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">pt</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_pt</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_pt</str>
+			<str name="field">autosuggest_pt</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">ru</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_ru</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_ru</str>
+			<str name="field">autosuggest_ru</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">zh</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_zh</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_zh</str>
+			<str name="field">autosuggest_zh</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+		<lst name="suggester">
+			<str name="name">zh_TW</str>
+			<str name="dictionaryImpl">DocumentDictionaryFactory</str>
+			<str name="lookupImpl">FreeTextLookupFactory</str>
+			<str name="suggestAnalyzerFieldType">text_spell_zh_tw</str>
+			<str name="suggestFreeTextAnalyzerFieldType">text_spell_zh_tw</str>
+			<str name="field">autosuggest_zh_tw</str>
+			<str name="buildOnCommit">true</str>
+			<str name="buildOnOptimize">true</str>
+			<str name="exactMatchFirst">true</str>
+			<str name="separator"><![CDATA[ ]]></str>
+		</lst>
+	</searchComponent>
+	-->
 
 	<searchComponent name="suggest" class="solr.SpellCheckComponent">
 		<str name="queryAnalyzerFieldType">text_spell</str>

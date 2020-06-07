@@ -347,7 +347,7 @@ public class PickupInStoreController extends AbstractSearchPageController
 	}
 
 	@RequestMapping(value = "/cart/update/delivery", method =
-	{ RequestMethod.GET, RequestMethod.POST })
+	{ RequestMethod.GET, RequestMethod.POST }) //NOSONAR
 	public String updateToDelivery(@RequestParam("entryNumber") final long entryNumber, final RedirectAttributes redirectModel)
 			throws CommerceCartModificationException
 	{

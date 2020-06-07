@@ -652,8 +652,7 @@ public class AcceleratorTestOrderData
 		}
 	}
 
-	protected void placeOrder()
-	{
+	protected void placeOrder() throws InterruptedException {
 		try
 		{
 			final OrderData orderData = getCheckoutFacade().placeOrder();
@@ -666,6 +665,7 @@ public class AcceleratorTestOrderData
 		catch (final InterruptedException e)
 		{
 			LOG.error("Exception during sleep in order to allow the fulfilment processes to run for this order", e);
+			throw e;
 		}
 	}
 

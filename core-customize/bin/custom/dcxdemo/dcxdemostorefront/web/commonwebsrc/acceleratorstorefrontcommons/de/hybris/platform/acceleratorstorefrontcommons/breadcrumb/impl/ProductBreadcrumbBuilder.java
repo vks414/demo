@@ -94,7 +94,7 @@ public class ProductBreadcrumbBuilder
 	/**
 	 * @deprecated As of 1905 - use {@link ProductAndCategoryHelper#getBaseProduct(ProductModel)} instead
 	 */
-	@Deprecated
+	@Deprecated(since = "1905", forRemoval = true)
 	protected ProductModel getBaseProduct(final ProductModel product)
 	{
 		if (product instanceof VariantProductModel)

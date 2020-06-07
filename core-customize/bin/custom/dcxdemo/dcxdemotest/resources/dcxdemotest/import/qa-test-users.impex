@@ -8,7 +8,6 @@ $regulargroup=regulargroup
 $customergroup=customergroup
 
 
-$defaultPassword=12341234
 
 
 # Create Customer Group
@@ -43,14 +42,14 @@ INSERT_UPDATE DeliveryMode;code[unique=true];active;supportedpaymentmodes(code);
 ;;
 
 # Sample customers
-INSERT_UPDATE Customer;originalUid[unique=true];uid[unique=true];title(code);name;description;sessionLanguage(isocode);sessionCurrency(isocode);groups(uid);password[default=$defaultPassword];&userId
-;PromotionUser@test.com;promotionuser@test.com;mr;promotions test user;a test user for order threshold promotions etc;en;GBP;$regulargroup;;user1
-;PaymentUser@test.com;paymentuser@test.com;mr;payments test user;a test user for payments;en;GBP;$customergroup;;user2
-;OrderHistoryUser@test.com;orderhistoryuser@test.com;mr;orders test user;a test user for orders;en;GBP;$customergroup;;user3
-;TestUser1@test.com;testuser1@test.com;mr;test user 1;test user;en;GBP;$customergroup;;user4
-;TestUser2@test.com;testuser2@test.com;mr;test user 2;test user;de;USD;$customergroup;;user5
-;TestUser3@test.com;testuser3@test.com;mr;test user 3;test user;ja;JPY;$customergroup;;user6
-;EnterpriseUser@test.com;enterpriseuser@test.com;mr;enterprise test user;an enterprise test user for orders;en;USD;$customergroup;;user7
+INSERT_UPDATE Customer;originalUid[unique=true];uid[unique=true];title(code);name;description;sessionLanguage(isocode);sessionCurrency(isocode);groups(uid);&userId
+;PromotionUser@test.com;promotionuser@test.com;mr;promotions test user;a test user for order threshold promotions etc;en;GBP;$regulargroup;user1
+;PaymentUser@test.com;paymentuser@test.com;mr;payments test user;a test user for payments;en;GBP;$customergroup;user2
+;OrderHistoryUser@test.com;orderhistoryuser@test.com;mr;orders test user;a test user for orders;en;GBP;$customergroup;user3
+;TestUser1@test.com;testuser1@test.com;mr;test user 1;test user;en;GBP;$customergroup;user4
+;TestUser2@test.com;testuser2@test.com;mr;test user 2;test user;de;USD;$customergroup;user5
+;TestUser3@test.com;testuser3@test.com;mr;test user 3;test user;ja;JPY;$customergroup;user6
+;EnterpriseUser@test.com;enterpriseuser@test.com;mr;enterprise test user;an enterprise test user for orders;en;USD;$customergroup;user7
 
 # Sample customer addresses
 INSERT_UPDATE Address;&addId;owner(&userId)[unique=true];streetname[unique=true];postalcode[unique=true];duplicate[unique=true];town;country(isocode);region(isocode);billingAddress;contactAddress;shippingAddress;unloadingAddress;firstname;lastname;email;gender(code);middlename;phone1;title(code);url;company;fax;department
@@ -72,8 +71,8 @@ UPDATE Customer;uid[unique=true];defaultPaymentAddress(&addId);defaultShipmentAd
 ;testuser3@test.com;addr6;addr6
 ;enterpriseuser@test.com;addr7;addr7
 
-INSERT_UPDATE Customer;uid[unique=true];originalUid;name;sessionLanguage(isocode);sessionCurrency(isocode);groups(uid);password[default=$defaultPassword];
-;acceptanceuser@test.com;AcceptanceUser@test.com;John Acceptance;en;USD;$customergroup;;
+INSERT_UPDATE Customer;uid[unique=true];originalUid;name;sessionLanguage(isocode);sessionCurrency(isocode);groups(uid);
+;acceptanceuser@test.com;AcceptanceUser@test.com;John Acceptance;en;USD;$customergroup;
 
 INSERT_UPDATE Address;owner(Customer.uid)[unique=true];streetname[unique=true];streetnumber[unique=true];postalcode[unique=true];duplicate[unique=true];town;country(isocode);billingAddress;contactAddress;shippingAddress;unloadingAddress;lastname;firstname;email;gender(code);&addressID
 ;acceptanceuser@test.com;Sesame Street;231;90210;false;Los Angeles;US;true;true;true;false;Acceptance;Johh;acceptanceuser@test.com;MALE;231

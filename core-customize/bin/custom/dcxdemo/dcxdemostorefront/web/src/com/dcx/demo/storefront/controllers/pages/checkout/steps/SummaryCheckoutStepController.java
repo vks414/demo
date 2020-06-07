@@ -91,7 +91,7 @@ public class SummaryCheckoutStepController extends AbstractCheckoutStepControlle
 	}
 
 
-	@RequestMapping(value = "/placeOrder")
+	@RequestMapping(value = "/placeOrder") //NOSONAR
 	@PreValidateQuoteCheckoutStep
 	@RequireHardLogIn
 	public String placeOrder(@ModelAttribute("placeOrderForm") final PlaceOrderForm placeOrderForm, final Model model,

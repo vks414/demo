@@ -32,7 +32,7 @@ public interface SimpleSuggestionFacade
 	 * @deprecated Since 5.0. Use getReferencesForPurchasedInCategory(String categoryCode, List
 	 *             <ProductReferenceTypeEnum> referenceTypes, boolean excludePurchased, Integer limit) instead.
 	 */
-	@Deprecated(since = "5.0")
+	@Deprecated(since = "5.0", forRemoval = true)
 	List<ProductData> getReferencesForPurchasedInCategory(String categoryCode, ProductReferenceTypeEnum referenceType,
 			boolean excludePurchased, Integer limit);
 

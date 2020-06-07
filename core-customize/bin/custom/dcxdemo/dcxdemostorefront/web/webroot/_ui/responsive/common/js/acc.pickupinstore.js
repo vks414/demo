@@ -38,14 +38,14 @@ ACC.pickupinstore = {
 			e.preventDefault();
 			$listitems.css("transform","translateY("+(curPos+listHeight)+"px)")
 			curPos = curPos+listHeight;
-			checkPosition("prev");
+			checkPosition();
 		})
 
 		$(document).on("click","#colorbox .js-pickup-store-pager-next",function(e){
 			e.preventDefault();
 			$listitems.css("transform","translateY("+(curPos-listHeight)+"px)")
 			curPos = curPos-listHeight;
-			checkPosition("next");
+			checkPosition();
 		})
 
 		function checkPosition(){
@@ -226,7 +226,7 @@ ACC.pickupinstore = {
 			productIdNUM = productIdNUM.split("_");
 			productIdNUM = productIdNUM[1];
 
-			if (productId !== null)
+			if (productId != null)
 			{
 				cartItemProductPostfix = '_' + productId;
 			}

@@ -22,7 +22,7 @@ import org.springframework.util.Assert;
 
 /**
  * Default implementation of {@link SimpleSuggestionDao}.
- * 
+ *
  * Finds products that are related products that the user has bought.
  */
 public class DefaultSimpleSuggestionDao extends AbstractItemDao implements SimpleSuggestionDao
@@ -135,7 +135,7 @@ public class DefaultSimpleSuggestionDao extends AbstractItemDao implements Simpl
 	 * @deprecated Since 5.0. Use
 	 *             {@link #findProductsRelatedToPurchasedProductsByCategory(CategoryModel, List, UserModel, boolean, Integer)}
 	 */
-	@Deprecated(since = "5.0")
+	@Deprecated(since = "5.0", forRemoval = true)
 	@Override
 	public List<ProductModel> findProductsRelatedToPurchasedProductsByCategory(final CategoryModel category, final UserModel user,
 			final ProductReferenceTypeEnum referenceType, final boolean excludePurchased, final Integer limit)

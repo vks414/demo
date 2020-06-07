@@ -1,5 +1,5 @@
 {
-    "commerceSuiteVersion": "1905",
+    "commerceSuiteVersion": "2005",
     "extensions": [
         "modeltacceleratorservices"
     ],
@@ -140,7 +140,7 @@
 			},
 			{
 			  "key":"smarteditaddon.javascript.paths.responsive",
-			  "value":"/shared/common/js/webApplicationInjector.js?allow-origin=https://backoffice.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com:443;/shared/common/js/reprocessPage.js;/shared/common/js/adjustComponentRenderingToSE.js;/responsive/common/js/smarteditaddon.js"			  
+			  "value":"/shared/common/js/webApplicationInjector.js?allow-origin=backoffice.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com:443;/shared/common/js/reprocessPage.js;/shared/common/js/adjustComponentRenderingToSE.js;/responsive/common/js/smarteditaddon.js"			  
 			}
 		  ],
             "webapps": [

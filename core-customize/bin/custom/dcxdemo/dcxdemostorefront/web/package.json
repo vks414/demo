@@ -1,5 +1,5 @@
 {
-  "name": "dcxdemostorefront",
+  "name": "dcxdemostorefront-web",
   "version": "0.0.0",
   "description": "grunt config for the accelerator",
   "private": true,

@@ -45,6 +45,9 @@
 		<!-- filter to log the current request -->
 		<ref bean="requestLoggerFilter"/>
 
+		<!-- filter to initialize polyglot persistence repo per-request behaviour -->
+		<ref bean="polyglotPersistenceCallbackFilter"/>
+
 		<!-- filter to setup the cms integration -->
 		<ref bean="cmsSiteFilter"/>
 

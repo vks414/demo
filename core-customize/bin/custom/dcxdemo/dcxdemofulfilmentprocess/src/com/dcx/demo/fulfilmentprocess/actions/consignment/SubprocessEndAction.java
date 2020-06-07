@@ -46,7 +46,8 @@ public class SubprocessEndAction extends AbstractProceduralAction<ConsignmentPro
 		}
 		catch (final InterruptedException e)
 		{
-			// can't help it
+			LOG.error(e.getMessage(), e);
+			Thread.currentThread().interrupt();
 		}
 
 		process.setDone(true);

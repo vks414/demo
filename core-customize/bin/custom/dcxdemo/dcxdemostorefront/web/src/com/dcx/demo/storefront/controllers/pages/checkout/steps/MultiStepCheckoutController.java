@@ -70,7 +70,7 @@ public class MultiStepCheckoutController extends AbstractCheckoutStepController
 	}
 
 
-	@RequestMapping(value = "/termsAndConditions")
+	@RequestMapping(value = "/termsAndConditions", method = RequestMethod.GET)
 	@RequireHardLogIn
 	public String getTermsAndConditions(final Model model) throws CMSItemNotFoundException
 	{

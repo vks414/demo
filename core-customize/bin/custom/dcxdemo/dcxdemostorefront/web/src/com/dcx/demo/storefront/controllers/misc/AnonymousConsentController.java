@@ -72,11 +72,6 @@ public class AnonymousConsentController extends AbstractPageController
 			updatedAnonymousConsentCookie.setMaxAge((int) TimeUnit.DAYS.toSeconds(365));
 			response.addCookie(updatedAnonymousConsentCookie);
 		}
-		catch (final UnsupportedEncodingException e)
-		{
-			LOGGER.error("UnsupportedEncodingException occurred while decoding the Anonymous Consent Cookie", e);
-			return new ResponseEntity(HttpStatus.BAD_REQUEST);
-		}
 		catch (final IOException e)
 		{
 			LOGGER.error("IOException occured while reading the Anonymous Consent Cookie", e);

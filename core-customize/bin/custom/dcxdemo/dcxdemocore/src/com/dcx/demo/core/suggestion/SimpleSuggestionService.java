@@ -34,7 +34,7 @@ public interface SimpleSuggestionService
 	 *             <ProductReferenceTypeEnum> referenceTypes, UserModel user, boolean excludePurchased, Integer limit)
 	 *             instead.
 	 */
-	@Deprecated(since = "5.0")
+	@Deprecated(since = "5.0", forRemoval = true)
 	List<ProductModel> getReferencesForPurchasedInCategory(CategoryModel category, UserModel user,
 			ProductReferenceTypeEnum referenceType, boolean excludePurchased, Integer limit);
 

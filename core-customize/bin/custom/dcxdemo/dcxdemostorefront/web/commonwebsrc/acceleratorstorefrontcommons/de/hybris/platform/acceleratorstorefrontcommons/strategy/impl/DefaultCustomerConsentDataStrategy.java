@@ -4,61 +4,32 @@
 package de.hybris.platform.acceleratorstorefrontcommons.strategy.impl;
 
 import de.hybris.platform.acceleratorstorefrontcommons.strategy.CustomerConsentDataStrategy;
-import de.hybris.platform.commercefacades.consent.ConsentFacade;
-import de.hybris.platform.commercefacades.consent.data.ConsentTemplateData;
-import de.hybris.platform.servicelayer.session.SessionService;
-
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import org.springframework.beans.factory.annotation.Required;
-
-import static de.hybris.platform.commercefacades.constants.CommerceFacadesConstants.CONSENT_GIVEN;
-import static de.hybris.platform.commercefacades.constants.CommerceFacadesConstants.CONSENT_WITHDRAWN;
-import static de.hybris.platform.commercefacades.constants.CommerceFacadesConstants.USER_CONSENTS;
-
 
 /**
  * Default implementation of @{@link CustomerConsentDataStrategy}
+ *
+ * Deprecated, please use {@link de.hybris.platform.commercefacades.consent.impl.DefaultCustomerConsentDataStrategy}
  */
+@Deprecated(since = "2005")
 public class DefaultCustomerConsentDataStrategy implements CustomerConsentDataStrategy
 {
-	private SessionService sessionService;
-	private ConsentFacade consentFacade;
+    private de.hybris.platform.commercefacades.consent.CustomerConsentDataStrategy customerConsentDataStrategy;
 
-	@Override
-	public void populateCustomerConsentDataInSession()
-	{
-		final Stream<ConsentTemplateData> activeConsentData = getConsentFacade().getConsentTemplatesWithConsents().stream()
-				.filter(ConsentTemplateData::isExposed);
+    @Override
+    public void populateCustomerConsentDataInSession()
+    {
+        getCustomerConsentDataStrategy().populateCustomerConsentDataInSession();
+    }
 
-		final Map<String, String> consentsMap = activeConsentData.collect(Collectors.toMap(ConsentTemplateData::getId,
-				item -> item.getConsentData() == null || item.getConsentData().getConsentWithdrawnDate() != null
-						? CONSENT_WITHDRAWN : CONSENT_GIVEN));
+    public de.hybris.platform.commercefacades.consent.CustomerConsentDataStrategy getCustomerConsentDataStrategy()
+    {
+        return customerConsentDataStrategy;
+    }
 
-		getSessionService().setAttribute(USER_CONSENTS, consentsMap);
-	}
-
-	protected ConsentFacade getConsentFacade()
-	{
-		return consentFacade;
-	}
-
-	@Required
-	public void setConsentFacade(final ConsentFacade consentFacade)
-	{
-		this.consentFacade = consentFacade;
-	}
-
-	protected SessionService getSessionService()
-	{
-		return sessionService;
-	}
-
-	@Required
-	public void setSessionService(final SessionService sessionService)
-	{
-		this.sessionService = sessionService;
-	}
+    @Required
+    public void setCustomerConsentDataStrategy(de.hybris.platform.commercefacades.consent.CustomerConsentDataStrategy customerConsentDataStrategy)
+    {
+        this.customerConsentDataStrategy = customerConsentDataStrategy;
+    }
 }

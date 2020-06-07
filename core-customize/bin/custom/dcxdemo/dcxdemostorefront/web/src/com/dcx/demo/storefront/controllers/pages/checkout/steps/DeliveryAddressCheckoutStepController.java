@@ -229,7 +229,7 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 	}
 
 	@RequestMapping(value = "/remove", method =
-	{ RequestMethod.GET, RequestMethod.POST })
+	{ RequestMethod.GET, RequestMethod.POST }) //NOSONAR
 	@RequireHardLogIn
 	public String removeAddress(@RequestParam("addressCode") final String addressCode, final RedirectAttributes redirectModel,
 			final Model model) throws CMSItemNotFoundException

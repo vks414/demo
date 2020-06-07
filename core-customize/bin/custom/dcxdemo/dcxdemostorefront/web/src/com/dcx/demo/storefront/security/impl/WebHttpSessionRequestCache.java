@@ -11,6 +11,7 @@ import java.io.Serializable;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -34,6 +35,8 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
  */
 public class WebHttpSessionRequestCache extends HttpSessionRequestCache implements Serializable
 {
+	private static final Logger LOG = Logger.getLogger(WebHttpSessionRequestCache.class);
+
 	private static final long serialVersionUID = 1L;
 	private static final String REFERER = "referer";
 
@@ -113,12 +116,12 @@ public class WebHttpSessionRequestCache extends HttpSessionRequestCache implemen
 				if (isCreateSessionAllowed() || request.getSession(false) != null)
 				{
 					request.getSession().setAttribute(SAVED_REQUEST, savedRequest);
-					logger.debug("DefaultSavedRequest added to Session: " + savedRequest);
+					LOG.debug("DefaultSavedRequest added to Session: " + savedRequest);
 				}
 			}
 			else
 			{
-				logger.debug("Request not saved as configured RequestMatcher did not match");
+				LOG.debug("Request not saved as configured RequestMatcher did not match");
 			}
 		}
 	}

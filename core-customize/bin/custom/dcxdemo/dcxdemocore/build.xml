@@ -1,13 +1,6 @@
 <?xml version="1.0"?>
 <!--
- [y] hybris Platform
-
- Copyright (c) 2018 SAP SE or an SAP affiliate company. All rights reserved.
-
- This software is the confidential and proprietary information of SAP
- ("Confidential Information"). You shall not disclose such Confidential
- Information and shall use it only in accordance with the terms of the
- license agreement you entered into with SAP.
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
 -->
 <project name="dcxdemocore" default="all">
 	<property file="platformhome.properties" />
@@ -27,7 +20,7 @@
           IF YOU WANT TO ADAPT THE BUILD PROCESS, CREATE A FILE
           CALLED buildcallbacks.xml IN YOUR EXTENSION.
           PLEASE ALSO REFER TO THE DOCUMENTATION ON THE HYBRIS HELP SITE
-          (https://help.hybris.com/1811/hcd/8b6ded0d86691014a6fab18e171c1f91.html).
+          (https://help.sap.com/viewer/d0224eca81e249cb821f2cdf45a82ace/2005/en-US/8b6ded0d86691014a6fab18e171c1f91.html).
 
 
  *** WARNING *** WARNING *** WARNING *** WARNING *** WARNING *** WARNING *** WARNING ***

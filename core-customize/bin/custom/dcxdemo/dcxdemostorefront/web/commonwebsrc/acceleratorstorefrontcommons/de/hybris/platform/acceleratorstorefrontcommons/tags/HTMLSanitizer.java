@@ -3,9 +3,11 @@
  */
 package de.hybris.platform.acceleratorstorefrontcommons.tags;
 
-import org.owasp.html.HtmlPolicyBuilder;
-import org.owasp.html.PolicyFactory;
-import org.owasp.html.Sanitizers;
+import de.hybris.platform.acceleratorservices.util.HtmlSanitizerPolicyProvider;
+
+import java.util.Arrays;
+
+import org.owasp.html.FilterUrlByProtocolAttributePolicy;
 
 
 /**
@@ -13,15 +15,8 @@ import org.owasp.html.Sanitizers;
  */
 public class HTMLSanitizer
 {
-	protected static final PolicyFactory POLICY = new HtmlPolicyBuilder()
-			.allowElements("pre", "address", "em", "hr", "a")
-			.allowAttributes("class").onElements("em", "a")
-			.toFactory()
-			.and(Sanitizers.BLOCKS)
-			.and(Sanitizers.FORMATTING)
-			.and(Sanitizers.LINKS)
-			.and(Sanitizers.TABLES)
-			.and(Sanitizers.STYLES);
+	protected static final FilterUrlByProtocolAttributePolicy URL_POLICY = new FilterUrlByProtocolAttributePolicy(
+			Arrays.asList("http", "https", "mailto"));
 
 	/**
 	 * JSP EL Function to sanitize unsafe HTML string
@@ -33,6 +28,18 @@ public class HTMLSanitizer
 	 */
 	public static String sanitizeHTML(final String untrustedHTML)
 	{
-		return POLICY.sanitize(untrustedHTML);
+		return HtmlSanitizerPolicyProvider.defaultPolicy().sanitize(untrustedHTML);
+	}
+
+	/**
+	 * Validate input URL scheme against declared URL Policy
+	 *
+	 * @param the
+	 *           dirtyUrl that needs to be validated
+	 * @return whether the URL is valid or not
+	 */
+	public static boolean validateUrlScheme(final String dirtyUrl)
+	{
+		return URL_POLICY.apply(null, null, dirtyUrl) != null;
 	}
 }

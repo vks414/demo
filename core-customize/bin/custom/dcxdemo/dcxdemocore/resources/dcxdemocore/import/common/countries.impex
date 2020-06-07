@@ -100,7 +100,7 @@ INSERT_UPDATE Country;isocode[unique=true];name[lang=en];active[default=true]
 ;GU;"Guam"
 ;GW;"Guinea-Bissau"
 ;GY;"Guyana"
-;HK;"Hong Kong"
+;HK;"Hong Kong, China"
 ;HM;"Heard Island and McDonald Islands"
 ;HN;"Honduras"
 ;HR;"Croatia"
@@ -153,7 +153,7 @@ INSERT_UPDATE Country;isocode[unique=true];name[lang=en];active[default=true]
 ;ML;"Mali"
 ;MM;"Myanmar"
 ;MN;"Mongolia"
-;MO;"Macao"
+;MO;"Macao, China"
 ;MP;"Northern Mariana Islands"
 ;MQ;"Martinique"
 ;MR;"Mauritania"
@@ -232,7 +232,7 @@ INSERT_UPDATE Country;isocode[unique=true];name[lang=en];active[default=true]
 ;TR;"Turkey"
 ;TT;"Trinidad and Tobago"
 ;TV;"Tuvalu"
-;TW;"Taiwan"
+;TW;"Taiwan, China"
 ;TZ;"Tanzania"
 ;UA;"Ukraine"
 ;UG;"Uganda"
@@ -361,7 +361,6 @@ INSERT_UPDATE Region;country(isocode);isocode[unique=true];isocodeShort;name[lan
 ;CN;CN-37;37;"Shandong"
 ;CN;CN-14;14;"Shanxi"
 ;CN;CN-51;51;"Sichuan"
-;CN;CN-71;71;"Taiwan"
 ;CN;CN-53;53;"Yunnan"
 ;CN;CN-33;33;"Zhejiang"
 ;CN;CN-45;45;"Guangxi"
@@ -369,8 +368,6 @@ INSERT_UPDATE Region;country(isocode);isocode[unique=true];isocodeShort;name[lan
 ;CN;CN-64;64;"Ningxia"
 ;CN;CN-65;65;"Xinjiang"
 ;CN;CN-54;54;"Xizang"
-;CN;CN-91;91;"Xianggang"
-;CN;CN-92;92;"Aomen"
 
 #
 # ISO 3166-2:JP

@@ -45,7 +45,8 @@ public class MockProcess2WarehouseAdapter implements Process2WarehouseAdapter
 		}
 		catch (final InterruptedException e)
 		{
-			//nothing to do
+			LOG.error(e.getMessage(), e);
+			Thread.currentThread().interrupt();
 		}
 	}
 

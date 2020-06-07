@@ -64,8 +64,7 @@ public class QuoteNotificationEmailContext extends AbstractEmailContext<QuotePro
     {
         return Optional.of(quoteProcessModel)
                 .map(QuoteProcessModel::getQuoteCode)
-                .map(getQuoteService()::getCurrentQuoteForCode)
-                .get();
+                .map(getQuoteService()::getCurrentQuoteForCode).orElseThrow();
     }
 
     @Required

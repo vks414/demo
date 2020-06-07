@@ -58,7 +58,7 @@ public class StorefrontFilter extends OncePerRequestFilter
 			{
 				final String requestURL = request.getRequestURL().toString();
 				session.setAttribute(ORIGINAL_REFERER, StringUtils.isNotBlank(queryString) ? requestURL + "?" + queryString
-						: requestURL);
+						: requestURL);	// NOSONAR
 			}
 
 			getBrowseHistory().addBrowseHistoryEntry(new BrowseHistoryEntry(request.getRequestURI(), null));

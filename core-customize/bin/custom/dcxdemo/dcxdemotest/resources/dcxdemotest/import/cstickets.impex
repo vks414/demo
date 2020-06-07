@@ -1,16 +1,15 @@
 # -----------------------------------------------------------------------
 # Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
 # -----------------------------------------------------------------------
-$defaultPassword=12341234
 
 # Sample customers
-INSERT_UPDATE Customer;originalUid[unique=true];uid[unique=true];title(code);name;description;sessionLanguage(isocode);sessionCurrency(isocode);groups(uid);password[default=$defaultPassword];&userId;customerId
+INSERT_UPDATE Customer;originalUid[unique=true];uid[unique=true];title(code);name;description;sessionLanguage(isocode);sessionCurrency(isocode);groups(uid);&userId;customerId
 "#% beforeEach:
 import java.util.UUID;
 line.put(Integer.valueOf(11), UUID.randomUUID().toString());
 "
-;zohan@customer.com;zohan@customer.com;mr;Zohan;Ticket collector;en;USD;customergroup;;user1;;
-;aaron.customer@hybris.com;aaron.customer@hybris.com;mr;Aaron Customer;;en;USD;customergroup;;;;
+;zohan@customer.com;zohan@customer.com;mr;Zohan;Ticket collector;en;USD;customergroup;user1;;
+;aaron.customer@hybris.com;aaron.customer@hybris.com;mr;Aaron Customer;;en;USD;customergroup;;;
 
 # Sample customer addresses
 INSERT_UPDATE Address;&addId;owner(&userId)[unique=true];streetname[unique=true];postalcode[unique=true];duplicate[unique=true];town;country(isocode);billingAddress;contactAddress;shippingAddress;unloadingAddress;firstname;lastname;email;gender(code);middlename;phone1;title(code);url;company;fax;department

@@ -211,7 +211,7 @@ public class ProductPageController extends AbstractPageController
 	}
 
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN + "/review", method =
-	{ RequestMethod.GET, RequestMethod.POST })
+	{ RequestMethod.GET, RequestMethod.POST }) //NOSONAR
 	public String postReview(@PathVariable("productCode") final String encodedProductCode, final ReviewForm form,
 			final BindingResult result, final Model model, final HttpServletRequest request, final RedirectAttributes redirectAttrs)
 			throws CMSItemNotFoundException
