@@ -18604,23 +18604,7 @@ select[multiple].input-sm {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-#cboxTitle {
-  padding: 16px;
-  height: auto;
-  background: #F2F0ED;
-}
-#cboxTitle .headline {
-  margin-bottom: 0px;
-  font-size: 14px;
-}
-#cboxLoadedContent {
-  margin-top: 56px;
-  padding: 16px;
-  max-height: calc(-30vh);
-}
-#cboxContent {
-  max-height: calc(60vh);
-}
+
 .deliveryslot_list {
   padding: 8px;
   margin-bottom: 8px;
