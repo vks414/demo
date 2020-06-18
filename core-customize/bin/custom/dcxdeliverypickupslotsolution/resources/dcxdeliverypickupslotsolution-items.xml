@@ -33,6 +33,14 @@
 					</attribute>
 				</attributes>
 		</itemtype>
+		<itemtype code="Consignment" autocreate="false" generate="false">
+				<attributes>
+					<attribute qualifier="securityPin" type="java.lang.String">
+						<description>Security Pin</description>
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+		</itemtype>
 			<itemtype code="BaseStore" generate="false" autocreate="false">
 				<attributes>
 				<attribute qualifier="slotHolidaysList" type="SlotHolidaysList">

@@ -182,4 +182,8 @@
 	</bean>
 
 	<bean id="genderData" class="com.dcx.demo.facades.product.data.GenderData" scope="prototype"/>
+	
+	<bean id="makeReadyForPickupConsignmentAndSendMessageAction" class="com.dcx.demo.facades.process.action.UpdateReadyForPickupAndSendMessageAction" parent="abstractAction">
+		<property name="eventService" ref="eventService"/>
+	</bean>
 </beans>

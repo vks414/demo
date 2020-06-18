@@ -14,6 +14,11 @@ import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentProcessModel;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
+import de.hybris.platform.servicelayer.model.ModelService;
+
+import java.util.concurrent.ThreadLocalRandom;
+
+import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Required;
 
@@ -29,13 +34,23 @@ public class ReadyForPickupEmailContext extends AbstractEmailContext<Consignment
 	private String orderGuid;
 	private boolean guest;
 
+	@Resource(name = "modelService")
+	private ModelService modelService;
+
+
 	@Override
 	public void init(final ConsignmentProcessModel consignmentProcessModel, final EmailPageModel emailPageModel)
 	{
 		super.init(consignmentProcessModel, emailPageModel);
 		orderCode = consignmentProcessModel.getConsignment().getOrder().getCode();
 		orderGuid = consignmentProcessModel.getConsignment().getOrder().getGuid();
+		final ConsignmentModel consignment = consignmentProcessModel.getConsignment();
+		final int i = ThreadLocalRandom.current().nextInt(111111, 999999);
+		put("securityPin", i);
+		consignment.setSecurityPin((String) i);
+		modelService.save(consignment);
 		consignmentData = getConsignmentConverter().convert(consignmentProcessModel.getConsignment());
+
 		guest = CustomerType.GUEST.equals(getCustomer(consignmentProcessModel).getType());
 	}
 
