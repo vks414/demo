@@ -19,10 +19,9 @@ public class ResponsiveDeliveryAddressCheckoutStepValidator extends AbstractChec
 			return ValidationResults.REDIRECT_TO_CART;
 		}
 
-		if (!getCheckoutFacade().hasShippingItems())
-		{
-			return ValidationResults.REDIRECT_TO_PAYMENT_METHOD;
-		}
+		/*
+		 * if (!getCheckoutFacade().hasShippingItems()) { return ValidationResults.REDIRECT_TO_PAYMENT_METHOD; }
+		 */
 
 		return ValidationResults.SUCCESS;
 	}

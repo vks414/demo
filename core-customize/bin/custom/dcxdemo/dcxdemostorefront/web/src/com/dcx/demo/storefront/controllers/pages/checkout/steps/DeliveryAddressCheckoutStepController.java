@@ -21,8 +21,10 @@ import de.hybris.platform.commercefacades.user.data.AddressData;
 import de.hybris.platform.commercefacades.user.data.CountryData;
 import de.hybris.platform.commerceservices.address.AddressVerificationDecision;
 import de.hybris.platform.util.Config;
-import com.dcx.demo.storefront.controllers.ControllerConstants;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import javax.annotation.Resource;
@@ -35,7 +37,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.dcx.demo.service.DeliverySlotFacade;
+import com.dcx.demo.slot.DeliverySlotData;
+import com.dcx.demo.storefront.controllers.ControllerConstants;
 
 
 @Controller
@@ -48,6 +55,9 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 	@Resource(name = "addressDataUtil")
 	private AddressDataUtil addressDataUtil;
 
+	@Resource(name = "deliverySlotFacade")
+	private DeliverySlotFacade deliverySlotFacade;
+
 	@Override
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	@RequireHardLogIn
@@ -56,12 +66,14 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 	public String enterStep(final Model model, final RedirectAttributes redirectAttributes) throws CMSItemNotFoundException
 	{
 		getCheckoutFacade().setDeliveryAddressIfAvailable();
+		deliverySlotFacade.setDefaultdeliverySlots();
 		final CartData cartData = getCheckoutFacade().getCheckoutCart();
 
 		populateCommonModelAttributes(model, cartData, new AddressForm());
 
 		return ControllerConstants.Views.Pages.MultiStepCheckout.AddEditDeliveryAddressPage;
 	}
+
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	@RequireHardLogIn
@@ -130,8 +142,8 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	@RequireHardLogIn
-	public String editAddressForm(@RequestParam("editAddressCode") final String editAddressCode, final Model model,
-			final RedirectAttributes redirectAttributes) throws CMSItemNotFoundException
+	public String editAddressForm(@RequestParam("editAddressCode")
+	final String editAddressCode, final Model model, final RedirectAttributes redirectAttributes) throws CMSItemNotFoundException
 	{
 		final ValidationResults validationResults = getCheckoutStep().validate(redirectAttributes);
 		if (getCheckoutStep().checkIfValidationErrors(validationResults))
@@ -231,8 +243,8 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 	@RequestMapping(value = "/remove", method =
 	{ RequestMethod.GET, RequestMethod.POST })
 	@RequireHardLogIn
-	public String removeAddress(@RequestParam("addressCode") final String addressCode, final RedirectAttributes redirectModel,
-			final Model model) throws CMSItemNotFoundException
+	public String removeAddress(@RequestParam("addressCode")
+	final String addressCode, final RedirectAttributes redirectModel, final Model model) throws CMSItemNotFoundException
 	{
 		if (getCheckoutFacade().isRemoveAddressEnabledForCart())
 		{
@@ -304,8 +316,8 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 	 */
 	@RequestMapping(value = "/select", method = RequestMethod.GET)
 	@RequireHardLogIn
-	public String doSelectDeliveryAddress(@RequestParam("selectedAddressCode") final String selectedAddressCode,
-			final RedirectAttributes redirectAttributes)
+	public String doSelectDeliveryAddress(@RequestParam("selectedAddressCode")
+	final String selectedAddressCode, final RedirectAttributes redirectAttributes)
 	{
 		final ValidationResults validationResults = getCheckoutStep().validate(redirectAttributes);
 		if (getCheckoutStep().checkIfValidationErrors(validationResults))
@@ -335,6 +347,44 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 				getUserFacade().removeAddress(cartCheckoutDeliveryAddress);
 			}
 		}
+	}
+
+
+	@RequestMapping(value = "/selectslot", method = RequestMethod.POST)
+	@ResponseBody
+	public String doSelectDeliveryMode(@RequestParam("delivery_slot")
+	final String selectedDeliverySlot, @RequestParam("entries")
+	final List<String> entries)
+	{
+		if (StringUtils.isNotEmpty(selectedDeliverySlot))
+		{
+			deliverySlotFacade.setDeliverySlot(selectedDeliverySlot, entries);
+		}
+
+		return "success";
+	}
+
+	@RequestMapping(value = "/getslots", method = RequestMethod.GET)
+	@RequireHardLogIn
+	public String getDeliverySlots(final Model model, @RequestParam("posName")
+	final String posName, @RequestParam("entries")
+	final String entries)
+	{
+		final List<DeliverySlotData> slotDataList = deliverySlotFacade.getAvailableDeliverySlots(posName);
+		model.addAttribute("deliverySlotDataList", slotDataList);
+		final List<Date> deliverySlotDateList = new ArrayList<Date>();
+		for (final DeliverySlotData deliverSlotData : slotDataList)
+		{
+			if (!deliverySlotDateList.contains(deliverSlotData.getDate()))
+			{
+				deliverySlotDateList.add(deliverSlotData.getDate());
+			}
+		}
+		model.addAttribute("daysToShow", deliverySlotDateList.size());
+		model.addAttribute("deliverySlotDateList", deliverySlotDateList);
+		model.addAttribute("entries", entries);
+		final CartData cartData = getCheckoutFacade().getCheckoutCart();
+		return ControllerConstants.Views.Fragments.Checkout.DeliverySlotPopup;
 	}
 
 	@RequestMapping(value = "/back", method = RequestMethod.GET)

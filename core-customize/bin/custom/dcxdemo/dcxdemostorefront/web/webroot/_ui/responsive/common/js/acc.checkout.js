@@ -18,6 +18,49 @@ ACC.checkout = {
 			e.preventDefault();
 			$('#selectDeliveryMethodForm').submit();	
 		})
+		$(document).on("click","#deliverySlotSubmit",function(e){
+			e.preventDefault();
+			$('#selectDeliverySlotForm').submit();	
+		})
+		
+		$(document).on("click",".edit_timeslot", function(e){
+			e.preventDefault();
+			//$(".loader").show();	
+			var url = $(this).attr("href");
+			var titleHeader = "When do you want your order?";
+			$.ajax({
+				  type: 'GET',
+				  url: url,
+				  success: function(data){
+					  $(".loader").hide();
+						ACC.colorbox.open(titleHeader,{
+							html: data,
+							width:"1120px",
+						    height:"440px",
+						});	
+				  },
+				  error: function (data) { 
+					  $(".loader").hide();
+				  }
+
+			});
+		});
+		
+		$(document).on("click",".js_deliveryslot_submit",function(e){
+			e.preventDefault();
+			var form = $(this).closest('form')[0];
+			var deliverySlotIndex = $(this).attr('id');
+			$.ajax({
+				url: $(this).closest("form")[0].action,
+				type: 'POST',
+				data: $(form).serialize(),
+				success: function(data){
+					ACC.colorbox.close();
+					$(".js_deliveryslot_submit").removeClass("active");
+				}
+			});
+		
+		});
 
 	},
 

@@ -46,6 +46,11 @@
 		  "template": "yacceleratorstorefront"
 		},
 		{
+		  "addon": "ordermanagementaddon",
+		  "storefront": "dcxdemostorefront",
+		  "template": "yacceleratorstorefront"
+		},
+		{
 		  "addon": "notificationoccaddon",
 		  "storefront": "ycommercewebservices",
 		  "template": "ycommercewebservices"

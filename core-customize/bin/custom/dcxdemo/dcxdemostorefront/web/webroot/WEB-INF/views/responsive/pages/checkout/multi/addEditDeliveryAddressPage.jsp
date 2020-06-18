@@ -24,7 +24,7 @@
                 <ycommerce:testId code="checkoutStepOne">
                     <div class="checkout-shipping">
                             <multi-checkout:shipmentItems cartData="${cartData}" showDeliveryAddress="false" />
-
+							<c:if test="${cartData.deliveryItemsQuantity > 0}">
                             <div class="checkout-indent">
                                 <div class="headline"><spring:theme code="checkout.summary.shippingAddress" /></div>
 
@@ -71,13 +71,18 @@
 
                                         <address:suggestedAddresses selectedAddressUrl="/checkout/multi/delivery-address/select" />
                             </div>
+							</c:if>
 
                                 <multi-checkout:pickupGroups cartData="${cartData}" />
                     </div>
 
-
+					<c:if test="${cartData.deliveryItemsQuantity > 0}">
                     <button id="addressSubmit" type="button"
                         class="btn btn-primary btn-block checkout-next"><spring:theme code="checkout.multi.deliveryAddress.continue"/></button>
+                        </c:if>
+                        <c:if test="${cartData.deliveryItemsQuantity eq 0}">
+                   			 <a href="next" class="btn btn-primary btn-block checkout-next"><spring:theme code="checkout.multi.deliveryAddress.continue"/></a>
+                        </c:if>
                 </ycommerce:testId>
             </jsp:body>
         </multi-checkout:checkoutSteps>

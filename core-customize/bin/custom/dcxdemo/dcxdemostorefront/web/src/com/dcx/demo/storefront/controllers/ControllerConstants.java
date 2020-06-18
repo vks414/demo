@@ -97,6 +97,7 @@ public interface ControllerConstants
 			{
 				String AddEditDeliveryAddressPage = "pages/checkout/multi/addEditDeliveryAddressPage"; // NOSONAR
 				String ChooseDeliveryMethodPage = "pages/checkout/multi/chooseDeliveryMethodPage"; // NOSONAR
+				String ChooseDeliverySlotPage = "pages/checkout/multi/chooseDeliverySlotPage"; // NOSONAR
 				String ChoosePickupLocationPage = "pages/checkout/multi/choosePickupLocationPage"; // NOSONAR
 				String AddPaymentMethodPage = "pages/checkout/multi/addPaymentMethodPage"; // NOSONAR
 				String CheckoutSummaryPage = "pages/checkout/multi/checkoutSummaryPage"; // NOSONAR
@@ -181,6 +182,7 @@ public interface ControllerConstants
 				String TermsAndConditionsPopup = "fragments/checkout/termsAndConditionsPopup"; // NOSONAR
 				String BillingAddressForm = "fragments/checkout/billingAddressForm"; // NOSONAR
 				String ReadOnlyExpandedOrderForm = "fragments/checkout/readOnlyExpandedOrderForm"; // NOSONAR
+				String DeliverySlotPopup = "fragments/checkout/deliverySlotPopup"; // NOSONAR
 			}
 
 			interface Password // NOSONAR

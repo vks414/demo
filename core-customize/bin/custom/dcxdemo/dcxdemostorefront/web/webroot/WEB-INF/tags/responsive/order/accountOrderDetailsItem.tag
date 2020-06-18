@@ -17,12 +17,28 @@
             <ycommerce:testId code="orderDetail_consignmentStatus_label">
                 <spring:theme code="text.account.order.consignment.status.${consignment.statusDisplay}" />
             </ycommerce:testId>
+            <c:set var="statusDate" value="${consignment.statusDate}"></c:set>
+             <c:choose>
+                        <c:when test="${consignment.deliveryPointOfService ne null}">
+            			<ycommerce:testId code="orderDetail_consignmentStatusDate_label">
+							<span class="well-headline-sub">
+							<c:forEach items="${consignment.entries}" var="entry" end="0">
+			                    <b><fmt:formatDate value="${entry.orderEntry.deliverySlot.date}" dateStyle="medium" timeStyle="short" type="both"/>&nbsp;(${entry.orderEntry.deliverySlot.fromTime} - ${entry.orderEntry.deliverySlot.toTime})</b>
+			                    <c:set var="statusDate" value="${entry.orderEntry.deliverySlot.date}"></c:set>
+			                </c:forEach>
+			                </span>
+						</ycommerce:testId>
+            			</c:when>
+			            <c:otherwise>
+			            <ycommerce:testId code="orderDetail_consignmentStatusDate_label">
+							<span class="well-headline-sub">
+			                    <fmt:formatDate value="${consignment.statusDate}" dateStyle="medium" timeStyle="short" type="both"/>
+			                </span>
+						</ycommerce:testId>
+			            </c:otherwise>
+            </c:choose>
 
-			<ycommerce:testId code="orderDetail_consignmentStatusDate_label">
-				<span class="well-headline-sub">
-                    <fmt:formatDate value="${consignment.statusDate}" dateStyle="medium" timeStyle="short" type="both"/>
-                </span>
-			</ycommerce:testId>
+			
 		</div>
 
         <div class="well-content col-sm-12 col-md-9">
@@ -31,7 +47,7 @@
                     <c:choose>
                         <c:when test="${consignment.deliveryPointOfService ne null}">
                             <ycommerce:testId code="orderDetail_storeDetails_section">
-                                <order:storeAddressItem deliveryPointOfService="${consignment.deliveryPointOfService}" inProgress="${inProgress}" statusDate="${consignment.statusDate}"/>
+                                <order:storeAddressItem deliveryPointOfService="${consignment.deliveryPointOfService}" inProgress="${inProgress}" statusDate="${statusDate}"/>
                             </ycommerce:testId>
                         </c:when>
                         <c:otherwise>

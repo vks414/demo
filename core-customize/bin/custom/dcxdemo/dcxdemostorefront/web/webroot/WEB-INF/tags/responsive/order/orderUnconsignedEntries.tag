@@ -3,13 +3,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="order" tagdir="/WEB-INF/tags/responsive/order" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <c:forEach items="${order.unconsignedEntries}" var="entry" varStatus="loop">
     <div class="well well-quinary well-xs">
         <div class="well-headline orderPending">
-            <spring:theme code="text.account.order.unconsignedEntry.status.pending" />
+           <%--  <spring:theme code="text.account.order.unconsignedEntry.status.pending" /> --%>
+            <c:if test="${not empty entry.deliverySlot}">
+					<b>Curbside Pickup on &nbsp;<fmt:formatDate type="date" value="${entry.deliverySlot.date}" dateStyle="FULL" />&nbsp;(${entry.deliverySlot.fromTime} - ${entry.deliverySlot.toTime})</b> 
+				</c:if>	
         </div>
 
         <c:choose>

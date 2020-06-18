@@ -11,6 +11,7 @@
 <%@ taglib prefix="product" tagdir="/WEB-INF/tags/responsive/product" %>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
@@ -43,6 +44,12 @@
 			<c:if test="${ not empty groupData.deliveryPointOfService.address.phone }">
 				${fn:escapeXml(groupData.deliveryPointOfService.address.phone)}
 			</c:if>
+			<br>
+			<c:forEach items="${groupData.entries}" var="entry" end="0">
+				<c:if test="${not empty entry.deliverySlot}">
+					<b><fmt:formatDate type="date" value="${entry.deliverySlot.date}" dateStyle="FULL" />&nbsp;(${entry.deliverySlot.fromTime} - ${entry.deliverySlot.toTime})</b> 
+				</c:if>	
+			</c:forEach>
 		</div>
 	</li>
 </c:if>
