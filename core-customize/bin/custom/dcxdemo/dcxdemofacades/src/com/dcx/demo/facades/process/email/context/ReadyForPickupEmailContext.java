@@ -47,7 +47,7 @@ public class ReadyForPickupEmailContext extends AbstractEmailContext<Consignment
 		final ConsignmentModel consignment = consignmentProcessModel.getConsignment();
 		final int i = ThreadLocalRandom.current().nextInt(111111, 999999);
 		put("securityPin", i);
-		consignment.setSecurityPin((String) i);
+		consignment.setSecurityPin(Integer.toString(i));
 		modelService.save(consignment);
 		consignmentData = getConsignmentConverter().convert(consignmentProcessModel.getConsignment());
 
