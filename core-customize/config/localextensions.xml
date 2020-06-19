@@ -34,6 +34,10 @@
     <extension name='customerticketingaddon' />
     -->
     <extension name='customersupportbackoffice' />
+    <extension name='profiletagaddon' />
+    <extension name='profileservices' />
+    <extension name='textfieldconfiguratortemplatebackoffice' />
+    <extension name='textfieldconfiguratortemplateaddon' />
     <extension name='cmswebservices' />
     <extension name='smarteditwebservices' />
     <extension name='cmssmarteditwebservices' />
@@ -42,8 +46,7 @@
     <extension name='cmssmartedit' />
     <extension name='cmsbackoffice' />
     <extension name='cmsoccaddon' />
-    <extension name='platformbackoffice' />
-    <!--<extension name='consignmenttrackingaddon' />
+    <extension name='consignmenttrackingaddon' />
     <extension name='consignmenttrackingmock' />
     <extension name='consignmenttrackingbackoffice' /> 
     <extension name='notificationaddon' />
@@ -70,7 +73,15 @@
     <extension name='personalizationyprofilesampledataaddon' />
     <extension name='personalizationaddon' />
     <extension name='pcmbackofficesamplesaddon' />
-    
+    <extension name='xyformsbackoffice' />
+    <extension name='xyformsstorefrontcommons' />
+    <extension name='xyformssamples' />
+    <extension name='xyformsweb' />
+    <extension name='platformbackoffice' />
+    <extension name='orbeonweb' />
+    <extension name='consignmenttrackingoccaddon' />
+    <extension name='customerinterestsoccaddon' />
+    <extension name='notificationoccaddon' />
     <extension name='kymaintegrationbackoffice' />
     <extension name='outboundservices' />
     <extension name='outboundsync' />
@@ -80,12 +91,11 @@
     <extension name='integrationmonitoringbackoffice' />
     <extension name='outboundsyncbackoffice' />
     <extension name='merchandisingaddon' />
-    <extension name='merchandisingstorefrontsampledataaddon' />
     <extension name='merchandisingcmswebservices' />
     <extension name='merchandisingsmartedit' />
     <extension name='merchandisingservices' />
     <extension name='merchandisingservicesbackoffice' />
-    -->
+        <extension name='merchandisingstorefrontsampledataaddon' />
 	<!-- <extension name="dcxdemofulfilmentprocess"/> -->
 	<extension name='consignmenttrackingoccaddon' />
     <extension name='customerinterestsoccaddon' />
@@ -104,6 +114,8 @@
 	<extension name="dcxdemoinitialdata"/>
 	<extension name="dcxdemobackoffice"/>
 	<extension name="dcxdemostorefront"/>
+	  <extension name='sapcpiproductexchange' />
+	  <extension name='sapproductconfigservices' />
 	<extension name="dcxdeliverypickupslotsolution"/>
   </extensions>
 </hybrisconfig>
