@@ -16,7 +16,7 @@
     <extension name='ycommercewebservices' />
     <extension name='electronicsstore' />
     <extension name='apparelstore' />
-    <!-- <extension name='captchaaddon' /> -->
+    <extension name='captchaaddon' />
     <extension name='acceleratorwebservicesaddon' />
     <extension name='commerceorgsamplesaddon' />
     <extension name='orderselfserviceaddon' />
@@ -28,11 +28,10 @@
     <extension name='promotionenginesamplesaddon' />
     <extension name='assistedservicestorefront' />
     <extension name='assistedservicewebservices' />
-    <!--<extension name='assistedserviceyprofileaddon' />
+    <extension name='assistedserviceyprofileaddon' />
     <extension name='assistedservicecustomerinterestsaddon' />
     <extension name='assistedservicepromotionaddon' /> 
     <extension name='customerticketingaddon' />
-    -->
     <extension name='customersupportbackoffice' />
     <extension name='profiletagaddon' />
     <extension name='profileservices' />
@@ -98,8 +97,8 @@
         <extension name='merchandisingstorefrontsampledataaddon' />
 	<!-- <extension name="dcxdemofulfilmentprocess"/> -->
 	<extension name='consignmenttrackingoccaddon' />
-    <extension name='customerinterestsoccaddon' />
-    <extension name='notificationoccaddon' />
+	<extension name='customerinterestsoccaddon' />
+	<extension name='notificationoccaddon' />
 	<extension name="ordermanagementaddon"/>
 	<extension name="ordermanagementfacades"/>
 	<extension name="ordermanagementwebservices"/>
