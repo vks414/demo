@@ -14,7 +14,7 @@ import { B2cStorefrontModule } from '@spartacus/storefront';
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {
-          baseUrl: 'https://localhost:9002',
+          baseUrl: 'https://api.c6ofl83-capgemini1-d1-public.model-t.cc.commerce.ondemand.com',
           prefix: '/rest/v2/',
           legacy: false
         }
