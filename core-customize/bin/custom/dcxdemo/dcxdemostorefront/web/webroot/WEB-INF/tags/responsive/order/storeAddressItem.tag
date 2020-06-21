@@ -21,7 +21,7 @@
         </div>
 
         <c:set var="openingSchedule" value="${deliveryPointOfService.openingHours}"/>
-        <c:if test="${not empty openingSchedule}">
+        <%-- <c:if test="${not empty openingSchedule}">
             <div class="col-sm-6 col-md-4 order-store-hours">
                 <div class="label-order"><spring:theme code="storeDetails.table.opening"/></div>
                 <ycommerce:testId code="storeDetails_table_openingSchedule_label">
@@ -44,5 +44,5 @@
                     <div class="label-order"><spring:theme code="text.account.order.consignment.pickUpBy"/></div><fmt:formatDate value="${statusDate}" dateStyle="medium" timeStyle="short" type="both"/>
                 </c:if>
             </div>
-        </c:if>
+        </c:if> --%>
     </div>

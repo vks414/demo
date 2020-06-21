@@ -23,7 +23,7 @@
             			<ycommerce:testId code="orderDetail_consignmentStatusDate_label">
 							<span class="well-headline-sub">
 							<c:forEach items="${consignment.entries}" var="entry" end="0">
-			                    <b><fmt:formatDate value="${entry.orderEntry.deliverySlot.date}" dateStyle="medium" timeStyle="short" type="both"/>&nbsp;(${entry.orderEntry.deliverySlot.fromTime} - ${entry.orderEntry.deliverySlot.toTime})</b>
+			                    <b> Curbside Pickup on <fmt:formatDate value="${entry.orderEntry.deliverySlot.date}" dateStyle="medium" timeStyle="short" type="both"/>&nbsp;(${entry.orderEntry.deliverySlot.fromTime} - ${entry.orderEntry.deliverySlot.toTime})</b>
 			                    <c:set var="statusDate" value="${entry.orderEntry.deliverySlot.date}"></c:set>
 			                </c:forEach>
 			                </span>

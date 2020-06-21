@@ -63,12 +63,12 @@
 			<c:forEach items="${groupData.entries}" var="entry" end="0">
 				<c:if test="${not empty entry.deliverySlot}">
 				<br>
-					<b><fmt:formatDate type="date" value="${entry.deliverySlot.date}" dateStyle="FULL" />&nbsp;(${entry.deliverySlot.fromTime} - ${entry.deliverySlot.toTime})</b> 
+					<b>Earliest/Selected Slot:&nbsp;</b> <fmt:formatDate type="date" value="${entry.deliverySlot.date}" dateStyle="FULL" />&nbsp;(${entry.deliverySlot.fromTime} - ${entry.deliverySlot.toTime}) 
 				</c:if>	
 			</c:forEach>
 			<br>
 			<br>
-		<a href="getslots?posName=${fn:escapeXml(groupData.deliveryPointOfService.name)}&entries=${groupentries}" class=" edit_timeslot btn btn-primary">Choose Slot</a>
+		<a href="getslots?posName=${fn:escapeXml(groupData.deliveryPointOfService.name)}&entries=${groupentries}" class=" edit_timeslot btn btn-primary">Edit Slot</a>
 		</div>
 	</div>
 </c:forEach>
