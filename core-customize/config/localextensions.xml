@@ -116,5 +116,7 @@
 	  <extension name='sapcpiproductexchange' />
 	  <extension name='sapproductconfigservices' />
 	<extension name="dcxdeliverypickupslotsolution"/>
+	<extension name="spartacussampledataaddon"/>
+	
   </extensions>
 </hybrisconfig>

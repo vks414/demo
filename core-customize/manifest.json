@@ -54,6 +54,11 @@
 		  "addon": "notificationoccaddon",
 		  "storefront": "ycommercewebservices",
 		  "template": "ycommercewebservices"
+		},
+		{
+		  "addon": "spartacussampledataaddon",
+		  "storefront": "dcxdemostorefront",
+		  "template": "yacceleratorstorefront"
 		}
 	],
          "aspects": [

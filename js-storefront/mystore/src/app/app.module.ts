@@ -19,10 +19,6 @@ import { B2cStorefrontModule } from '@spartacus/storefront';
           legacy: false
         }
       },
-      authentication: {
-        client_id: 'mobile_android',
-        client_secret: 'secret'
-      },
       context: {
         urlParameters: ['baseSite', 'language', 'currency'],
         baseSite: ['electronics'],
@@ -36,7 +32,7 @@ import { B2cStorefrontModule } from '@spartacus/storefront';
       features: {
         level: '2.0'
       }
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

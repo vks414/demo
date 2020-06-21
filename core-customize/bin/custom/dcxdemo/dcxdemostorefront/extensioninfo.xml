@@ -2,45 +2,62 @@
 <!--
  Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
 --><extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
-        
+            
+    
     <extension abstractclassprefix="Generated" classprefix="DcxdemoStorefront" name="dcxdemostorefront" usemaven="false">
-          
+                  
         
+        
+        <requires-extension name="spartacussampledataaddon"/>
         <requires-extension name="ordermanagementaddon"/>
+                
         <requires-extension name="merchandisingstorefrontsampledataaddon"/>
-          
+                  
+        
         
         <requires-extension name="personalizationyprofilesampledataaddon"/>
-          
+                  
+        
         
         <requires-extension name="personalizationsearchsamplesaddon"/>
-         
+                 
+        
         
         <requires-extension name="adaptivesearchsamplesaddon"/>
-          
+                  
+        
         
         <requires-extension name="orderselfserviceaddon"/>
-                
+                        
+        
         
         <requires-extension name="smarteditaddon"/>
-            
+                    
+        
         
         <requires-extension name="promotionenginesamplesaddon"/>
-                
+                        
+        
         <requires-extension name="acceleratorstorefrontcommons"/>
-          
+                  
+        
         
         <requires-extension name="dcxdemofacades"/>
-                
+                        
+        
         
         <requires-extension name="dcxdeliverypickupslotsolution"/>
-                
+                        
+        
         <webmodule jspcompile="false" webroot="/dcxdemostorefront"/>
-             
+                     
+        
         
         <meta key="extgen-template-extension" value="true"/>
-         
+                 
+    
     
     </extension>
-    
+        
+
 </extensioninfo>
