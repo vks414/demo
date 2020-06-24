@@ -11,6 +11,7 @@ import de.hybris.platform.acceleratorstorefrontcommons.forms.AddToEntryGroupForm
 import de.hybris.platform.commercefacades.order.CartFacade;
 import de.hybris.platform.commercefacades.order.converters.populator.GroupCartModificationListPopulator;
 import de.hybris.platform.commercefacades.order.data.AddToCartParams;
+import de.hybris.platform.commercefacades.order.data.CartData;
 import de.hybris.platform.commercefacades.order.data.CartModificationData;
 import de.hybris.platform.commercefacades.order.data.OrderEntryData;
 import de.hybris.platform.commercefacades.product.ProductFacade;
@@ -19,7 +20,6 @@ import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commerceservices.order.CommerceCartModificationException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
-import com.dcx.demo.storefront.controllers.ControllerConstants;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,6 +43,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.dcx.demo.storefront.controllers.ControllerConstants;
 
 
 /**
@@ -69,8 +71,9 @@ public class AddToCartController extends AbstractController
 	private GroupCartModificationListPopulator groupCartModificationListPopulator;
 
 	@RequestMapping(value = "/cart/add", method = RequestMethod.POST, produces = "application/json")
-	public String addToCart(@RequestParam("productCodePost") final String code, final Model model,
-			@Valid final AddToCartForm form, final BindingResult bindingErrors)
+	public String addToCart(@RequestParam("productCodePost")
+	final String code, final Model model, @Valid
+	final AddToCartForm form, final BindingResult bindingErrors)
 	{
 		if (bindingErrors.hasErrors())
 		{
@@ -78,6 +81,14 @@ public class AddToCartController extends AbstractController
 		}
 
 		final long qty = form.getQty();
+
+		final CartData cartData = cartFacade.getSessionCart();
+		if (cartData.getPickupOrderGroups() != null && !cartData.getPickupOrderGroups().isEmpty())
+		{
+			model.addAttribute(ERROR_MSG_TYPE, "basket.error.pickup.mode.invalid");
+			model.addAttribute(QUANTITY_ATTR, Long.valueOf(0L));
+			return ControllerConstants.Views.Fragments.Cart.AddToCartPopup;
+		}
 
 		if (qty <= 0)
 		{
@@ -146,7 +157,8 @@ public class AddToCartController extends AbstractController
 	}
 
 	@RequestMapping(value = "/cart/addGrid", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	public final String addGridToCart(@RequestBody final AddToCartOrderForm form, final Model model)
+	public final String addGridToCart(@RequestBody
+	final AddToCartOrderForm form, final Model model)
 	{
 		final Set<String> multidErrorMsgs = new HashSet<String>();
 		final List<CartModificationData> modificationDataList = new ArrayList<CartModificationData>();
@@ -191,7 +203,8 @@ public class AddToCartController extends AbstractController
 	}
 
 	@RequestMapping(value = "/cart/addQuickOrder", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	public final String addQuickOrderToCart(@RequestBody final AddToCartOrderForm form, final Model model)
+	public final String addQuickOrderToCart(@RequestBody
+	final AddToCartOrderForm form, final Model model)
 	{
 		final List<CartModificationData> modificationDataList = new ArrayList();
 		final List<ProductWrapperData> productWrapperDataList = new ArrayList();
@@ -235,7 +248,8 @@ public class AddToCartController extends AbstractController
 
 	@RequestMapping(value = "/entrygroups/cart/addToEntryGroup", method =
 	{ RequestMethod.POST, RequestMethod.GET })
-	public String addEntryGroupToCart(final Model model, @Valid final AddToEntryGroupForm form, final BindingResult bindingErrors)
+	public String addEntryGroupToCart(final Model model, @Valid
+	final AddToEntryGroupForm form, final BindingResult bindingErrors)
 	{
 		if (bindingErrors.hasErrors())
 		{

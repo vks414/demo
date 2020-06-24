@@ -69,6 +69,31 @@
 			<br>
 			<br>
 		<a href="getslots?posName=${fn:escapeXml(groupData.deliveryPointOfService.name)}&entries=${groupentries}" class=" edit_timeslot btn btn-primary">Edit Slot</a>
+		
 		</div>
 	</div>
+		<style>#cboxTitle {
+	padding: 16px;
+	height: auto;
+	background: #F2F0ED;
+}
+
+#cboxTitle .headline {
+	margin-bottom: 0px;
+	font-size: 14px;
+}
+
+#cboxLoadedContent {
+    margin-top: 56px;
+    padding: 16px;
+	max-height: calc(100vh - 130px);
+}
+
+#cboxContent {
+	max-height: calc(100vh - 40px);
+}
+.col.deliverySlot_content.pl-0 {
+    min-width: 195px;
+}
+</style>
 </c:forEach>

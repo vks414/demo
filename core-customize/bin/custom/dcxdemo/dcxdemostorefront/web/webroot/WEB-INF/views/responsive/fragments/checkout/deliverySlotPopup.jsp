@@ -36,14 +36,14 @@
 			                               <c:choose>
                                					<c:when test="${deliverySlotTimings.remainingCapacity ne 0}">
 					                               	<div id="js_deliveryslot_index_${status.index}" class="deliveryslot_list js_deliveryslot_submit <c:if test="${deliverySlotTimings.date eq selectedSlotDateFmt && deliverySlotTimings.fromTime eq fromTime &&  deliverySlotTimings.toTime eq toTime}">active</c:if><c:if test="${selectedSlotDateFmt eq null && deliverySlotTimings.date eq EarliestSlotDetail.date && deliverySlotTimings.fromTime eq EarliestSlotFromTime &&  deliverySlotTimings.toTime eq EarliestSlotToTime}">active</c:if>">
-					                               		${fn:escapeXml(deliverySlotTimings.fromTime)} &nbsp;-&nbsp; ${fn:escapeXml(deliverySlotTimings.toTime)}
+					                               		${fn:escapeXml(deliverySlotTimings.fromTime)}-${fn:escapeXml(deliverySlotTimings.toTime)} 
 		                               						<span class="pull-right"><spring:theme code="checkout.slot.available"/></span>
 					                               <div class="clearfix"></div>	
 					                               </div>
                                					</c:when>
                                					<c:otherwise>
 													<div class="deliveryslot_list unavailable_slot">
-					                               		${fn:escapeXml(deliverySlotTimings.fromTime)} &nbsp;-&nbsp; ${fn:escapeXml(deliverySlotTimings.toTime)}
+					                               		${fn:escapeXml(deliverySlotTimings.fromTime)}-${fn:escapeXml(deliverySlotTimings.toTime)}
 		                               						<span class="pull-right"><spring:theme code="checkout.slot.unavailable"/></span>
 					                               <div class="clearfix"></div>			                               						
 					                               </div>

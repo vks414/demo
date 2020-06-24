@@ -45,7 +45,7 @@ public class DefaultDCXCheckoutFacade extends DefaultAcceleratorCheckoutFacade
 				deliverySlots.stream().forEach(e -> {
 					final DeliverySlotModel slot = deliverySlotService.getDeliverySlotforPK(e);
 					int cap = slot.getRemainingCapacity();
-					slot.setRemainingCapacity(cap--);
+					slot.setRemainingCapacity(--cap);
 					getModelService().save(slot);
 				});
 

@@ -538,4 +538,7 @@
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
+	
+	<alias name="defaultDCXEmailService" alias="emailService" />
+	<bean id="defaultDCXEmailService" class="com.dcx.demo.core.mail.service.DefaultDCXEmailService" parent="defaultEmailService"/>
 </beans>

@@ -9,22 +9,25 @@ import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.Abstrac
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.PickupInStoreForm;
 import de.hybris.platform.commercefacades.order.CartFacade;
+import de.hybris.platform.commercefacades.order.data.CartData;
 import de.hybris.platform.commercefacades.order.data.CartModificationData;
 import de.hybris.platform.commercefacades.product.ProductFacade;
 import de.hybris.platform.commercefacades.product.ProductOption;
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commercefacades.storefinder.StoreFinderStockFacade;
 import de.hybris.platform.commercefacades.storefinder.data.StoreFinderStockSearchPageData;
+import de.hybris.platform.commercefacades.storelocator.data.PointOfServiceData;
 import de.hybris.platform.commercefacades.storelocator.data.PointOfServiceStockData;
 import de.hybris.platform.commerceservices.order.CommerceCartModificationException;
 import de.hybris.platform.commerceservices.order.CommerceCartModificationStatus;
+import de.hybris.platform.commerceservices.search.pagedata.PaginationData;
 import de.hybris.platform.commerceservices.store.data.GeoPoint;
 import de.hybris.platform.servicelayer.config.ConfigurationService;
-import com.dcx.demo.storefront.controllers.ControllerConstants;
-import com.dcx.demo.storefront.security.cookie.CustomerLocationCookieGenerator;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -43,6 +46,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.dcx.demo.storefront.controllers.ControllerConstants;
+import com.dcx.demo.storefront.security.cookie.CustomerLocationCookieGenerator;
 
 
 @Controller
@@ -97,16 +103,18 @@ public class PickupInStoreController extends AbstractSearchPageController
 	}
 
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN + "/pointOfServices", method = RequestMethod.POST)
-	public String getPointOfServiceForStorePickupSubmit(@PathVariable("productCode") final String encodedProductCode, // NOSONAR
-			@RequestParam(value = "locationQuery", required = false) final String locationQuery,
-			@RequestParam(value = "latitude", required = false) final Double latitude,
-			@RequestParam(value = "longitude", required = false) final Double longitude,
-			@RequestParam(value = "page", defaultValue = "0") final int page,
-			@RequestParam(value = "show", defaultValue = "Page") final AbstractSearchPageController.ShowMode showMode,
-			@RequestParam(value = "sort", required = false) final String sortCode,
-			@RequestParam(value = "cartPage", defaultValue = "Page") final Boolean cartPage,
-			@RequestParam(value = "entryNumber", defaultValue = "0") final Long entryNumber,
-			@RequestParam(value = "qty", defaultValue = "0") final Long qty, final HttpServletResponse response, final Model model)
+	public String getPointOfServiceForStorePickupSubmit(@PathVariable("productCode")
+	final String encodedProductCode, // NOSONAR
+			@RequestParam(value = "locationQuery", required = false)
+			final String locationQuery, @RequestParam(value = "latitude", required = false)
+			final Double latitude, @RequestParam(value = "longitude", required = false)
+			final Double longitude, @RequestParam(value = "page", defaultValue = "0")
+			final int page, @RequestParam(value = "show", defaultValue = "Page")
+			final AbstractSearchPageController.ShowMode showMode, @RequestParam(value = "sort", required = false)
+			final String sortCode, @RequestParam(value = "cartPage", defaultValue = "Page")
+			final Boolean cartPage, @RequestParam(value = "entryNumber", defaultValue = "0")
+			final Long entryNumber, @RequestParam(value = "qty", defaultValue = "0")
+			final Long qty, final HttpServletResponse response, final Model model)
 	{
 		GeoPoint geoPoint = null;
 		if (longitude != null && latitude != null)
@@ -118,17 +126,19 @@ public class PickupInStoreController extends AbstractSearchPageController
 
 		model.addAttribute("qty", qty);
 
-		return getPointOfServiceForStorePickup(decodeWithScheme(encodedProductCode, UTF_8), locationQuery, geoPoint, page, showMode, sortCode,
-				cartPage, entryNumber, model, RequestMethod.POST, response);
+		return getPointOfServiceForStorePickup(decodeWithScheme(encodedProductCode, UTF_8), locationQuery, geoPoint, page, showMode,
+				sortCode, cartPage, entryNumber, model, RequestMethod.POST, response);
 	}
 
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN + "/pointOfServices", method = RequestMethod.GET)
-	public String getPointOfServiceForStorePickupClick(@PathVariable("productCode") final String encodedProductCode, // NOSONAR
-			@RequestParam(value = "page", defaultValue = "0") final int page,
-			@RequestParam(value = "show", defaultValue = "Page") final AbstractSearchPageController.ShowMode showMode,
-			@RequestParam(value = "sort", required = false) final String sortCode,
-			@RequestParam(value = "cartPage") final Boolean cartPage, @RequestParam(value = "entryNumber") final Long entryNumber,
-			final HttpServletResponse response, final Model model)
+	public String getPointOfServiceForStorePickupClick(@PathVariable("productCode")
+	final String encodedProductCode, // NOSONAR
+			@RequestParam(value = "page", defaultValue = "0")
+			final int page, @RequestParam(value = "show", defaultValue = "Page")
+			final AbstractSearchPageController.ShowMode showMode, @RequestParam(value = "sort", required = false)
+			final String sortCode, @RequestParam(value = "cartPage")
+			final Boolean cartPage, @RequestParam(value = "entryNumber")
+			final Long entryNumber, final HttpServletResponse response, final Model model)
 	{
 		final UserLocationData userLocationData = customerLocationFacade.getUserLocationData();
 		String location = "";
@@ -140,8 +150,8 @@ public class PickupInStoreController extends AbstractSearchPageController
 			geoPoint = userLocationData.getPoint();
 		}
 
-		return getPointOfServiceForStorePickup(decodeWithScheme(encodedProductCode, UTF_8), location, geoPoint, page, showMode, sortCode,
-				cartPage, entryNumber, model, RequestMethod.GET, response);
+		return getPointOfServiceForStorePickup(decodeWithScheme(encodedProductCode, UTF_8), location, geoPoint, page, showMode,
+				sortCode, cartPage, entryNumber, model, RequestMethod.GET, response);
 	}
 
 	protected String getPointOfServiceForStorePickup(final String productCode, final String locationQuery, // NOSONAR
@@ -193,7 +203,15 @@ public class PickupInStoreController extends AbstractSearchPageController
 		{
 			storeFinderStockSearchPageData = emptyStoreFinderResult(productData);
 		}
-
+		final CartData cartData = cartFacade.getSessionCart();
+		if (cartData.getPickupOrderGroups() != null && !cartData.getPickupOrderGroups().isEmpty())
+		{
+			final PointOfServiceData entryPOS = cartData.getEntries().get(0).getDeliveryPointOfService();
+			if (entryPOS != null)
+			{
+				singleStoreFinderResult(productData, entryPOS, storeFinderStockSearchPageData);
+			}
+		}
 		populateModel(model, storeFinderStockSearchPageData, showMode);
 
 		model.addAttribute("cartPage", cartPage);
@@ -212,6 +230,30 @@ public class PickupInStoreController extends AbstractSearchPageController
 
 		return storeFinderStockSearchPageData;
 	}
+
+	protected StoreFinderStockSearchPageData<PointOfServiceStockData> singleStoreFinderResult(final ProductData productData,
+			final PointOfServiceData pos,
+			final StoreFinderStockSearchPageData<PointOfServiceStockData> storeFinderStockSearchPageData)
+	{
+		final List<PointOfServiceStockData> result = storeFinderStockSearchPageData.getResults();
+		final List<PointOfServiceStockData> filteredResult = result.stream().filter(e -> e.getName().equals(pos.getName()))
+				.collect(Collectors.toList());
+		storeFinderStockSearchPageData.setResults(filteredResult);
+		storeFinderStockSearchPageData.setPagination(createSinglePagination());
+
+		return storeFinderStockSearchPageData;
+	}
+
+	protected PaginationData createSinglePagination()
+	{
+		final PaginationData paginationData = new PaginationData();
+		paginationData.setCurrentPage(0);
+		paginationData.setNumberOfPages(1);
+		paginationData.setPageSize(1);
+		paginationData.setTotalNumberOfResults(1);
+		return paginationData;
+	}
+
 
 	protected String generatedUserLocationDataString(final UserLocationData userLocationData)
 	{
@@ -232,13 +274,20 @@ public class PickupInStoreController extends AbstractSearchPageController
 	}
 
 	@RequestMapping(value = "/cart/add", method = RequestMethod.POST, produces = "application/json")
-	public String addToCartPickup(@RequestParam("productCodePost") final String code,
-			@RequestParam("storeNamePost") final String storeId, final Model model, @Valid final PickupInStoreForm form,
-			final BindingResult bindingErrors)
+	public String addToCartPickup(@RequestParam("productCodePost")
+	final String code, @RequestParam("storeNamePost")
+	final String storeId, final Model model, @Valid
+	final PickupInStoreForm form, final BindingResult bindingErrors)
 	{
 		if (bindingErrors.hasErrors())
 		{
 			return getViewWithBindingErrorMessages(model, bindingErrors);
+		}
+		final CartData cartData = cartFacade.getSessionCart();
+		if (cartData.getDeliveryOrderGroups() != null && !cartData.getDeliveryOrderGroups().isEmpty())
+		{
+			model.addAttribute(ERROR_MSG_TYPE, "basket.error.delivery.mode.invalid");
+			return ControllerConstants.Views.Fragments.Cart.AddToCartPopup;
 		}
 
 		final long qty = form.getHiddenPickupQty();
@@ -305,9 +354,10 @@ public class PickupInStoreController extends AbstractSearchPageController
 	}
 
 	@RequestMapping(value = "/cart/update", method = RequestMethod.POST, produces = "application/json")
-	public String updateCartQuantities(@RequestParam("storeNamePost") final String storeId,
-			@RequestParam("entryNumber") final long entryNumber, @RequestParam("hiddenPickupQty") final long quantity,
-			final RedirectAttributes redirectModel) throws CommerceCartModificationException
+	public String updateCartQuantities(@RequestParam("storeNamePost")
+	final String storeId, @RequestParam("entryNumber")
+	final long entryNumber, @RequestParam("hiddenPickupQty")
+	final long quantity, final RedirectAttributes redirectModel) throws CommerceCartModificationException
 	{
 		final CartModificationData cartModificationData = cartFacade.updateCartEntry(entryNumber, storeId);
 
@@ -348,8 +398,8 @@ public class PickupInStoreController extends AbstractSearchPageController
 
 	@RequestMapping(value = "/cart/update/delivery", method =
 	{ RequestMethod.GET, RequestMethod.POST })
-	public String updateToDelivery(@RequestParam("entryNumber") final long entryNumber, final RedirectAttributes redirectModel)
-			throws CommerceCartModificationException
+	public String updateToDelivery(@RequestParam("entryNumber")
+	final long entryNumber, final RedirectAttributes redirectModel) throws CommerceCartModificationException
 	{
 		final CartModificationData cartModificationData = cartFacade.updateCartEntry(entryNumber, null);
 		if (CommerceCartModificationStatus.SUCCESS.equals(cartModificationData.getStatusCode()))

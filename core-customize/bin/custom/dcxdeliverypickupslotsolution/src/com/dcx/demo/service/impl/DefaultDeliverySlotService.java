@@ -49,7 +49,7 @@ public class DefaultDeliverySlotService implements DeliverySlotService
 			+ "{ds.date} >=?startdate and {ds.date} <= ?enddate";
 
 	private static final String DELIVERY_SLOT_FOR_DATE = "select {ds.pk} from {DeliverySlot as ds} where "
-			+ "{ds.date} =?currentdate and {ds.store} =?currentStore";
+			+ "{ds.date} =?currentdate and {ds.store} =?currentStore ORDER BY {ds.date} ASC, {ds.code} ASC";
 
 	@Override
 	public List<DeliverySlotModel> getDeliverySlotsForDate(final PointOfServiceModel store, final Date date)
