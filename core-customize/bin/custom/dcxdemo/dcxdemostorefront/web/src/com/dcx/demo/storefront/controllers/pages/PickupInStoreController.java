@@ -164,8 +164,13 @@ public class PickupInStoreController extends AbstractSearchPageController
 		productData.setCode(productCode);
 
 		final StoreFinderStockSearchPageData<PointOfServiceStockData> storeFinderStockSearchPageData;
-
-		if (StringUtils.isNotBlank(locationQuery))
+		final CartData cartData = cartFacade.getSessionCart();
+		boolean pickupDisabled = false;
+		if (cartData.getDeliveryOrderGroups() != null && !cartData.getDeliveryOrderGroups().isEmpty())
+		{
+			pickupDisabled = true;
+		}
+		if (StringUtils.isNotBlank(locationQuery) && !pickupDisabled)
 		{
 			storeFinderStockSearchPageData = storeFinderStockFacade.productSearch(locationQuery, productData,
 					createPageableData(page, pagination, sortCode, showMode));
@@ -185,7 +190,7 @@ public class PickupInStoreController extends AbstractSearchPageController
 				cookieGenerator.addCookie(response, generatedUserLocationDataString(userLocationData));
 			}
 		}
-		else if (geoPoint != null)
+		else if (geoPoint != null && !pickupDisabled)
 		{
 			storeFinderStockSearchPageData = storeFinderStockFacade.productSearch(geoPoint, productData,
 					createPageableData(page, pagination, sortCode, showMode));
@@ -203,7 +208,6 @@ public class PickupInStoreController extends AbstractSearchPageController
 		{
 			storeFinderStockSearchPageData = emptyStoreFinderResult(productData);
 		}
-		final CartData cartData = cartFacade.getSessionCart();
 		if (cartData.getPickupOrderGroups() != null && !cartData.getPickupOrderGroups().isEmpty())
 		{
 			final PointOfServiceData entryPOS = cartData.getEntries().get(0).getDeliveryPointOfService();
