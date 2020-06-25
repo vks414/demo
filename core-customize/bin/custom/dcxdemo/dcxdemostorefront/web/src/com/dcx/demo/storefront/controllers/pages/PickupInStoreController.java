@@ -287,6 +287,7 @@ public class PickupInStoreController extends AbstractSearchPageController
 		if (cartData.getDeliveryOrderGroups() != null && !cartData.getDeliveryOrderGroups().isEmpty())
 		{
 			model.addAttribute(ERROR_MSG_TYPE, "basket.error.delivery.mode.invalid");
+			model.addAttribute("quantity", Long.valueOf(0L));
 			return ControllerConstants.Views.Fragments.Cart.AddToCartPopup;
 		}
 
