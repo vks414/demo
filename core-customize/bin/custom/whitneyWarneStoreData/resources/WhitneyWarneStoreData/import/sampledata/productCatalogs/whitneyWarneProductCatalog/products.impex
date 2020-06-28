@@ -1,0 +1,41 @@
+$productCatalog=whitneyWarneProductCatalog
+$productCatalogName=WhitneyWarne Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$baseProduct=baseProduct(code, catalogVersion(catalog(id[default='$productCatalog']),version[default='Staged']))
+$categoryCatalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$approved=approvalstatus(code)[default='approved']
+$taxGroup=Europe1PriceFactory_PTG(code)[default=eu-vat-full]
+$supercategories=supercategories(code, $categoryCatalogVersion)
+ 
+$categories=source(code, $categoryCatalogVersion)[unique=true]
+$products=target(code, $catalogVersion)[unique=true]
+ 
+# Insert Products
+INSERT_UPDATE Product ; code[unique=true] ; $supercategories ; manufacturerName ; manufacturerAID ; unit(code) ; ean           ; variantType(code) ; $catalogVersion ; $approved 
+                      ; 23191             ; 578,iceCreams    ; Ice Creams       ; ACC-CSPW        ; pieces     ;               
+                      ; 23210             ; yogurts          ; Yogurts          ; DSC-P71         ; pieces     ; 4901780755943 
+                      ; 23213             ; soups            ; Soups            ; MVC-CD400       ; pieces     ;               
+                      ; 23231             ; homehygenie      ; Home Hygenie     ; DSC-F717        ; pieces     ; 4901780791897 
+                      ; 23355             ; personalhygenie  ; Personal Hygenie ; VCT-1170RM      ; pieces     ; 0027242680746 
+                      ; 1993748           ; cosmetics        ; Cosmetics        ; MCD_98          ; pieces     ; 756675765765  
+                      ; 2053226           ; fragrances       ; Fragrances       ; SDF_98          ; pieces     ; 2257657675    
+                      ; 3557133           ; skincare         ; Skin Care        ; QWF_98          ; pieces     ; 865765758765  
+                      ; 2006365           ; cosmetics        ; Cosmetics        ; XCD_98          ; pieces     ; 2114341414    
+                      ; 3555166           ; cosmetics        ; Fragrances       ; SZDF_98         ; pieces     ; 225567657675  
+                      ; 3708646           ; skincare         ; Skin Care        ; QVWF_98         ; pieces     ; 4675868768678 
+                      ; 450848            ; skincare         ; Skin Care        ; QWNF_98         ; pieces     ; 7847883365335 
+                      
+# Insert CategoryProduct Relation
+INSERT_UPDATE CategoryProductRelation ; $categories     ; $products ;  
+                                      ; iceCreams       ; 23191     ;  
+                                      ; yogurts         ; 23210     ;  
+                                      ; soups           ; 23213     ;  
+                                      ; homehygenie     ; 23231     ;  
+                                      ; personalhygenie ; 23355     ;  
+                                      ; cosmetics       ; 1993748   ;  
+                                      ; fragrances      ; 2053226   ;  
+                                      ; skincare        ; 3557133   ;  
+                                      ; cosmetics       ; 2006365   ;  
+                                      ; cosmetics       ; 3555166   ;  
+                                      ; skincare        ; 3708646   ;  
+                                      ; skincare        ; 450848    ;  

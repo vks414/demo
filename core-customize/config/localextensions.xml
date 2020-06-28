@@ -117,6 +117,8 @@
 	  <extension name='sapproductconfigservices' />
 	<extension name="dcxdeliverypickupslotsolution"/>
 	<extension name="spartacussampledataaddon"/>
+	<extension name="whitneyWarneStoreData"/>
+	
 	
   </extensions>
 </hybrisconfig>

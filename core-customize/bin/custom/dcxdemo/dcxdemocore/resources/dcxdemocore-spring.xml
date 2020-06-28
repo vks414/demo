@@ -76,6 +76,20 @@
 		<property name="commonI18NService" ref="commonI18NService"/>
 	</bean>
 
+	<bean id="whitneyWarneCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
+		<property name="categorySource" ref="electronicsCategorySource"/>
+	</bean>
+	<bean id="whitneyWarneBrandCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
+		<property name="categorySource" ref="electronicsBrandCategorySource"/>
+	</bean>
+	<bean id="whitneyWarneCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
+		<property name="categorySource" ref="electronicsCategorySource"/>
+	</bean>
+	<bean id="whitneyWarneBrandCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
+		<property name="categorySource" ref="electronicsBrandCategorySource"/>
+	</bean>
+
+	
 	<bean id="electronicsCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
 		<property name="categorySource" ref="electronicsCategorySource"/>
 	</bean>
@@ -88,7 +102,7 @@
 	<bean id="electronicsBrandCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
 		<property name="categorySource" ref="electronicsBrandCategorySource"/>
 	</bean>
-
+	
 	<bean id="apparelCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
 		<property name="categorySource" ref="apparelCategorySource"/>
 	</bean>
@@ -168,6 +182,12 @@
 	</bean>
 
 	<bean id="electronicsPointOfServiceFacetDisplayNameProvider"
+	      class="com.dcx.demo.core.search.solrfacetsearch.provider.impl.PointOfServiceFacetDisplayNameProvider"
+	      >
+		<property name="pointOfServiceService" ref="pointOfServiceService"/>
+	</bean>
+	
+	<bean id="whitneyWarnePointOfServiceFacetDisplayNameProvider"
 	      class="com.dcx.demo.core.search.solrfacetsearch.provider.impl.PointOfServiceFacetDisplayNameProvider"
 	      >
 		<property name="pointOfServiceService" ref="pointOfServiceService"/>
