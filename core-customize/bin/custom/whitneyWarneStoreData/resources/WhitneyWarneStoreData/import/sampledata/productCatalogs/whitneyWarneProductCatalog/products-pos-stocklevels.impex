@@ -62,43 +62,43 @@ INSERT_UPDATE Warehouse;code[unique=true];vendor(code)[default=$vendor];default[
 ;Kawasaki Pearl Hotel Kawasaki
 ;Kawasaki Grand Hotel
 
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nakano',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
-;8;;forceOutOfStock;0;0;23355;0
-;7;;forceOutOfStock;0;0;29925;0
-;9;;forceOutOfStock;0;0;65652;0
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nakano',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
+;8;;forceInStock;0;0;23355;0
+;7;;forceInStock;0;0;29925;0
+;9;;forceInStock;0;0;65652;0
 ;0;;forceInStock;0;0;149243;0
-;3;;forceOutOfStock;0;0;266685;0
-;16;;forceOutOfStock;0;0;280916;0
-;10;;forceOutOfStock;0;0;289540;0
-;8;;forceOutOfStock;0;0;300938;0
-;10;;forceOutOfStock;0;0;301233;0
-;16;;forceOutOfStock;0;0;358639;0
-;26;;forceOutOfStock;0;0;454831;0
-;12;;forceOutOfStock;0;0;458542;0
-;6;;forceOutOfStock;0;0;479742;0
-;9;;forceOutOfStock;0;0;492274;0
-;7;;forceOutOfStock;0;0;493683;0
-;27;;forceOutOfStock;0;0;503392;0
-;24;;forceOutOfStock;0;0;572461;0
-;17;;forceOutOfStock;0;0;592506;0
-;18;;forceOutOfStock;0;0;726511;0
-;11;;forceOutOfStock;0;0;768108;0
-;3;;forceOutOfStock;0;0;779841;0
-;24;;forceOutOfStock;0;0;779842;0
-;11;;forceOutOfStock;0;0;779848;0
-;27;;forceOutOfStock;0;0;779864;0
-;14;;forceOutOfStock;0;0;779866;0
-;7;;forceOutOfStock;0;0;779868;0
+;3;;forceInStock;0;0;266685;0
+;16;;forceInStock;0;0;280916;0
+;10;;forceInStock;0;0;289540;0
+;8;;forceInStock;0;0;300938;0
+;10;;forceInStock;0;0;301233;0
+;16;;forceInStock;0;0;358639;0
+;26;;forceInStock;0;0;454831;0
+;12;;forceInStock;0;0;458542;0
+;6;;forceInStock;0;0;479742;0
+;9;;forceInStock;0;0;492274;0
+;7;;forceInStock;0;0;493683;0
+;27;;forceInStock;0;0;503392;0
+;24;;forceInStock;0;0;572461;0
+;17;;forceInStock;0;0;592506;0
+;18;;forceInStock;0;0;726511;0
+;11;;forceInStock;0;0;768108;0
+;3;;forceInStock;0;0;779841;0
+;24;;forceInStock;0;0;779842;0
+;11;;forceInStock;0;0;779848;0
+;27;;forceInStock;0;0;779864;0
+;14;;forceInStock;0;0;779866;0
+;7;;forceInStock;0;0;779868;0
 ;0;;forceInStock;0;0;784173;0
-;5;;forceOutOfStock;0;0;784343;0
-;14;;forceOutOfStock;0;0;791635;0
-;10;;forceOutOfStock;0;0;816323;0
-;2;;forceOutOfStock;0;0;816324;0
-;4;;forceOutOfStock;0;0;816379;0
+;5;;forceInStock;0;0;784343;0
+;14;;forceInStock;0;0;791635;0
+;10;;forceInStock;0;0;816323;0
+;2;;forceInStock;0;0;816324;0
+;4;;forceInStock;0;0;816379;0
 ;0;;forceInStock;0;0;816780;0
-;15;;forceOutOfStock;0;0;816802;0
-;10;;forceOutOfStock;0;0;832386;0
-;13;;forceOutOfStock;0;0;834955;0
+;15;;forceInStock;0;0;816802;0
+;10;;forceInStock;0;0;832386;0
+;13;;forceInStock;0;0;834955;0
 ;0;;forceInStock;0;0;848855;0
 ;5;;;0;0;855246;0
 ;15;;;0;0;898503;0
@@ -275,7 +275,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nakano',unique=true]
 ;14;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
 ;13;;;0;0;5864583;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Shinbashi',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Shinbashi',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;0;;;0;0;29925;0
 ;8;;;0;0;65652;0
 ;0;;;0;0;149243;0
@@ -448,7 +448,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Shinbashi',unique=tr
 ;0;;;0;0;4873607;0
 ;11;;;0;0;5103775;0
 ;5;;;0;0;5473115;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Koto',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Koto',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;4;;;0;0;23355;0
 ;0;;;0;0;29925;0
 ;8;;;0;0;65652;0
@@ -621,7 +621,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Koto',unique=true];i
 ;0;;;0;0;4873607;0
 ;0;;;0;0;5864567;0
 ;5;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Misato',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Misato',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;0;;;0;0;65652;0
 ;4;;;0;0;137220;0
 ;0;;;0;0;149243;0
@@ -794,7 +794,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Misato',unique=true]
 ;0;;;0;0;5864567;0
 ;6;;;0;0;5864583;0
 ;7;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Matsudo',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Matsudo',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;0;;;0;0;65652;0
 ;6;;;0;0;137220;0
 ;0;;;0;0;149243;0
@@ -967,7 +967,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Matsudo',unique=true
 ;3;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
 ;1;;;0;0;5864583;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Ichikawa',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Ichikawa',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;6;;;0;0;23355;0
 ;0;;;0;0;29925;0
 ;9;;;0;0;65652;0
@@ -1180,7 +1180,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Ichikawa',unique=tru
 ;13;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
 ;3;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Choshi',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Choshi',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;3;;;0;0;23355;0
 ;0;;;0;0;149243;0
 ;3;;;0;0;266685;0
@@ -1353,7 +1353,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Choshi',unique=true]
 ;0;;;0;0;5864567;0
 ;5;;;0;0;5864583;0
 ;4;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Chiba',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Chiba',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;9;;;0;0;23355;0
 ;3;;;0;0;29925;0
 ;9;;;0;0;65652;0
@@ -1526,7 +1526,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Chiba',unique=true];
 ;12;;;0;0;5103775;0
 ;5;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokosuka',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokosuka',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;5;;;0;0;23355;0
 ;2;;;0;0;29925;0
 ;5;;;0;0;137220;0
@@ -1699,7 +1699,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokosuka',unique=tru
 ;9;;;0;0;5473115;0
 ;5;;;0;0;5864583;0
 ;7;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Cerulean Tower Tokyu Hotel',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Cerulean Tower Tokyu Hotel',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;8;;;0;0;23355;0
 ;1;;;0;0;65652;0
 ;10;;;0;0;137220;0
@@ -1872,7 +1872,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Cerulean Tower
 ;0;;;0;0;4873607;0
 ;5;;;0;0;5864583;0
 ;10;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Flexstay Nippori Inn',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Flexstay Nippori Inn',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;3;;;0;0;23355;0
 ;2;;;0;0;29925;0
 ;9;;;0;0;137220;0
@@ -2085,7 +2085,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Flexstay Nippo
 ;0;;;0;0;5864567;0
 ;3;;;0;0;5864583;0
 ;6;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Hotel Metropolitan Tokyo',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Hotel Metropolitan Tokyo',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;5;;;0;0;23355;0
 ;7;;;0;0;29925;0
 ;11;;;0;0;137220;0
@@ -2258,7 +2258,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Hotel Metropol
 ;5;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
 ;9;;;0;0;5864583;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Dormy Inn Tokyo Hatchobori',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Dormy Inn Tokyo Hatchobori',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;8;;;0;0;23355;0
 ;4;;;0;0;29925;0
 ;9;;;0;0;65652;0
@@ -2431,7 +2431,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Dormy Inn Toky
 ;4;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
 ;5;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Park Hotel Tokyo',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Park Hotel Tokyo',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;3;;;0;0;23355;0
 ;6;;;0;0;65652;0
 ;8;;;0;0;137220;0
@@ -2604,7 +2604,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Tokio Park Hotel Tok
 ;9;;;0;0;5473115;0
 ;9;;;0;0;5864583;0
 ;10;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Sakuragicho Washington Hotel',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Sakuragicho Washington Hotel',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;6;;;0;0;23355;0
 ;5;;;0;0;29925;0
 ;2;;;0;0;65652;0
@@ -2777,7 +2777,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Sakuragicho
 ;8;;;0;0;5103775;0
 ;4;;;0;0;5473115;0
 ;7;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Shin Yokohama Prince Hotel',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Shin Yokohama Prince Hotel',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;3;;;0;0;23355;0
 ;8;;;0;0;137220;0
 ;7;;;0;0;266685;0
@@ -2950,7 +2950,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Shin Yokoha
 ;7;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
 ;7;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Comfort Hotel Yokohama Kannai',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Comfort Hotel Yokohama Kannai',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;6;;;0;0;23355;0
 ;2;;;0;0;29925;0
 ;0;;;0;0;65652;0
@@ -3123,7 +3123,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Comfort Hot
 ;6;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
 ;4;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Hotel New Grand',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Hotel New Grand',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;3;;;0;0;23355;0
 ;10;;;0;0;29925;0
 ;7;;;0;0;137220;0
@@ -3336,7 +3336,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Hotel New G
 ;3;;;0;0;5473115;0
 ;12;;;0;0;5864583;0
 ;10;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Hotel JAL City Kannai Yokohama',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Hotel JAL City Kannai Yokohama',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;12;;;0;0;137220;0
 ;0;;;0;0;149243;0
 ;3;;;0;0;266685;0
@@ -3509,7 +3509,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Yokohama Hotel JAL C
 ;0;;;0;0;5864567;0
 ;8;;;0;0;5864583;0
 ;3;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Hilton Osaka Hotel',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Hilton Osaka Hotel',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;4;;;0;0;23355;0
 ;0;;;0;0;29925;0
 ;2;;;0;0;65652;0
@@ -3682,7 +3682,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Hilton Osaka H
 ;3;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
 ;4;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Crowne Plaza Hotel Ana Osaka',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Crowne Plaza Hotel Ana Osaka',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;12;;;0;0;137220;0
 ;0;;;0;0;149243;0
 ;4;;;0;0;266685;0
@@ -3855,7 +3855,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Crowne Plaza H
 ;4;;;0;0;5103712;0
 ;7;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Ramada Osaka',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Ramada Osaka',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;7;;;0;0;23355;0
 ;5;;;0;0;29925;0
 ;5;;;0;0;65652;0
@@ -4028,7 +4028,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Ramada Osaka',
 ;0;;;0;0;5864567;0
 ;6;;;0;0;5864583;0
 ;7;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Cross Hotel Osaka',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Cross Hotel Osaka',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;5;;;0;0;65652;0
 ;9;;;0;0;137220;0
 ;0;;;0;0;149243;0
@@ -4201,7 +4201,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Cross Hotel Os
 ;0;;;0;0;5864567;0
 ;2;;;0;0;5864583;0
 ;2;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Best Western Hotel Fino Osaka Shinsaibashi',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Best Western Hotel Fino Osaka Shinsaibashi',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;10;;;0;0;280916;0
 ;4;;;0;0;284533;0
 ;6;;;0;0;300938;0
@@ -4374,7 +4374,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Osaka Best Western H
 ;6;;;0;0;5103775;0
 ;5;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya Hilton Nagoya Hotel',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya Hilton Nagoya Hotel',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;10;;;0;0;23355;0
 ;2;;;0;0;266685;0
 ;5;;;0;0;284533;0
@@ -4547,7 +4547,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya Hilton Nagoya
 ;11;;;0;0;5103775;0
 ;0;;;0;0;5864583;0
 ;5;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya Marriott Nagoya',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya Marriott Nagoya',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;7;;;0;0;23355;0
 ;5;;;0;0;29925;0
 ;8;;;0;0;65652;0
@@ -4720,7 +4720,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya Marriott Nago
 ;10;;;0;0;5103712;0
 ;3;;;0;0;5864583;0
 ;7;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya Crowne Plaza Ana Grand Court Nagoya',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya Crowne Plaza Ana Grand Court Nagoya',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;2;;;0;0;23355;0
 ;6;;;0;0;29925;0
 ;3;;;0;0;137220;0
@@ -4893,7 +4893,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya Crowne Plaza 
 ;5;;;0;0;4872010;0
 ;0;;;0;0;4873607;0
 ;0;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya The Westin Nagoya Castle',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya The Westin Nagoya Castle',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;2;;;0;0;23355;0
 ;6;;;0;0;29925;0
 ;4;;;0;0;137220;0
@@ -5066,7 +5066,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya The Westin Na
 ;0;;;0;0;5864567;0
 ;4;;;0;0;5864583;0
 ;5;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya Royal Park Inn Nagoya',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya Royal Park Inn Nagoya',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;2;;;0;0;23355;0
 ;0;;;0;0;65652;0
 ;7;;;0;0;137220;0
@@ -5239,7 +5239,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nagoya Royal Park In
 ;2;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
 ;4;;;0;0;5864583;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Ana Hotel Sapporo',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Ana Hotel Sapporo',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;15;;;0;0;23355;0
 ;1;;;0;0;29925;0
 ;3;;;0;0;65652;0
@@ -5452,7 +5452,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Ana Hotel Sa
 ;0;;;0;0;5864567;0
 ;13;;;0;0;5864583;0
 ;14;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Best Western Hotel Sapporo Nakajima Koen',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Best Western Hotel Sapporo Nakajima Koen',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;0;;;0;0;29925;0
 ;9;;;0;0;137220;0
 ;0;;;0;0;149243;0
@@ -5625,7 +5625,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Best Western
 ;0;;;0;0;5864567;0
 ;9;;;0;0;5864583;0
 ;6;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Sheraton Sapporo Hotel',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Sheraton Sapporo Hotel',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;4;;;0;0;23355;0
 ;2;;;0;0;29925;0
 ;1;;;0;0;65652;0
@@ -5798,7 +5798,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Sheraton Sap
 ;0;;;0;0;5864567;0
 ;6;;;0;0;5864583;0
 ;1;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Hotel Resol Trinity Sapporo',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Hotel Resol Trinity Sapporo',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;10;;;0;0;23355;0
 ;10;;;0;0;137220;0
 ;7;;;0;0;266685;0
@@ -5971,7 +5971,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Hotel Resol 
 ;0;;;0;0;4873607;0
 ;8;;;0;0;5103712;0
 ;8;;;0;0;5473115;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Hotel Sunroute Sapporo',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Hotel Sunroute Sapporo',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;7;;;0;0;23355;0
 ;2;;;0;0;65652;0
 ;0;;;0;0;149243;0
@@ -6144,7 +6144,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Sapporo Hotel Sunrou
 ;5;;;0;0;5103712;0
 ;2;;;0;0;5864583;0
 ;6;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe Hotel Monterey Amalie',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe Hotel Monterey Amalie',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;1;;;0;0;29925;0
 ;3;;;0;0;65652;0
 ;3;;;0;0;266685;0
@@ -6251,7 +6251,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe Hotel Monterey 
 ;0;;;0;0;5864567;0
 ;5;;;0;0;5864583;0
 ;3;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe Hotel Monterey Kobe',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe Hotel Monterey Kobe',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;5;;;0;0;23355;0
 ;3;;;0;0;137220;0
 ;7;;;0;0;280916;0
@@ -6358,7 +6358,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe Hotel Monterey 
 ;3;;;0;0;4872010;0
 ;3;;;0;0;5103712;0
 ;1;;;0;0;5864583;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe Sannomiya Terminal Hotel',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe Sannomiya Terminal Hotel',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;15;;;0;0;23355;0
 ;3;;;0;0;29925;0
 ;2;;;0;0;65652;0
@@ -6571,7 +6571,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe Sannomiya Termi
 ;0;;;0;0;5864567;0
 ;4;;;0;0;5864583;0
 ;7;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe Bay Sheraton Hotel and Towers',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe Bay Sheraton Hotel and Towers',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;1;;;0;0;29925;0
 ;9;;;0;0;65652;0
 ;0;;;0;0;149243;0
@@ -6744,7 +6744,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe Bay Sheraton Ho
 ;3;;;0;0;5473115;0
 ;2;;;0;0;5864583;0
 ;5;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe the b',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe the b',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;3;;;0;0;29925;0
 ;4;;;0;0;137220;0
 ;0;;;0;0;149243;0
@@ -6851,7 +6851,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kobe the b',unique=t
 ;3;;;0;0;4852405;0
 ;6;;;0;0;5103775;0
 ;0;;;0;0;5864567;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Hotel Monterey La Soeur Fukuoka',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Hotel Monterey La Soeur Fukuoka',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;7;;;0;0;29925;0
 ;8;;;0;0;65652;0
 ;8;;;0;0;266685;0
@@ -7024,7 +7024,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Hotel Monter
 ;9;;;0;0;4872010;0
 ;0;;;0;0;4873607;0
 ;6;;;0;0;5103775;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Hilton Fukuoka Sea Hawk',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Hilton Fukuoka Sea Hawk',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;5;;;0;0;23355;0
 ;1;;;0;0;29925;0
 ;8;;;0;0;137220;0
@@ -7197,7 +7197,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Hilton Fukuo
 ;8;;;0;0;5103775;0
 ;3;;;0;0;5473115;0
 ;3;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Best Western Fukuoka Nakasu Inn',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Best Western Fukuoka Nakasu Inn',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;5;;;0;0;23355;0
 ;0;;;0;0;29925;0
 ;5;;;0;0;137220;0
@@ -7370,7 +7370,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Best Western
 ;0;;;0;0;4873607;0
 ;10;;;0;0;5103775;0
 ;0;;;0;0;5864567;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Canal City Fukuoka Washington Hotel',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Canal City Fukuoka Washington Hotel',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;7;;;0;0;23355;0
 ;3;;;0;0;65652;0
 ;0;;;0;0;149243;0
@@ -7543,7 +7543,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Canal City F
 ;8;;;0;0;5473115;0
 ;8;;;0;0;5864583;0
 ;1;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Hotel Nikko Fukuoka',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Hotel Nikko Fukuoka',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;6;;;0;0;23355;0
 ;0;;;0;0;29925;0
 ;5;;;0;0;137220;0
@@ -7716,7 +7716,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Fukuoka Hotel Nikko 
 ;7;;;0;0;5103712;0
 ;9;;;0;0;5103775;0
 ;10;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Mets Kawasaki Hotel',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Mets Kawasaki Hotel',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;2;;;0;0;23355;0
 ;5;;;0;0;29925;0
 ;11;;;0;0;137220;0
@@ -7889,7 +7889,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Mets Kawasa
 ;2;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
 ;10;;;0;0;5864583;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Mets Mizonokuchi Hotel',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Mets Mizonokuchi Hotel',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;15;;;0;0;23355;0
 ;10;;;0;0;29925;0
 ;13;;;0;0;65652;0
@@ -8102,7 +8102,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Mets Mizono
 ;14;;;0;0;5473115;0
 ;0;;;0;0;5864567;0
 ;2;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Hotel Sunroute Kawasaki',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Hotel Sunroute Kawasaki',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;6;;;0;0;29925;0
 ;4;;;0;0;137220;0
 ;10;;;0;0;280916;0
@@ -8275,7 +8275,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Hotel Sunro
 ;0;;;0;0;5864567;0
 ;7;;;0;0;5864583;0
 ;3;;;0;0;5897548;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Pearl Hotel Kawasaki',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Pearl Hotel Kawasaki',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;1;;;0;0;29925;0
 ;9;;;0;0;65652;0
 ;0;;;0;0;149243;0
@@ -8448,7 +8448,7 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Pearl Hotel
 ;10;;;0;0;5103712;0
 ;7;;;0;0;5473115;0
 ;6;;;0;0;5864583;0
-INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Grand Hotel',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Kawasaki Grand Hotel',unique=true];inStockStatus(code)[default='forceInStock'];overSelling;preOrder;productCode[unique=true];reserved
 ;3;;;0;0;23355;0
 ;12;;;0;0;280916;0
 ;7;;;0;0;284533;0

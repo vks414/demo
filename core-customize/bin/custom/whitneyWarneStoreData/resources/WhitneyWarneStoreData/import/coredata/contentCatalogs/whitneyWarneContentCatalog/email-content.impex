@@ -206,11 +206,11 @@ INSERT_UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];name;masterTemp
 
 # CMS components velocity templates
 INSERT_UPDATE RendererTemplate;code[unique=true];contextClass;rendererType(code)[default='velocity']
-;electronics-CMSImageComponent-template;java.util.Map
-;electronics-BannerComponent-template;java.util.Map
-;electronics-SimpleBannerComponent-template;java.util.Map
-;electronics-CMSLinkComponent-template;java.util.Map
-;electronics-CMSParagraphComponent-template;java.util.Map
+;whitneyWarne-CMSImageComponent-template;java.util.Map
+;whitneyWarne-BannerComponent-template;java.util.Map
+;whitneyWarne-SimpleBannerComponent-template;java.util.Map
+;whitneyWarne-CMSLinkComponent-template;java.util.Map
+;whitneyWarne-CMSParagraphComponent-template;java.util.Map
 
 # Email velocity templates
 INSERT_UPDATE RendererTemplate;code[unique=true];contextClass;rendererType(code)[default='velocity']
