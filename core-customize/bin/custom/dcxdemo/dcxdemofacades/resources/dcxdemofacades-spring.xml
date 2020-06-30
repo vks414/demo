@@ -186,4 +186,8 @@
 	<bean id="makeReadyForPickupConsignmentAndSendMessageAction" class="com.dcx.demo.facades.process.action.UpdateReadyForPickupAndSendMessageAction" parent="abstractAction">
 		<property name="eventService" ref="eventService"/>
 	</bean>
+	<alias name="defaultDCXCustomerFacade" alias="customerFacade" />
+	<bean id="defaultDCXCustomerFacade" class="com.dcx.demo.facades.customer.DefaultDCXCustomerFacade" parent="defaultCustomerFacade">
+	</bean>
+	
 </beans>

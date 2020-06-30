@@ -545,7 +545,7 @@ INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=t
 ;widescreen;;Cosmetic-Branding-Mockups.jpg;$siteResource/images/banners/homepage/responsive/Cosmetic-Branding-Mockups.jpg;;Cosmetic-Branding-Mockups.jpg;;"Cosmetic-Branding-Mockups"
 
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-;whitneyWarne-homepage-light-fam-en;Picture2.png,Cosmetic-Branding-Mockups.jpg
+;whitneyWarne-homepage-light-fam-en;Picture2.png
 ;whitneyWarne-homepage-light-text-en;Cosmetic-Branding-Mockups.jpg
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer

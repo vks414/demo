@@ -49,7 +49,7 @@ ACC.autocomplete = {
 							.append(
 									item.image  
 											? $("<div>").addClass("thumb")
-													.append($("<img>").attr("src", item.image))
+													.append($("<img>").attr("src", item.image).attr('style',"width: 96px;height: auto;"))
 											: null
 							)
 							.append($("<div>").addClass("name").html(ACC.sanitizer.sanitize(item.value)))
