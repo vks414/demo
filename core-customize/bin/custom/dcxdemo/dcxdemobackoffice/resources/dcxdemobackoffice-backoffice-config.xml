@@ -3,7 +3,15 @@
  Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
 -->
 <config xmlns="http://www.hybris.com/cockpit/config"
-	xmlns:na="http://www.hybris.com/cockpitng/config/notifications">
+	xmlns:na="http://www.hybris.com/cockpitng/config/notifications"
+		xmlns:y="http://www.hybris.com/cockpit/config/hybris"
+		xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree"
+		xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea"
+		xmlns:list-view="http://www.hybris.com/cockpitng/component/listView"
+		xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config"
+		xmlns:df="http://www.hybris.com/cockpitng/component/dynamicForms"
+		xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch"
+		xmlns:simple-search="http://www.hybris.com/cockpitng/config/simplesearch">
 
 	<context merge-by="module" component="editorareaactions" type="Consignment">
 		<y:actions xmlns:y="http://www.hybris.com/cockpit/config/hybris">
@@ -21,6 +29,19 @@
 	            <na:message>hmc.action.confirmpickup.success</na:message>
 	        </na:notifications>
 	   </na:notification-area>
+	</context>
+	
+	<context merge-by="type" parent="AbstractRestriction" type="CMSQueryParamRestriction" component="editor-area">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list />
+		</advanced-search:advanced-search>
+		<editorArea:editorArea>
+			<editorArea:tab name="hmc.properties">
+				<editorArea:section name="hmc.section.restriction.objects">
+					<editorArea:attribute qualifier="queryparam" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
 	</context>
 
 </config>

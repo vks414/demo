@@ -561,4 +561,19 @@
 	
 	<alias name="defaultDCXEmailService" alias="emailService" />
 	<bean id="defaultDCXEmailService" class="com.dcx.demo.core.mail.service.DefaultDCXEmailService" parent="defaultEmailService"/>
+	
+	<!-- Dynamic Attributes -->
+	<bean id="queryParamRestrictionDynamicDescription" class="com.dcx.demo.core.model.QueryParamRestrictionDynamicDescription" >
+		<property name="typeService" ref="typeService"/>
+	</bean>
+	
+	<!-- Restriction Evaluators -->
+	<bean id="queryParamRestrictionEvaluator" class="com.dcx.demo.core.evaluator.QueryParamRestrictionEvaluator" >
+	</bean>
+
+	<!-- Restriction Evaluator Mappings -->
+	<bean id="queryParamRestrictionEvaluatorMapping" class="de.hybris.platform.cms2.servicelayer.services.evaluator.CMSRestrictionEvaluatorMapping" >
+		<property name="restrictionTypeCode" value="CMSQueryParamRestriction" />
+		<property name="restrictionEvaluator" ref="queryParamRestrictionEvaluator" />
+	</bean>
 </beans>

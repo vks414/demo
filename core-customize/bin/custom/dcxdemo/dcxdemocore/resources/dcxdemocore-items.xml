@@ -103,6 +103,22 @@
                 </attributes>
             </itemtype>
         </typegroup>
+        
+        <typegroup name="Restrictions">
+
+			<itemtype code="CMSQueryParamRestriction"
+				jaloclass="de.hybris.platform.dcxdemocore.jalo.restrictions.CMSQueryParamRestriction"
+				extends="AbstractRestriction" autocreate="true" generate="true">
+				<description>Works on Url QueryParam</description>
+				<attributes>
+					<attribute qualifier="queryparam" type="java.lang.String">
+						<persistence type="property" />
+						<modifiers optional="false" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+		</typegroup>
 
     </itemtypes>
 </items>
