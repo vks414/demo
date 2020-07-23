@@ -55,7 +55,8 @@ ACC.checkout = {
 				type: 'POST',
 				data: $(form).serialize(),
 				success: function(data){
-					ACC.colorbox.close();
+					location.reload(true);
+					//ACC.colorbox.close();
 					$(".js_deliveryslot_submit").removeClass("active");
 				}
 			});
