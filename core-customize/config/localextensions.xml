@@ -118,6 +118,9 @@
 	<extension name="dcxdeliverypickupslotsolution"/>
 	<extension name="spartacussampledataaddon"/>
 	<extension name="whitneyWarneStoreData"/>
+	<extension name="promotionsAddon"/>
+	<extension name="promotionsext"/>
+	
 	
 	
   </extensions>

@@ -59,6 +59,11 @@
 		  "addon": "spartacussampledataaddon",
 		  "storefront": "dcxdemostorefront",
 		  "template": "yacceleratorstorefront"
+		},
+		{
+		  "addon": "promotionsAddon",
+		  "storefront": "dcxdemostorefront",
+		  "template": "yacceleratorstorefront"
 		}
 	],
          "aspects": [
