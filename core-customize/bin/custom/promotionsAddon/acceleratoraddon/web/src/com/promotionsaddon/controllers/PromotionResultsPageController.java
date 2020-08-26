@@ -54,7 +54,7 @@ public class PromotionResultsPageController extends AbstractSearchPageController
 	 * DEALS_META_KEYWORDS = "deals.meta.keywords"; private static final String BULKOFFER_META_DESCRIPTION =
 	 * "bulkoffer.meta.description"; private static final String BULKOFFER_META_KEYWORDS = "seo.meta.keywords.bulkoffer";
 	 */
-	protected static final String DEALS_QUERY = ":relevance:deals:On Sale";
+	protected static final String DEALS_QUERY = ":relevance:promotions:On Sale";
 	//private static final String FILTER = Config.getParameter("deals.landingpage.title");
 	//private static final String DEALS_PAGE_TITLE = "deals.page.title";
 	private static final String PROMOTIONPAGE = "promotions";
@@ -102,7 +102,7 @@ public class PromotionResultsPageController extends AbstractSearchPageController
 			final String sortCode, @RequestParam(value = "pageSize", required = false, defaultValue = "0")
 			final int pageSize, final HttpServletRequest request) throws CMSItemNotFoundException
 	{
-		System.out.println("inside promotions page");
+		
 		final String breadcrumbQuery = DEALS_QUERY;
 		if (StringUtils.isEmpty(searchQuery))
 		{
