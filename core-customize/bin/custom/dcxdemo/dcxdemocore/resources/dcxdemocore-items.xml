@@ -102,6 +102,22 @@
                     </attribute>
                 </attributes>
             </itemtype>
+			
+			<!-- New attributes for hot folder poc -->
+            <itemtype code="Product" autocreate="false" generate="false">
+				<attributes>
+					<attribute qualifier="productDescription" type="java.lang.String">
+                        <description>Product Description</description>
+                        <modifiers/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="productWeight" type="java.lang.String">
+                        <description>Product weight</description>
+                        <modifiers/>
+                        <persistence type="property"/>
+                    </attribute>
+				</attributes>
+			</itemtype>
         </typegroup>
         
         <typegroup name="Restrictions">
