@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+ HOT FOLDER Configuration for whitneyWarne webshop
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:file="http://www.springframework.org/schema/integration/file"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/integration 
+	http://www.springframework.org/schema/integration/spring-integration.xsd
+	http://www.springframework.org/schema/integration/file 
+	http://www.springframework.org/schema/integration/file/spring-integration-file.xsd
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+		
+    <context:annotation-config/> 
+
+	<!-- Base Directory -->
+    
+    <bean id="whitneyWarneBaseDirectory" class="java.lang.String">
+		<constructor-arg value="#{configurationService.configuration.getProperty('whitney.warne.data.load.basefolder')}" />
+	</bean>
+
+	<bean id="baseDirectoryWhitneyWarne" class="java.lang.String">
+		<constructor-arg value="#{whitneyWarneBaseDirectory}/${tenantId}/whitneyWarne" />
+	</bean>
+	
+	<!-- Spring File Adapter to pull file from base directory -->
+	
+	<file:inbound-channel-adapter id="whitneyWarneDataloadAdapter" directory="#{baseDirectoryWhitneyWarne}"
+		filename-regex="^(ww_product|base_product|customer|product|url_media)-\\d+.*" comparator="fileOrderComparator">
+		<int:poller fixed-rate="1000" />
+	</file:inbound-channel-adapter>
+
+
+	<!-- Moving file for  processing and creating header -->
+	<file:outbound-gateway request-channel="whitneyWarneDataloadAdapter" reply-channel="whitneyWarneDataloadProcessingChannel"
+		directory="#{baseDirectoryWhitneyWarne}/processing" delete-source-files="true" />
+
+	<int:service-activator input-channel="whitneyWarneDataloadProcessingChannel" output-channel="batchFilesHeaderInit" 
+			ref="whitneyWarneHeaderSetupTask" method="execute" />	
+
+	<bean id="whitneyWarneHeaderSetupTask" class="de.hybris.platform.acceleratorservices.dataimport.batch.task.HeaderSetupTask">
+		<property name="catalog" value="whitneyWarneProductCatalog" />
+		<property name="net" value="false" />
+		<property name="storeBaseDirectory" ref="baseDirectoryWhitneyWarne" />
+	</bean>		
+	
+
+	<!-- Transformer converters mappings -->
+	<bean id="whitneyWarneProductConverterMapping" 
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping" 
+		  p:mapping="ww_product" 
+		  p:converter-ref="whitneyWarneProductConverter"/>	
+
+
+	<!-- Converter -->	  
+	<bean id="whitneyWarneProductConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				# Insert Products
+				INSERT_UPDATE Product;code[unique=true];name[lang=$lang];description[lang=$lang];$catalogVersion
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{+0};{1};{2};{3}</value>
+		</property>
+		<property name="type" value="Product"/>
+	</bean>	 	  	
+
+</beans>

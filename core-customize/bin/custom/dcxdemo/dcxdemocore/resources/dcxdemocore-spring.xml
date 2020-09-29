@@ -17,6 +17,9 @@
 	<import resource="classpath:/dcxdemocore/integration/hot-folder-store-electronics-spring.xml"/>
 	<import resource="classpath:/dcxdemocore/integration/hot-folder-store-apparel-spring.xml"/>
 	<import resource="classpath:/dcxdemocore/integration/hot-folder-common-spring.xml"/>
+	<!-- Registering HOT FOLDER Configuration for whitneyWarne webshop-->
+	<import resource="classpath:/dcxdemocore/integration/hot-folder-store-whitneyWarne-spring.xml"/>	
+	
 
 	<!-- SystemSetup for the DcxdemoCore -->
 	<bean id="acceleratorCoreSystemSetup" class="com.dcx.demo.core.setup.CoreSystemSetup"
