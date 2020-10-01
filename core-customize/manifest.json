@@ -244,6 +244,38 @@
             	{
                     "key": "cluster.node.groups",
                     "value": "integration,yHotfolderCandidate"
+                },
+                {
+                    "key": "azure.hotfolder.storage.account.name",
+                    "value": "eq2p9mzfhp068xmuhgob8og"
+                },
+                {
+                    "key": "azure.hotfolder.storage.account.connection-string",
+                    "value": "AccountName=eq2p9mzfhp068xmuhgob8og;AccountKey=XpJMLged9UkvmKf58ZuD36F06LkqSVV1TvuPEJ8UcFw5t9/zIEE7LKmgaavhgwXscBJ+nm+uBPC/IRERVJ13CA==;EndpointSuffix=core.windows.net;DefaultEndpointsProtocol=https;"
+                },
+                {
+                    "key": "azure.hotfolder.storage.container.name",
+                    "value": "hybris"
+                },
+                {
+                    "key": "azure.hotfolder.storage.container.hotfolder",
+                    "value": "${tenantId}/hot_folder"
+                },
+                {
+                    "key": "azure.hotfolder.storage.container.match.pattern",
+                    "value": "^(ww_product|base_product|customer|product|url_media)-\\d+.*"
+                },
+                {
+                    "key": "azure.hotfolder.storage.polling.fixed.rate",
+                    "value": "1000"
+                },
+                {
+                    "key": "azure.hotfolder.storage.polling.fetch.batch-size",
+                    "value": "1"
+                },
+                {
+                    "key": "cloud.hotfolder.default.mapping.file.name.pattern",
+                    "value": "^(ww_product|base_product|customer|product|url_media)-\\d+.*"
                 }
             ],
             "webapps": [
