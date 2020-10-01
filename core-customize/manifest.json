@@ -4,6 +4,7 @@
         "modeltacceleratorservices",
         "azurecloudhotfolder"
     ],
+    "usecloudextensionpack":true,
 	"useConfig": {
         "properties": [
             {
