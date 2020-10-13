@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+--><!--
+ All hybris buildcallbacks.xml macrodefinitions:
+ 
+ Build/Documentation
+ 
+	 before/after ant macro "clean"
+		 <macrodef name="dcxdemocore_before_clean"/>
+		 <macrodef name="dcxdemocore_after_clean"/>
+
+	 before/after ant macro "build"
+		 <macrodef name="dcxdemocore_before_build"/>
+		 <macrodef name="dcxdemocore_after_build"/>
+
+	 before/after ant macro "compile_core" - the core module of the extension
+		 <macrodef name="dcxdemocore_before_compile_core">
+		 <macrodef name="dcxdemocore_after_compile_core">
+
+	 before/after ant macro "compile_web" - the web module of the extension
+		 <macrodef name="dcxdemocore_before_compile_web" />
+		 <macrodef name="dcxdemocore_after_compile_web" />
+ 
+ Preparing extension
+ 
+	 will be called in the beginning of the ant call and only once (also when using multiple 
+	 ant targets e.g. ant build yunittest)
+		 <macrodef name="dcxdemocore_only_once_prepare"/>
+ 
+ Creating ear module/production
+ 
+	 before/after ant macro "ear"
+		 <macrodef name="dcxdemocore_before_ear"/>
+		 <macrodef name="dcxdemocore_after_ear"/>
+
+	 before/after ant macro "production" - for hybris server only
+		 <macrodef name="dcxdemocore_before_production" />
+		 <macrodef name="dcxdemocore_after_production" />
+ 
+ JUnit Test
+ 
+	 before/after ant macro "yunitinit" 
+		 <macrodef name="dcxdemocore_before_yunitinit" />
+		 <macrodef name="dcxdemocore_after_yunitinit" />
+
+	 before/after ant macro "yunit"
+		 <macrodef name="dcxdemocore_before_yunit" />
+		 <macrodef name="dcxdemocore_after_yunit" /> 
+
+ Distribution package
+ 
+ 	 before/after ant macro "dist" - internal target; only for use when platform is available in source code
+		 <macrodef name="dcxdemocore_after_dist"/>
+		 <macrodef name="dcxdemocore_before_dist"/>
+
+	 before/after ant macro "dist_copy" - internal target; only for use when platform is available in source code
+		 <macrodef name="dcxdemocore_before_dist_copy"/>
+		 <macrodef name="dcxdemocore_after_dist_copy"/>
+
+--><project name="dcxdemocore_buildcallbacks">
+    	
+    <macrodef name="dcxdemocore_after_build">
+        		
+        <sequential>
+            			
+            <impexGenerate extname="dcxdemocore"/>
+            		
+        </sequential>
+        	
+    </macrodef>
+    	
+    <macrodef name="dcxdemocore_after_clean">
+        		
+        <sequential>
+            			
+            <delete failonerror="false" file="${ext.dcxdemocore.path}/resources-lang/touch_impexgen"/>
+            		
+        </sequential>
+        	
+    </macrodef>
+    	
+	
+    <!-- exclude impex files from localization -->
+     
+	
+    <patternset id="dcxdemocore.localization.pattern">
+        		
+        <patternset refid="localization.defaultpattern"/>
+        		
+        <exclude name="**/*.impex"/>
+        	
+    </patternset>
+    	
+
+
+</project>
