@@ -82,6 +82,7 @@
     <extension name='customerinterestsoccaddon' />
     <extension name='notificationoccaddon' />
     <extension name='kymaintegrationbackoffice' />
+    <extension name="kymaintegrationservices"/>
     <extension name='outboundservices' />
     <extension name='outboundsync' />
     <extension name='odata2webservices' />
