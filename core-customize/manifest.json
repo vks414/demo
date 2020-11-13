@@ -1,0 +1,124 @@
+{
+  "commerceSuiteVersion" : "1811",
+  "extensions" : [ ],
+  "useConfig" : {
+    "properties" : [ {
+      "location" : "config/local.properties"
+    } ],
+    "extensions" : {
+      "location" : "config/localextensions.xml"
+    }
+  },
+  "storefrontAddons" : [ {
+    "addon" : "commerceorgsamplesaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "customercouponaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "configurablebundleaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "notificationaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "dfgcaptchaaaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "cybersourceb2cpaymentaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "assistedserviceyprofileaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "smarteditaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "customerticketingaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "cybersourcepaymentaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "personalizationaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "consignmenttrackingaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "dfgorderselfservicesaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "textfieldconfiguratortemplateaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "assistedservicestorefront",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "assistedservicecustomerinterestsaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "dfgproductnotificationaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "assistedservicepromotionaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "customerinterestsaddon",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  }, {
+    "addon" : "bazaarvoice",
+    "storefront" : "dfgstorefront",
+    "template" : "yacceleratorstorefront"
+  } ],
+  "aspects" : [ {
+    "name" : "backoffice",
+    "webapps" : [ {
+      "name" : "hac",
+      "contextPath" : "/hac"
+    }, {
+      "name" : "mediaweb",
+      "contextPath" : "/medias"
+    } ]
+  }, {
+    "name" : "backgroundProcessing",
+    "webapps" : [ {
+      "name" : "hac",
+      "contextPath" : ""
+    }, {
+      "name" : "mediaweb",
+      "contextPath" : "/medias"
+    } ]
+  }, {
+    "name" : "accstorefront",
+    "webapps" : [ {
+      "name" : "mediaweb",
+      "contextPath" : "/medias"
+    }, {
+      "name" : "acceleratorservices",
+      "contextPath" : "/acceleratorservices"
+    }, {
+      "name" : "dfgstorefront",
+      "contextPath" : ""
+    } ]
+  } ]
+}
