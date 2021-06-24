@@ -1,0 +1,137 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImPex for Importing Product Media into Electronics Store
+ 
+# Macros / Replacement Parameter definitions
+$productCatalog=whitneyWarneProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$data_sheet=data_sheet(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$siteResource=jar:de.hybris.platform.WhitneyWarneStoreData.setup.WhitneyWarneStoreSystemSetup&/WhitneyWarneStoreData/import/sampledata/productCatalogs/$productCatalog
+ 
+INSERT_UPDATE Media ; mediaFormat(qualifier) ; code[unique=true]        ; @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; mime[default='image/jpeg'] ; $catalogVersion ; folder(qualifier) 
+                    ; 1200Wx1200H            ; /1200Wx1200H/23191.jpg   ; $siteResource/images/1200Wx1200H/23191.jpg                                 ;                            ;                 ; images            
+                    ; 515Wx515H              ; /515Wx515H/23191.jpg     ; $siteResource/images/515Wx515H/23191.jpg                                   ;                            ;                 ; images            
+                    ; 300Wx300H              ; /300Wx300H/23191.jpg     ; $siteResource/images/300Wx300H/23191.jpg                                   ;                            ;                 ; images            
+                    ; 96Wx96H                ; /96Wx96H/23191.jpg       ; $siteResource/images/96Wx96H/23191.jpg                                     ;                            ;                 ; images            
+                    ; 65Wx65H                ; /65Wx65H/23191.jpg       ; $siteResource/images/65Wx65H/23191.jpg                                     ;                            ;                 ; images            
+                    ; 30Wx30H                ; /30Wx30H/23191.jpg       ; $siteResource/images/30Wx30H/23191.jpg                                     ;                            ;                 ; images            
+                    
+                    
+                    ; 1200Wx1200H            ; /1200Wx1200H/23213.jpg   ; $siteResource/images/1200Wx1200H/23213.jpg                                 ;                            ;                 ; images            
+                    ; 515Wx515H              ; /515Wx515H/23213.jpg     ; $siteResource/images/515Wx515H/23213.jpg                                   ;                            ;                 ; images            
+                    ; 300Wx300H              ; /300Wx300H/23213.jpg     ; $siteResource/images/300Wx300H/23213.jpg                                   ;                            ;                 ; images            
+                    ; 96Wx96H                ; /96Wx96H/23213.jpg       ; $siteResource/images/96Wx96H/23213.jpg                                     ;                            ;                 ; images            
+                    ; 65Wx65H                ; /65Wx65H/23213.jpg       ; $siteResource/images/65Wx65H/23213.jpg                                     ;                            ;                 ; images            
+                    ; 30Wx30H                ; /30Wx30H/23213.jpg       ; $siteResource/images/30Wx30H/23213.jpg                                     ;                            ;                 ; images            
+                    
+                    ; 1200Wx1200H            ; /1200Wx1200H/23231.jpg   ; $siteResource/images/1200Wx1200H/23231.jpg                                 ;                            ;                 ; images            
+                    ; 515Wx515H              ; /515Wx515H/23231.jpg     ; $siteResource/images/515Wx515H/23231.jpg                                   ;                            ;                 ; images            
+                    ; 300Wx300H              ; /300Wx300H/23231.jpg     ; $siteResource/images/300Wx300H/23231.jpg                                   ;                            ;                 ; images            
+                    ; 96Wx96H                ; /96Wx96H/23231.jpg       ; $siteResource/images/96Wx96H/23231.jpg                                     ;                            ;                 ; images            
+                    ; 65Wx65H                ; /65Wx65H/23231.jpg       ; $siteResource/images/65Wx65H/23231.jpg                                     ;                            ;                 ; images            
+                    ; 30Wx30H                ; /30Wx30H/23231.jpg       ; $siteResource/images/30Wx30H/23231.jpg                                     ;                            ;                 ; images            
+                    
+                    ; 1200Wx1200H            ; /1200Wx1200H/23355.jpg   ; $siteResource/images/1200Wx1200H/23355.jpg                                 ;                            ;                 ; images            
+                    ; 515Wx515H              ; /515Wx515H/23355.jpg     ; $siteResource/images/515Wx515H/23355.jpg                                   ;                            ;                 ; images            
+                    ; 300Wx300H              ; /300Wx300H/23355.jpg     ; $siteResource/images/300Wx300H/23355.jpg                                   ;                            ;                 ; images            
+                    ; 96Wx96H                ; /96Wx96H/23355.jpg       ; $siteResource/images/96Wx96H/23355.jpg                                     ;                            ;                 ; images            
+                    ; 65Wx65H                ; /65Wx65H/23355.jpg       ; $siteResource/images/65Wx65H/23355.jpg                                     ;                            ;                 ; images            
+                    ; 30Wx30H                ; /30Wx30H/23355.jpg       ; $siteResource/images/30Wx30H/23355.jpg                                     ;                            ;                 ; images            
+                    
+                    ; 1200Wx1200H            ; /1200Wx1200H/23210.jpg   ; $siteResource/images/1200Wx1200H/23210.jpg                                 ;                            ;                 ; images            
+                    ; 515Wx515H              ; /515Wx515H/23210.jpg     ; $siteResource/images/515Wx515H/23210.jpg                                   ;                            ;                 ; images            
+                    ; 300Wx300H              ; /300Wx300H/23210.jpg     ; $siteResource/images/300Wx300H/23210.jpg                                   ;                            ;                 ; images            
+                    ; 96Wx96H                ; /96Wx96H/23210.jpg       ; $siteResource/images/96Wx96H/23210.jpg                                     ;                            ;                 ; images            
+                    ; 65Wx65H                ; /65Wx65H/23210.jpg       ; $siteResource/images/65Wx65H/23210.jpg                                     ;                            ;                 ; images            
+                    ; 30Wx30H                ; /30Wx30H/23210.jpg       ; $siteResource/images/30Wx30H/23210.jpg                                     ;                            ;                 ; images            
+                    
+                    
+                    ; 1200Wx1200H            ; /1200Wx1200H/1993748.jpg ; $siteResource/images/1200Wx1200H/1993748.jpg                               ;                            ;                 ; images            
+                    ; 515Wx515H              ; /515Wx515H/1993748.jpg   ; $siteResource/images/515Wx515H/1993748.jpg                                 ;                            ;                 ; images            
+                    ; 300Wx300H              ; /300Wx300H/1993748.jpg   ; $siteResource/images/300Wx300H/1993748.jpg                                 ;                            ;                 ; images            
+                    ; 96Wx96H                ; /96Wx96H/1993748.jpg     ; $siteResource/images/96Wx96H/1993748.jpg                                   ;                            ;                 ; images            
+                    ; 65Wx65H                ; /65Wx65H/1993748.jpg     ; $siteResource/images/65Wx65H/1993748.jpg                                   ;                            ;                 ; images            
+                    ; 30Wx30H                ; /30Wx30H/1993748.jpg     ; $siteResource/images/30Wx30H/1993748.jpg                                   ;                            ;                 ; images            
+                    
+                    ; 1200Wx1200H            ; /1200Wx1200H/2053226.jpg ; $siteResource/images/1200Wx1200H/2053226.jpg                               ;                            ;                 ; images            
+                    ; 515Wx515H              ; /515Wx515H/2053226.jpg   ; $siteResource/images/515Wx515H/2053226.jpg                                 ;                            ;                 ; images            
+                    ; 300Wx300H              ; /300Wx300H/2053226.jpg   ; $siteResource/images/300Wx300H/2053226.jpg                                 ;                            ;                 ; images            
+                    ; 96Wx96H                ; /96Wx96H/2053226.jpg     ; $siteResource/images/96Wx96H/2053226.jpg                                   ;                            ;                 ; images            
+                    ; 65Wx65H                ; /65Wx65H/2053226.jpg     ; $siteResource/images/65Wx65H/2053226.jpg                                   ;                            ;                 ; images            
+                    ; 30Wx30H                ; /30Wx30H/2053226.jpg     ; $siteResource/images/30Wx30H/2053226.jpg                                   ;                            ;                 ; images            
+                    
+                    ; 1200Wx1200H            ; /1200Wx1200H/3557133.jpg ; $siteResource/images/1200Wx1200H/3557133.jpg                               ;                            ;                 ; images            
+                    ; 515Wx515H              ; /515Wx515H/3557133.jpg   ; $siteResource/images/515Wx515H/3557133.jpg                                 ;                            ;                 ; images            
+                    ; 300Wx300H              ; /300Wx300H/3557133.jpg   ; $siteResource/images/300Wx300H/3557133.jpg                                 ;                            ;                 ; images            
+                    ; 96Wx96H                ; /96Wx96H/3557133.jpg     ; $siteResource/images/96Wx96H/3557133.jpg                                   ;                            ;                 ; images            
+                    ; 65Wx65H                ; /65Wx65H/3557133.jpg     ; $siteResource/images/65Wx65H/3557133.jpg                                   ;                            ;                 ; images            
+                    ; 30Wx30H                ; /30Wx30H/3557133.jpg     ; $siteResource/images/30Wx30H/3557133.jpg                                   ;                            ;                 ; images            
+                    
+                    ; 1200Wx1200H            ; /1200Wx1200H/2006365.jpg ; $siteResource/images/1200Wx1200H/2006365.jpg                               ;                            ;                 ; images            
+                    ; 515Wx515H              ; /515Wx515H/2006365.jpg   ; $siteResource/images/515Wx515H/2006365.jpg                                 ;                            ;                 ; images            
+                    ; 300Wx300H              ; /300Wx300H/2006365.jpg   ; $siteResource/images/300Wx300H/2006365.jpg                                 ;                            ;                 ; images            
+                    ; 96Wx96H                ; /96Wx96H/2006365.jpg     ; $siteResource/images/96Wx96H/2006365.jpg                                   ;                            ;                 ; images            
+                    ; 65Wx65H                ; /65Wx65H/2006365.jpg     ; $siteResource/images/65Wx65H/2006365.jpg                                   ;                            ;                 ; images            
+                    ; 30Wx30H                ; /30Wx30H/2006365.jpg     ; $siteResource/images/30Wx30H/2006365.jpg                                   ;                            ;                 ; images            
+                    
+                    ; 1200Wx1200H            ; /1200Wx1200H/3555166.jpg ; $siteResource/images/1200Wx1200H/3555166.jpg                               ;                            ;                 ; images            
+                    ; 515Wx515H              ; /515Wx515H/3555166.jpg   ; $siteResource/images/515Wx515H/3555166.jpg                                 ;                            ;                 ; images            
+                    ; 300Wx300H              ; /300Wx300H/3555166.jpg   ; $siteResource/images/300Wx300H/3555166.jpg                                 ;                            ;                 ; images            
+                    ; 96Wx96H                ; /96Wx96H/3555166.jpg     ; $siteResource/images/96Wx96H/3555166.jpg                                   ;                            ;                 ; images            
+                    ; 65Wx65H                ; /65Wx65H/3555166.jpg     ; $siteResource/images/65Wx65H/3555166.jpg                                   ;                            ;                 ; images            
+                    ; 30Wx30H                ; /30Wx30H/3555166.jpg     ; $siteResource/images/30Wx30H/3555166.jpg                                   ;                            ;                 ; images            
+                    
+                    ; 1200Wx1200H            ; /1200Wx1200H/3708646.jpg ; $siteResource/images/1200Wx1200H/3708646.jpg                               ;                            ;                 ; images            
+                    ; 515Wx515H              ; /515Wx515H/3708646.jpg   ; $siteResource/images/515Wx515H/3708646.jpg                                 ;                            ;                 ; images            
+                    ; 300Wx300H              ; /300Wx300H/3708646.jpg   ; $siteResource/images/300Wx300H/3708646.jpg                                 ;                            ;                 ; images            
+                    ; 96Wx96H                ; /96Wx96H/3708646.jpg     ; $siteResource/images/96Wx96H/3708646.jpg                                   ;                            ;                 ; images            
+                    ; 65Wx65H                ; /65Wx65H/3708646.jpg     ; $siteResource/images/65Wx65H/3708646.jpg                                   ;                            ;                 ; images            
+                    ; 30Wx30H                ; /30Wx30H/3708646.jpg     ; $siteResource/images/30Wx30H/3708646.jpg                                   ;                            ;                 ; images            
+                    
+                    ; 1200Wx1200H            ; /1200Wx1200H/450848.jpg  ; $siteResource/images/1200Wx1200H/450848.jpg                                ;                            ;                 ; images            
+                    ; 515Wx515H              ; /515Wx515H/450848.jpg    ; $siteResource/images/515Wx515H/450848.jpg                                  ;                            ;                 ; images            
+                    ; 300Wx300H              ; /300Wx300H/450848.jpg    ; $siteResource/images/300Wx300H/450848.jpg                                  ;                            ;                 ; images            
+                    ; 96Wx96H                ; /96Wx96H/450848.jpg      ; $siteResource/images/96Wx96H/450848.jpg                                    ;                            ;                 ; images            
+                    ; 65Wx65H                ; /65Wx65H/450848.jpg      ; $siteResource/images/65Wx65H/450848.jpg                                    ;                            ;                 ; images            
+                    ; 30Wx30H                ; /30Wx30H/450848.jpg      ; $siteResource/images/30Wx30H/450848.jpg                                    ;                            ;                 ; images            
+                    
+                    
+INSERT_UPDATE MediaContainer ; qualifier[unique=true] ; $medias                                                                                                                               ; $catalogVersion 
+                             ; 23191                  ; /1200Wx1200H/23191.jpg,/515Wx515H/23191.jpg,/300Wx300H/23191.jpg,/96Wx96H/23191.jpg,/65Wx65H/23191.jpg,/30Wx30H/23191.jpg             ;                 
+                             ; 23213                  ; /1200Wx1200H/23213.jpg,/515Wx515H/23213.jpg,/300Wx300H/23213.jpg,/96Wx96H/23213.jpg,/65Wx65H/23213.jpg,/30Wx30H/23213.jpg             ;                 
+                             ; 23355                  ; /1200Wx1200H/23355.jpg,/515Wx515H/23355.jpg,/300Wx300H/23355.jpg,/96Wx96H/23355.jpg,/65Wx65H/23355.jpg,/30Wx30H/23355.jpg             ;                 
+                             ; 23231                  ; /1200Wx1200H/23231.jpg,/515Wx515H/23231.jpg,/300Wx300H/23231.jpg,/96Wx96H/23231.jpg,/65Wx65H/23231.jpg,/30Wx30H/23231.jpg             ;                 
+                             ; 23210                  ; /1200Wx1200H/23210.jpg,/515Wx515H/23210.jpg,/300Wx300H/23210.jpg,/96Wx96H/23210.jpg,/65Wx65H/23210.jpg,/30Wx30H/23210.jpg             ;                 
+                             ; 1993748                ; /1200Wx1200H/1993748.jpg,/515Wx515H/1993748.jpg,/300Wx300H/1993748.jpg,/96Wx96H/1993748.jpg,/65Wx65H/1993748.jpg,/30Wx30H/1993748.jpg ;                 
+                             ; 2053226                ; /1200Wx1200H/2053226.jpg,/515Wx515H/2053226.jpg,/300Wx300H/2053226.jpg,/96Wx96H/2053226.jpg,/65Wx65H/2053226.jpg,/30Wx30H/2053226.jpg ;                 
+                             ; 3557133                ; /1200Wx1200H/3557133.jpg,/515Wx515H/3557133.jpg,/300Wx300H/3557133.jpg,/96Wx96H/3557133.jpg,/65Wx65H/3557133.jpg,/30Wx30H/3557133.jpg ;                 
+                             ; 2006365                ; /1200Wx1200H/2006365.jpg,/515Wx515H/2006365.jpg,/300Wx300H/2006365.jpg,/96Wx96H/2006365.jpg,/65Wx65H/2006365.jpg,/30Wx30H/2006365.jpg ;                 
+                             ; 3555166                ; /1200Wx1200H/3555166.jpg,/515Wx515H/3555166.jpg,/300Wx300H/3555166.jpg,/96Wx96H/3555166.jpg,/65Wx65H/3555166.jpg,/30Wx30H/3555166.jpg ;                 
+                             ; 3708646                ; /1200Wx1200H/3708646.jpg,/515Wx515H/3708646.jpg,/300Wx300H/3708646.jpg,/96Wx96H/3708646.jpg,/65Wx65H/3708646.jpg,/30Wx30H/3708646.jpg ;                 
+                             ; 450848                 ; /1200Wx1200H/450848.jpg,/515Wx515H/450848.jpg,/300Wx300H/450848.jpg,/96Wx96H/450848.jpg,/65Wx65H/450848.jpg,/30Wx30H/450848.jpg       ;                 
+                             
+                             
+                             
+UPDATE Product ; code[unique=true] ; $picture               ; $thumbnail           ; $detail ; $others                                                          ; $normal                ; $thumbnails          ; $galleryImages ; $catalogVersion 
+               ; 23355             ; /300Wx300H/23355.jpg   ; /96Wx96H/23355.jpg   ;         ; /515Wx515H/23355.jpg,/65Wx65H/23355.jpg,/30Wx30H/23355.jpg       ; /300Wx300H/23355.jpg   ; /96Wx96H/23355.jpg   ; 23355          ;                 
+               ; 23213             ; /300Wx300H/23213.jpg   ; /96Wx96H/23213.jpg   ;         ; /515Wx515H/23213.jpg,/65Wx65H/23213.jpg,/30Wx30H/23213.jpg       ; /300Wx300H/23213.jpg   ; /96Wx96H/23213.jpg   ; 23213          ;                 
+               ; 23191             ; /300Wx300H/23191.jpg   ; /96Wx96H/23191.jpg   ;         ; /515Wx515H/23191.jpg,/65Wx65H/23191.jpg,/30Wx30H/23191.jpg       ; /300Wx300H/23191.jpg   ; /96Wx96H/23191.jpg   ; 23191          ;                 
+               ; 23231             ; /300Wx300H/23231.jpg   ; /96Wx96H/23231.jpg   ;         ; /515Wx515H/23231.jpg,/65Wx65H/23231.jpg,/30Wx30H/23231.jpg       ; /300Wx300H/23231.jpg   ; /96Wx96H/23231.jpg   ; 23231          ;                 
+               ; 1993748           ; /300Wx300H/1993748.jpg ; /96Wx96H/1993748.jpg ;         ; /515Wx515H/1993748.jpg,/65Wx65H/1993748.jpg,/30Wx30H/1993748.jpg ; /300Wx300H/1993748.jpg ; /96Wx96H/1993748.jpg ; 1993748        ;                 
+               ; 23210             ; /300Wx300H/23210.jpg   ; /96Wx96H/23210.jpg   ;         ; /515Wx515H/23210.jpg,/65Wx65H/23210.jpg,/30Wx30H/23210.jpg       ; /300Wx300H/23210.jpg   ; /96Wx96H/23210.jpg   ; 23210          ;                 
+               ; 2053226           ; /300Wx300H/2053226.jpg ; /96Wx96H/2053226.jpg ;         ; /515Wx515H/2053226.jpg,/65Wx65H/2053226.jpg,/30Wx30H/2053226.jpg ; /300Wx300H/2053226.jpg ; /96Wx96H/2053226.jpg ; 2053226        ;                 
+               ; 3557133           ; /300Wx300H/3557133.jpg ; /96Wx96H/3557133.jpg ;         ; /515Wx515H/3557133.jpg,/65Wx65H/3557133.jpg,/30Wx30H/3557133.jpg ; /300Wx300H/3557133.jpg ; /96Wx96H/3557133.jpg ; 3557133        ;                 
+               ; 2006365           ; /300Wx300H/2006365.jpg ; /96Wx96H/2006365.jpg ;         ; /515Wx515H/2006365.jpg,/65Wx65H/2006365.jpg,/30Wx30H/2006365.jpg ; /300Wx300H/2006365.jpg ; /96Wx96H/2006365.jpg ; 2006365        ;                 
+               ; 3555166           ; /300Wx300H/3555166.jpg ; /96Wx96H/3555166.jpg ;         ; /515Wx515H/3555166.jpg,/65Wx65H/3555166.jpg,/30Wx30H/3555166.jpg ; /300Wx300H/3555166.jpg ; /96Wx96H/3555166.jpg ; 3555166        ;                 
+               ; 3708646           ; /300Wx300H/3708646.jpg ; /96Wx96H/3708646.jpg ;         ; /515Wx515H/3708646.jpg,/65Wx65H/3708646.jpg,/30Wx30H/3708646.jpg ; /300Wx300H/3708646.jpg ; /96Wx96H/3708646.jpg ; 3708646        ;                 
+               ; 450848            ; /300Wx300H/450848.jpg  ; /96Wx96H/450848.jpg  ;         ; /515Wx515H/450848.jpg,/65Wx65H/450848.jpg,/30Wx30H/450848.jpg    ; /300Wx300H/450848.jpg  ; /96Wx96H/450848.jpg  ; 450848         ;                 
+               
