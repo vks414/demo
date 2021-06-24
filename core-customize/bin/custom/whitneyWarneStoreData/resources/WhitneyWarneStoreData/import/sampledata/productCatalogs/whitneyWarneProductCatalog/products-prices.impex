@@ -1,0 +1,26 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Electronics Store Prices
+#% impex.setLocale( Locale.GERMAN ); 
+ 
+$productCatalog=whitneyWarneProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
+$taxGroup=Europe1PriceFactory_PTG(code)[default=jp-vat-full]
+ 
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+INSERT_UPDATE PriceRow ; productId[unique=true] ; unit(code[unique=true,default=pieces]) ; currency(isocode)[unique=true] ; price ; minqtd ; unitFactor ; net   
+                       ; 23213                  ; pieces                                 ; USD                            ; 17    ; 1      ; 1          ; false 
+                       ; 23191                  ; pieces                                 ; USD                            ; 19    ; 1      ; 1          ; false 
+                       ; 23210                  ; pieces                                 ; USD                            ; 40    ; 1      ; 1          ; false 
+                       ; 23231                  ; pieces                                 ; USD                            ; 12    ; 1      ; 1          ; false 
+                       ; 1993748                ; pieces                                 ; USD                            ; 23    ; 1      ; 1          ; false 
+                       ; 2053226                ; pieces                                 ; USD                            ; 17    ; 1      ; 1          ; false 
+                       ; 3557133                ; pieces                                 ; USD                            ; 19    ; 1      ; 1          ; false 
+                       ; 2006365                ; pieces                                 ; USD                            ; 40    ; 1      ; 1          ; false 
+                       ; 3555166                ; pieces                                 ; USD                            ; 22    ; 1      ; 1          ; false 
+                       ; 3708646                ; pieces                                 ; USD                            ; 32    ; 1      ; 1          ; false 
+                       ; 450848                 ; pieces                                 ; USD                            ; 32    ; 1      ; 1          ; false 
+                       ; 23355                  ; pieces                                 ; USD                            ; 17    ; 1      ; 1          ; false 
+                       
