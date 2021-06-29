@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:noNamespaceSchemaLocation="items.xsd">
+	<collectiontypes>
+			<collectiontype code="SlotTimings"
+			elementtype="DeliverySlotTiming" autocreate="true" generate="true"
+			type="list" />
+			<collectiontype code="SlotHolidaysList"
+			elementtype="java.util.Date" autocreate="true" generate="true" type="list" />
+	</collectiontypes>
+
+	<itemtypes>
+		<itemtype code="AbstractOrderEntry" autocreate="false" generate="false">
+				<attributes>
+					<attribute qualifier="deliverySlotDate" type="java.util.Date">
+						<description>DeliverySlotDate</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="deliverySlotTime" type="java.lang.String">
+						<description>DeliverySlotTime</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="deliverySlotPK" type="java.lang.String">
+						<description>DeliverySlotPK</description>
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+		</itemtype>
+		<itemtype code="Consignment" autocreate="false" generate="false">
+				<attributes>
+					<attribute qualifier="securityPin" type="java.lang.String">
+						<description>Security Pin</description>
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+		</itemtype>
+			<itemtype code="BaseStore" generate="false" autocreate="false">
+				<attributes>
+				<attribute qualifier="slotHolidaysList" type="SlotHolidaysList">
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+						<description>Holiday to be excluded from pickup
+						</description>
+						<persistence type="property" />
+				</attribute>
+				<attribute qualifier="deliverySlotsEnabled" type="boolean">
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+						<description>Delivery Slot feature enabled</description>
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+						<persistence type="property" />
+				</attribute>
+				</attributes>
+			</itemtype>
+			<itemtype code="PointOfService" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="pickupLeadTime" type="int">
+							<modifiers read="true" write="true" search="true"
+								optional="true" />
+							<description>Lead time</description>
+							<persistence type="property" />
+					</attribute>
+				<attribute qualifier="pickupOffset" type="int">
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+						<description>Pickup Offset HH:mm</description>
+						<persistence type="property" />
+				</attribute>
+				<attribute qualifier="slotTimings" type="SlotTimings">
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+						<description>Slot timings for checkout</description>
+						<persistence type="property" />
+				</attribute>
+				<attribute qualifier="slotHolidaysList" type="SlotHolidaysList">
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+						<description>Holiday to be excluded from pickup
+						</description>
+						<persistence type="property" />
+				</attribute>
+			</attributes>
+			</itemtype>
+			<itemtype code="SlotCronJob" jaloclass="com.dcx.demo.slot.jalo.SlotCronJob"
+				generate="true" extends="CronJob" autocreate="true">
+				<attributes>
+					<attribute qualifier="fromDate" type="java.util.Date">
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+						<description>Slots needs to be created from this date
+						</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="toDate" type="java.util.Date">
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+						<description>Slots needs to be created upto this date
+						</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="store" type="BaseStore">
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+						<description>BaseStore
+						</description>
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+			<itemtype code="DeliverySlotTiming" extends="GenericItem"
+				jaloclass="com.dcx.demo.slot.jalo.DeliverySlotTimings" autocreate="true"
+				generate="true">
+				<deployment table="DeliverySlotTiming" typecode="12001" />
+				<attributes>
+					<attribute qualifier="code" type="java.lang.String">
+						<description>slot code</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="fromTime" type="java.lang.String">
+						<description>Format: hhmm</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="toTime" type="java.lang.String">
+						<description>Format: hhmm</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="slotCapacity" type="int">
+						<description>Maximum order capacity per slot</description>
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+			<itemtype code="DeliverySlot" extends="GenericItem"
+				jaloclass="com.dcx.demo.slot.jalo.DeliverySlot" autocreate="true"
+				generate="true">
+				<deployment table="DeliverySlot" typecode="12000" />
+				<attributes>
+					<attribute qualifier="code" type="java.lang.String">
+						<description>slot code</description>
+						<modifiers unique="true" />
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="date" type="java.util.Date">
+						<description>Date for which the slot is chosen during checkout
+						</description>
+						<modifiers unique="true" />
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="fromTime" type="java.lang.String">
+						<description>Format: hhmm</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="toTime" type="java.lang.String">
+						<description>Format: hhmm</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="remainingCapacity" type="int">
+						<description>Remaining capacity of the slot</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="used" type="boolean">
+						<description>Slot used</description>
+						<persistence type="property" />
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+					</attribute>
+					<attribute qualifier="store" type="PointOfService">
+						<persistence type="property" />
+						<description>Point of Service.
+						</description>
+					</attribute>
+				</attributes>
+			</itemtype>
+	</itemtypes>
+</items>
