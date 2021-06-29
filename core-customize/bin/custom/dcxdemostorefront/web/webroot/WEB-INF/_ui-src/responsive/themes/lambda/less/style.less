@@ -1,0 +1,59 @@
+//
+// Load core variables
+// --------------------------------------------------
+
+@import "../../../lib/ybase-0.1.0/less/ybase.less";
+@import "../../../lib/ybase-0.1.0/less/addons.less";
+@import "variables.less";
+
+.deliveryslot_list {
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 2px solid #F2F0ED;
+    cursor: pointer;
+}
+
+.deliveryslot_list.active {
+    border: 2px solid #FF8200;
+    border-left: 4px solid #FF8200;
+    background: #FFEACA;
+}
+
+.deliveryslot_list.active:hover {
+	padding-left: 8px;
+}
+	
+.deliveryslot_list:hover {
+	padding-left: 6px;
+    border: 2px solid #FF8200;
+    border-left: 4px solid #FF8200;
+}
+
+.unavailable_slot {
+    cursor: default;
+    background: #F2F0ED;
+}
+
+.unavailable_slot:hover {
+    border: 2px solid #F2F0ED;
+    border-left: 2px solid #F2F0ED;    
+}
+
+.d-flex {
+	display: -ms-flexbox !important;
+	display: flex !important;
+}
+
+.addressEntry li, .deliverySlot li {
+	list-style: none;
+}
+
+.promotions-nav-link:hover {
+background: #ee124f !important;
+}
+
+.promotions-nav-link {
+background: #f04173;
+border-radius: 10px;
+}
+
